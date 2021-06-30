@@ -5,7 +5,7 @@
     <img src="https://www.admscentre.org.au/wp-content/uploads/2021/06/brand_logo_2.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">The Australian Search Experience 2021</h3>
+  <h3 align="center">The Australian Search Experience - 2021</h3>
 
   <p align="center">
     This is the data donation project currently being led by Abdul Karim Obeid (@askoj), and supervised by Professor Axel Bruns, and Associate Professor Daniel Angus of the ADM+S, in collaboration with AlgorithmWatch.
