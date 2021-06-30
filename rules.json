@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "header": "User-Agent", "operation": "set", "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 QQ/8.5.0.635 V1_IPH_SQ_8.5.0_1_APP_A Pixel/1170 MiniAppEnable SimpleUISwitch/0 QQTheme/1000 Core/WKWebView Device/Apple(iPhone 12 Pro) NetType/WIFI QBWebViewType/1 WKType/1" }
+      ]
+    },
+    "condition": { "urlFilter": "https://*?*ase_injection_interface=mobile_iphone12pro", "resourceTypes": ["main_frame"] }
+  },
+  {
+    "id": 2,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "header": "User-Agent", "operation": "set", "value": "Mozilla/5.0 (Linux; Android 8.0.0; SM-G960F Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36" }
+      ]
+    },
+    "condition": { "urlFilter": "https://*?*ase_injection_interface=mobile_galaxyS5", "resourceTypes": ["main_frame"] }
+  }
+]

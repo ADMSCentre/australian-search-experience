@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "ADM+S - The Australian Search Experience",
+    "description": "ADM+S - The Australian Search Experience"
+  },
+  "appDescription": {
+    "message": "An extension for data donation in relation the various search engines.",
+    "description": "An extension for data donation in relation the various search engines."
+  },
+  "btnTooltip": {
+    "message": "Extension",
+    "description": "Tooltip for the button."
+  }
+}

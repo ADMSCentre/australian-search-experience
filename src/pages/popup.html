@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="../resources/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/form-validation.css" rel="stylesheet">
+    <link href="../resources/popup_styles.css" rel="stylesheet">
+    <link href="../resources/frontfacing.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="popup">
+      <div class="banner row m-0">
+        <div class="banner-logo col-3"></div>
+        <div class="banner-text col-9 pl-2">THE AUSTRALIAN SEARCH EXPERIENCE</div>
+      </div>
+      <!-- Loading -->
+      <div id="containerLoading" class="row mx-4 collapse show">
+        <div class="container-loading">
+          <div class="donut multi"></div>
+        </div>
+      </div>
+      <!-- Unregistered -->
+      <div id="containerUnregistered" class="row m-0 p-0 collapse">
+        <div class="status row mx-4 mt-4 mb-3">
+          <div class="status-border neg">
+            <div class="status-logo neg"></div>
+            <div class="status-text neg pr-3 second-font"><b class="pr-1">Status:</b> Not Registered</div>
+          </div>
+        </div>
+        <div class="row mx-4 mb-3">
+          <button class="btn btn-dark" id="buttonRegisterPluginUnregistered"><b>REGISTER</b></button>
+        </div>
+        <div class="row mx-4 pb-3">
+          <a class="link-text" id="buttonAboutProjectUnregistered" href="#">About this project...</a>
+        </div>
+      </div>
+      <!-- Registered -->
+      <div id="containerRegistered" class="row m-0 p-0 collapse">
+        <div class="status row mx-4 mt-4 mb-3">
+          <div class="status-border">
+            <div class="status-logo"></div>
+            <div class="status-text pr-3 second-font"><b class="pr-1">Status:</b> Registered</div>
+          </div>
+        </div>
+        <div class="row mx-4 mb-3">
+          <button class="btn btn-dark disabled" id="buttonRunSearchProcessRegistered"><b>TEST RUN</b></button>
+        </div>
+        <div class="row mx-4 mb-3">
+          <!--<button class="btn btn-dark" id="buttonPauseFor24HoursRegistered"><b>PAUSE FOR 24 HOURS</b></button>-->
+          <button class="btn btn-warning unpause-label" id="buttonPauseFor24HoursRegistered"><b id="buttonPauseFor24HoursRegisteredLabel">PAUSE FOR 24 HOURS</b>
+            <div id="buttonPauseFor24HoursRegisteredTimer" class="row my-2 mx-1 unpause-status collapse">
+              <div class="d-flex justify-content-center unpause-timer-container">
+                <div class="pt-2">
+                  <span class="unpause-label-b px-2 pt-2 mb-0 pb-1">The plugin will resume in</span>
+                  <div id="buttonPauseFor24HoursRegisteredTimerValue" class="unpause-timer pt-1 pb-3 px-2">00:00:01</div>
+                </div>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="row mx-4 pb-3">
+          <a class="link-text" id="buttonAboutProjectRegistered" href="#">About this project...</a>
+        </div>
+      </div>
+      <!-- Campaign Finished -->
+      <div id="containerFinished" class="row m-0 p-0 collapse">
+        <div class="status row mx-4 mt-4 pb-3">
+          <div class="popup-ending-image mb-2"></div>
+          <p class="popup-ending-text">The Australian Search Experience data donation project has now ended. Thank you for contributing to the success of this project.</p>
+        </div>
+      </div>
+    </div>
+    <script src="../resources/jquery.min.js"></script>
+    <script src="../resources/popper.min.js"></script>
+    <script src="../resources/bootstrap.min.js"></script>
+    <script src="../resources/holder.min.js"></script>
+    <script src="../scripts/popup.js"></script>
+  </body>
+</html>
