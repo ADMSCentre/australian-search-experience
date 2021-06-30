@@ -20,8 +20,6 @@
 <!-- GETTING STARTED -->
 ## Description
 
-<img src="https://github.com/ADMSCentre/australian-search-experience/blob/master/diagram-min.png?raw=true" alt="Logo" width="100%">
-
 The infrastructure of this project is compiled as a cross-browser search plugin that operates on Google Chrome, Microsoft Edge, Mozilla Firefox, and Blink Opera. The plugin uses a boilerplate template by Bharani (see https://github.com/EmailThis/extension-boilerplate). It runs exactly as was originally conceived by AlgorithmWatch (https://github.com/algorithmwatch/australianSearchExperience), with the addition of some extended functionality. The plugin is designed such that it periodically scrapes data from a simulated search engine session and then sends the data up to our server.
 
 If you would like to compile the unpacked extension, you will need a current installation of `npm`. Navigate to the cloned folder and then run the command `npm install`. This will install the necessary modules for the extension. Then run the command `npm run buildmv2` (for Mozilla Firefox and Blink Opera) or `npm run buildmv3` (for Google Chrome or Microsoft Edge), depending on which browser you will be using.
