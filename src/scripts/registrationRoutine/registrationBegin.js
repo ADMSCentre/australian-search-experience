@@ -1,4 +1,5 @@
 import storage from '../utils/utilitiesStorage';
+import { debugAO } from '../config.js';
 
 /*
 	This function injects the details about the plugin into the registration page
@@ -21,9 +22,12 @@ function addVariableInjectionASE() {
 	}	
 }
 
+
+/*
+	Ideally, we would like to have a service worker polling event on this content script, however it is unnecessary, as all routes to this script ensure that the service worker is awake
+*/
+
 // The forementioned function runs on ALL load events
-window.addEventListener('load', (event) => { addVariableInjectionASE(); });
+window.addEventListener('load', function() { addVariableInjectionASE(); });
 document.addEventListener('readystatechange', (event) => { addVariableInjectionASE(); });
 document.addEventListener('DOMContentLoaded', (event) => { addVariableInjectionASE(); });
-
-

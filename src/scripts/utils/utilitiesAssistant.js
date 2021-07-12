@@ -159,14 +159,22 @@ export function assistant_unicodeCharEscape(argString) {
 */
 export function assistant_fuzzyTime(inputTextPre) {
   var inputText = inputTextPre
-
-  // Attempt to process as a legitimate date
+  
   var attemptedDate = null;
-  try {
-    attemptedDate = new Date(inputText);
-  } catch (e) {}
-
-  if (String(attemptedDate) != "Invalid Date") {
+  // If there is no textual data hanging around
+  if ((inputTextPre.match(/[a-zA-Z]+/gm) == null) || (inputTextPre.match(/[a-zA-Z]+/gm).join("").length < 3)) {
+    // Attempt to process as a legitimate date
+    try {
+      attemptedDate = new Date(inputText);  // Attempting straight date conversion
+      if ((attemptedDate == "Invalid Date") && (inputText.length > 10)) {
+        attemptedDate = new Date(parseInt(inputText));  // Attempting integer parse
+      }
+      if ((attemptedDate == "Invalid Date") && (inputText.length <= 10)) {
+        attemptedDate = new Date(parseInt(inputText)*1000); // Attempting integer parse with milliseconds
+      }
+    } catch (e) {}
+  }
+  if ((String(attemptedDate) != "Invalid Date") && (attemptedDate != null)) {
     return String(attemptedDate.toISOString().slice(0, 19).replace('T', ' '));
   } else {
     try {
@@ -248,7 +256,9 @@ export function assistant_fuzzyTime(inputTextPre) {
             preprocessedUnitDeLemma = preprocessedUnit;
           }
           var processedUnit = {
+            "sec" : 1, 
             "second" : 1, 
+            "min" : 1*60, 
             "minute" : 1*60, 
             "hour" : 1*60*60, 
             "day" : 1*60*60*24, 
@@ -357,25 +367,30 @@ export function assistant_youtubeURLClean(inputText) {
   This function converts strings that communicate durations to integer values in seconds
 */
 export function assistant_fuzzyDurationToSeconds(inputText) {
-  var seconds = 0;
-  try {
-    var splitText = inputText.split(":");
-    if (splitText.length == 1) {
-      seconds += parseInt(splitText[0]);
-    } else if (splitText.length == 2) {
-      seconds += parseInt(splitText[0])*60;
-      seconds += parseInt(splitText[1]);
-    } else if (splitText.length == 3) {
-      seconds += parseInt(splitText[0])*60*60;
-      seconds += parseInt(splitText[1])*60;
-      seconds += parseInt(splitText[2]);
+  if (inputText == "LIVE") {
+    // Bypass LIVE streams
+    return null;
+  } else {
+    var seconds = 0;
+    try {
+      var splitText = inputText.split(":");
+      if (splitText.length == 1) {
+        seconds += parseInt(splitText[0]);
+      } else if (splitText.length == 2) {
+        seconds += parseInt(splitText[0])*60;
+        seconds += parseInt(splitText[1]);
+      } else if (splitText.length == 3) {
+        seconds += parseInt(splitText[0])*60*60;
+        seconds += parseInt(splitText[1])*60;
+        seconds += parseInt(splitText[2]);
+      }
+    } catch (e) {
+       error_log.push(String(e)+" "+String(e.lineNumber)+" ");;
+      if (debugAO) { console.log(e); }
+      // Do Nothing
     }
-  } catch (e) {
-     error_log.push(String(e)+" "+String(e.lineNumber)+" ");;
-    if (debugAO) { console.log(e); }
-    // Do Nothing
+    return seconds;
   }
-  return seconds;
 }
 
 /*

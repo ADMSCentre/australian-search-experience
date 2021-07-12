@@ -1,5 +1,5 @@
 import ext from './utils/utilitiesCrossBrowser';
-import { getConfig, CONST_OVERRIDE_REGISTRATION } from './config';
+import { getConfig, debugAO, CONST_OVERRIDE_REGISTRATION, CONST_MANIFEST_VERSION_INTEGER } from './config';
 import storage from './utils/utilitiesStorage';
 import { renderNormaliseClockValue } from './utils/utilitiesAssistant';
 import moment from 'moment-timezone';
@@ -73,8 +73,10 @@ function loadPageRegistered() {
     Alarms.searchAlarmCheckPauseStatus().then((paused)=>{
       // If the plugin is not paused, run a search process
       if (!(paused)) {
-        var action = 'test-search-routine';
-        ext.runtime.sendMessage({ action });
+        var port = ext.runtime.connect(ext.runtime.id);
+        port.postMessage({ action: "test-search-routine" });
+        //var action = 'test-search-routine';
+        //ext.runtime.sendMessage({ action });
       }
     });
   });
@@ -120,29 +122,53 @@ function loadPageUnregistered() {
 function init() {
   // Note: As the initiation involves an asynchronous process, the page defaults to a loading animation
   // If the user has a hash key...
-  storage.get('hash_key', (this_hash_key_object)=>{
-    getConfig().then((config) => { 
-      const currentTime = moment().tz(moment.tz.guess());
-      if (moment(config.startDate).isBefore(currentTime) && moment(config.endDate).isAfter(currentTime)) {
-        if (this_hash_key_object.hash_key) {
-          // Show the page intended for registered versions
-          loadPageRegistered();
-        } else {
-          // Otherwise, show the page intended for unregistered versions
-          if (CONST_OVERRIDE_REGISTRATION) {
+
+  function intendedRoutine() {
+    storage.get('hash_key', (this_hash_key_object)=>{
+      getConfig().then((config) => { 
+        const currentTime = moment().tz(moment.tz.guess());
+        if (moment(config.startDate).isBefore(currentTime) && moment(config.endDate).isAfter(currentTime)) {
+          if (this_hash_key_object.hash_key) {
+            // Show the page intended for registered versions
             loadPageRegistered();
           } else {
-            loadPageUnregistered();
+            // Otherwise, show the page intended for unregistered versions
+            if (CONST_OVERRIDE_REGISTRATION) {
+              loadPageRegistered();
+            } else {
+              loadPageUnregistered();
+            }
           }
+        } else {
+          loadPageFinished();
         }
-      } else {
-        loadPageFinished();
-      }
+      });
     });
-  }); 
+  }
+
+  // Bypass service worker for manifest version < 3
+  if (CONST_MANIFEST_VERSION_INTEGER < 3) {
+    intendedRoutine();
+  } else {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('../background.js').then(function(registration) {
+          // Registration was successful
+          if (debugAO) { console.log('ServiceWorker registration successful with scope: ', registration.scope); }
+          intendedRoutine();
+        }, function(err) {
+          // registration failed :(
+          if (debugAO) { console.log('ServiceWorker registration failed: ', err); }
+        });
+      });
+    }
+  }
+  
 }
 
 init();
+
+
 
 
 

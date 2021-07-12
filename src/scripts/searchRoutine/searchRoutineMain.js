@@ -42,8 +42,8 @@ const CONST_SEARCH_TOGGLE_INTERFACES = [
 ]
 
 const CONST_TIME_BEFORE_SEARCH_ROUTINE_QUEUE_STARTS_MILLISECONDS = 2000;
-const CONST_TIME_BEFORE_SEARCH_ROUTINE_QUEUE_ELEMENT_LOADS_DOWN_MILLISECONDS = 10000; 
-const CONST_TIME_BEFORE_SEARCH_ROUTINE_QUEUE_ELEMENT_LOADS_UP_MILLISECONDS = 2000; 
+const CONST_TIME_BEFORE_SEARCH_ROUTINE_QUEUE_ELEMENT_LOADS_DOWN_MILLISECONDS = 61000;///10000;  //TODO Depreciated
+const CONST_TIME_BEFORE_SEARCH_ROUTINE_QUEUE_ELEMENT_LOADS_UP_MILLISECONDS = 61000;//2000; 
 
 var CONST_REGEX_CUSTOM_FLAGS = {
   "DESLASH" : [customFlagStandardBehaviourPositive, customFlagStandardBehaviourNegative],
@@ -59,6 +59,8 @@ var CONST_REGEX_CUSTOM_FLAGS = {
   "INDEXED" : [customFlagStandardBehaviourPositive, customFlagStandardBehaviourNegative],
   "LISTIFY_MATCHES" : [customFlagStandardBehaviourPositive, customFlagStandardBehaviourNegative],
   "CONCATENATE_MATCHES" : [customFlagStandardBehaviourPositive, customFlagStandardBehaviourNegative],
+  "NEWS_REMOVE_DOUBLEUPS" : [customFlagStandardBehaviourPositive, customFlagStandardBehaviourNegative],
+  "NEWS_REMOVE_TAIL" : [customFlagStandardBehaviourPositive, customFlagStandardBehaviourNegative],
   "RECURSE" : [customFlagBehaviourRecursePositive, customFlagBehaviourRecurseNegative]
 }
 
@@ -155,6 +157,8 @@ function searchRoutineBegin(config, argWindowId, argTabId, argPluginInstanceId) 
           }
         }
       }
+
+      /* TODO Remove preset alarms
       //Set all upcoming alarms
       for (var alarmSetting_i = 0; alarmSetting_i < searchRoutineReferenceObject["searchRoutineQueueSettings"].length; alarmSetting_i ++) {
         // Only the 'when' parameter is set, as the alarm only runs once
@@ -165,13 +169,77 @@ function searchRoutineBegin(config, argWindowId, argTabId, argPluginInstanceId) 
         if (alarmSetting_i == (searchRoutineReferenceObject["searchRoutineQueueSettings"].length-1)) {
           searchRoutineReferenceObject["searchRoutineQueueEndingAlarm"] = searchRoutineReferenceObject["searchRoutineQueueSettings"][alarmSetting_i]["id"];
         }
-      }
+      }*/
+
+      // Action the first entry
+      var searchRoutineQueuePositionStart = 0;
+      storage.set({ 'searchRoutineQueuePosition': searchRoutineQueuePositionStart }, () => {
+        searchRoutineAlarmAction(
+        searchRoutineReferenceObject, 
+        searchRoutineReferenceObject["searchRoutineQueueSettings"][searchRoutineQueuePositionStart]["id"], 
+        searchRoutineReferenceObject["searchRoutineQueueSettings"][searchRoutineQueuePositionStart]);
+      });
+      // Set the ending alarm
+      searchRoutineReferenceObject["searchRoutineQueueEndingAlarm"] = searchRoutineReferenceObject["searchRoutineQueueSettings"][(searchRoutineReferenceObject["searchRoutineQueueSettings"].length-1)]["id"];
+      
+      
+
+
       // Set the reference object before inactivity starts
       storage.set({"searchRoutineReferenceObject": searchRoutineReferenceObject }, () => {});
       if (debugAO) { console.log("The search routine has been initiated with the following reference object:", searchRoutineReferenceObject); }
       //searchRoutineInstance(0, _windowId, pluginId, windowRootTabId, callback);
     });
   });
+}
+
+/*
+  This runs the next action in the search routine 
+*/
+function searchRoutineRunNextStep() {
+  if (debugAO) {
+    console.log("Attempting next step");
+  }
+  // Get the queue position...
+  storage.get("searchRoutineQueuePosition", (result) => {
+    if (debugAO) {
+      console.log("searchRoutineQueuePosition", result.searchRoutineQueuePosition);
+    }
+    var alarm_i = result.searchRoutineQueuePosition;
+    // Run the current position of the queue
+    storage.get("searchRoutineReferenceObject", (result) => {
+      // We check if the position belongs to the search routine
+      if (("searchRoutineReferenceObject" in result) && (result.searchRoutineReferenceObject != null)) {
+        var searchRoutineReferenceObject = result.searchRoutineReferenceObject;
+        for (var i = alarm_i+1; i <= alarm_i+2; i ++) {
+          if (i < searchRoutineReferenceObject["searchRoutineQueueSettings"].length) {
+            searchRoutineAlarmAction(searchRoutineReferenceObject, searchRoutineReferenceObject["searchRoutineQueueSettings"][i]["id"], searchRoutineReferenceObject["searchRoutineQueueSettings"][i]); 
+          }
+        }
+        storage.set({ 'searchRoutineQueuePosition': alarm_i+2 }, () => {});
+        /*
+        for (var i = 0; i < searchRoutineReferenceObject["searchRoutineQueueSettings"].length; i ++) {
+          // If so...
+          if (debugAO) {
+            console.log("indexed ", searchRoutineReferenceObject["searchRoutineQueueSettings"][i]["id"]);
+          }
+          if (i == alarm_i) {
+            if (debugAO) { console.log("A search routine queue alarm has been successfully detected:", searchRoutineReferenceObject["searchRoutineQueueSettings"][i]); }
+            // We action the alarm
+            if (debugAO) { console.log("Running next queue step for: ", searchRoutineReferenceObject["searchRoutineQueueSettings"][i]) };
+
+            searchRoutineAlarmAction(searchRoutineReferenceObject, searchRoutineReferenceObject["searchRoutineQueueSettings"][alarm_i]["id"], searchRoutineReferenceObject["searchRoutineQueueSettings"][alarm_i]);
+          }
+        }
+        */
+      } else {
+        // Otherwise, there is no search routine to index
+      }
+    });
+
+  });
+
+  
 }
 
 /*
@@ -253,7 +321,8 @@ function searchRoutineAlarmAction(argSearchRoutineReferenceObject, searchRoutine
                     var sanitisedHTML = result.caughtHTML;
 
                     // Unescaping is required for mobile devices
-                    if (searchRoutineReferenceObject["interfaceToggle"] != "desktop") {
+                    if ((searchRoutineReferenceObject["interfaceToggle"] != "desktop") 
+                          && (searchRoutineThisQueueSettingsObject["platform"] == "youtube")) {
                       sanitisedHTML = assistant_unicodeCharEscape(assistant_unicodeCharEscape(result.caughtHTML));
                     }
 
@@ -637,6 +706,21 @@ function retrieveElemFallback(source, selector_part, item, type) {
                   if ((flagActivationObject["LISTIFY_MATCHES"]) && (i == (expressionsToEvaluate.length-1))) {
                     // If all expressions have been evaluated, listify the matches
                     attempted_retrieved_val = attempted_retrieved_val.match(RegExp(expressionsToEvaluate[i], "g", "m"));
+                    // If we are dealing with an instance that removes the double-ups of news articles
+                    if (flagActivationObject["NEWS_REMOVE_DOUBLEUPS"]) {
+                      var attempted_retrieved_val_adjusted = []; // This is where we will put the successful entries
+                      var textCatch = "(?<=\"],\").*?(?=\")"; // This is what we will use to extract the uniqueness (formally, its the title selector for the Google News mobile scraper)
+                      for (var j = 0; j < attempted_retrieved_val.length; j ++) {
+                        if ((j == attempted_retrieved_val.length-1) || (attempted_retrieved_val[j].match(RegExp(textCatch, "g", "m"))[0] != attempted_retrieved_val[j+1].match(RegExp(textCatch, "g", "m"))[0])) {
+                          attempted_retrieved_val_adjusted.push(attempted_retrieved_val[j]);
+                        }
+                      }
+                      attempted_retrieved_val = attempted_retrieved_val_adjusted;
+                    }
+                    if (flagActivationObject["NEWS_REMOVE_TAIL"]) {
+                      // This is a specialised flag for the mobile Google news that pops the last element of an array
+                      attempted_retrieved_val.pop();
+                    }
                   } else if ((flagActivationObject["CONCATENATE_MATCHES"]) && (i == (expressionsToEvaluate.length-1))) {
                     // If all expressions have been evaluated, concatenate the matches
                     attempted_retrieved_val = attempted_retrieved_val.match(RegExp(expressionsToEvaluate[i], "g", "m")).join("");
@@ -808,7 +892,8 @@ function searchRoutineInit() {
 export default {
   searchRoutineInit,
   searchRoutineBegin,
-  mediateSearchRoutine
+  mediateSearchRoutine,
+  searchRoutineRunNextStep
 }
 
 

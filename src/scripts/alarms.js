@@ -74,7 +74,7 @@ function searchAlarmRefresh(firstTime=false) {
               when: whenToRun,
               periodInMinutes: config.runInterval
             });
-            if (debugAO) { console.log("The next scrape will occur at", (whenToRun/1000)); }
+            if (debugAO) { console.log("The next scrape will occur at", (new Date(whenToRun))); }
             if (debugAO) { console.log("Set the new alarm to interval of ", config.runInterval, "minutes"); }
           });
         } else {

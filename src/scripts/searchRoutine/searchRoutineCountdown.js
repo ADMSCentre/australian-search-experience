@@ -1,5 +1,5 @@
 import ext from '../utils/utilitiesCrossBrowser';
-import { debugAO } from '../config.js';
+import { debugAO, CONST_MANIFEST_VERSION_INTEGER } from '../config.js';
 import Alarms from '../alarms.js'
 
 var countDownValidated = true; // This variable enables the countdown to proceed
@@ -27,8 +27,26 @@ function countdownStep(arg_countdownSecondsValue) {
 			// If we have reached zero...
 			if (countdownSecondsValue == 0) {
 				// Call the search process event
-				var action  = 'run-from-countdown';
-				ext.runtime.sendMessage({ action });
+				function intendedRoutine() {
+					var port = ext.runtime.connect(ext.runtime.id);
+					port.postMessage({ action: "run-from-countdown" });
+				}
+			  	// Bypass service worker for manifest version < 3
+				if (CONST_MANIFEST_VERSION_INTEGER < 3) {
+					intendedRoutine();
+				} else {
+					// Attempt to register the service worker (if it is not already registered)
+					if ('serviceWorker' in navigator) {
+						navigator.serviceWorker.register('../../background.js').then(function(registration) {
+							// Registration was successful
+							if (debugAO) { console.log('ServiceWorker registration successful with scope: ', registration.scope); }
+							intendedRoutine();
+						}, function(err) {
+							// registration failed :(
+							if (debugAO) { console.log('ServiceWorker registration failed: ', err); }
+						});
+					}
+				}
 			} else {
 				// Run another step of a second
 				countdownStep(countdownSecondsValue);

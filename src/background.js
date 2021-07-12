@@ -56,17 +56,24 @@ function handleSearchRoutine() {
   This function runs once the plugin is installed 
 */
 function mainEventOnInstalled(reasonInfo) {
-  // Before anything, update the config file
+  /*
+    Only show the registration page and wipe the storage on installation
+  */
+  // Update the config file
   updateConfig().then(config => {
-    // If this is indeed a registration, load the registration page
     storage.get('uniqueId', (result)=>{
       // If the unique ID has indeed not been set
       if (!('uniqueId' in result)) {
         // Then this is indeed the first runthrough
-        ext.tabs.create({ url: config.introPage  }, tab => {});
         // Generate the unique ID for this plugin
         if (reasonInfo.reason === 'install') {
-          storage.set({'uniqueId': makeId()}, () => {});
+          // Wipe the entire storage on true installation
+          storage.clear(()=>{ if(ext.runtime.lastError) {} else {
+            // Set the unique ID
+            storage.set({'uniqueId': makeId()}, () => {});
+            // Load the registration page
+            ext.tabs.create({ url: config.introPage  }, tab => {});
+          }});
         }
       }
     });
@@ -90,6 +97,11 @@ function messageRouter(request, sender, sendResponse) {
       case 'catch-html' : storage.set({ 'caughtHTML': request.body }, () => {
         if (debugAO) { console.log("Visited a page during the search process; HTML caught: length: ",request.body.length); }
       }); break;
+      // Force the next step of the search queue
+      case 'force-search-routine-step' : 
+        if (debugAO) { console.log("Running the next step in the search queue"); }
+        SearchRoutine.searchRoutineRunNextStep();
+      break;
       // Run the search routine from the countdown
       case 'run-from-countdown': 
         if (has_hash_key) { 
@@ -123,8 +135,23 @@ function messageRouter(request, sender, sendResponse) {
     }
   });
 }
+// TODO Check this
+/*
+ext.runtime.onConnect.addListener((result)=>{
+  //SearchRoutine.searchRoutineRunNextStep();
+  console.log("Received connection: ", result);
+});*/
+
+ext.runtime.onConnect.addListener(function(port) {
+    port.onMessage.addListener(messageRouter);
+});
+
 
 // We listen for the installation event 
 ext.runtime.onInstalled.addListener(mainEventOnInstalled);
 // We listen for the messaging event
-ext.runtime.onMessage.addListener(messageRouter);
+//ext.runtime.onMessage.addListener(messageRouter);
+
+
+
+

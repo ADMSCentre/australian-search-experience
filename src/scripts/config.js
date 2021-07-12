@@ -3,10 +3,10 @@ import ext from './utils/utilitiesCrossBrowser';
 
 var debugAO = true;
 var CONST_OVERRIDE_REGISTRATION = true;
-var CONST_BROWSER_TOGGLE_FORCE = "desktop";
+var CONST_BROWSER_TOGGLE_FORCE = null;//"mobile_galaxyS5";//"mobile_iphone12pro";//"desktop";
 var CONST_WIPE_OVERRIDE = true;
 var CONST_BROWSER_TYPE = 'chrome';
-var CONST_SERVER_OVERRIDE = 'serverConfigAlt3'
+var CONST_SERVER_OVERRIDE = 'inject.1.1.3.5'
 const CONST_MANIFEST_VERSION_INTEGER = ext.runtime.getManifest().manifest_version;
 
 // Set the plugin to production mode:
@@ -17,7 +17,7 @@ if (CONST_PRODUCTION) {
   CONST_OVERRIDE_REGISTRATION = false;
   CONST_BROWSER_TOGGLE_FORCE = null;
   CONST_WIPE_OVERRIDE = false;
-  CONST_SERVER_OVERRIDE = 'serverConfigAlt2'
+  CONST_SERVER_OVERRIDE = 'inject.1.1.3.5'
 }
 
 if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) { CONST_BROWSER_TYPE = 'firefox'; }

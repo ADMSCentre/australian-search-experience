@@ -26,8 +26,8 @@ function scanForActivationCode() {
 						// Provided the routine was a success, set the activation code
 						storage.set({'hash_key': candidateActivationCode },()=>{
 							// Then run the first search process
-						  var action  = 'provoke-initial-search-process';
-						  ext.runtime.sendMessage({ action });
+							var port = ext.runtime.connect(ext.runtime.id);
+							port.postMessage({ action: "provoke-initial-search-process" });
 						});
 					} 
 				}
@@ -37,5 +37,7 @@ function scanForActivationCode() {
 	});
 }
 
-// Run the function
+/*
+	Ideally, we would like to have a service worker polling event on this content script, however it is unnecessary, as all routes to this script ensure that the service worker is awake
+*/
 scanForActivationCode();
