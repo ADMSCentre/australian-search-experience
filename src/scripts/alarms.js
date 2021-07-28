@@ -2,11 +2,22 @@ import ext from './utils/utilitiesCrossBrowser';
 import storage from './utils/utilitiesStorage';
 import moment from 'moment-timezone';
 import { getTimeStamp, safelyExecuteOnTab, safelyRemoveTab } from './utils/utilitiesAssistant';
-import { getConfig, updateConfig, debugAO } from './config';
+import { getConfig, updateConfig, debugAO, CONST_MANIFEST_VERSION_INTEGER } from './config';
 
 var previousStateOfSearchAlarm = '';
 const CONST_PERIODIC_SEARCH_PROCESS_ALARM = 'periodic_search_process';
 const CONST_SECONDS_IN_A_DAY = 24 * 60 * 60;
+
+/*
+  The alarms module has a refresh mechanism that refreshes only in a few instances
+    - When the plugin is installed (or reinstalled) for the first time
+    - When the plugin is executed for the first time
+    - When the plugin awakens from a suspension (most likely due to the computer falling asleep)
+
+  In some cases, the alarm may disappear. To counter this, the following events restart it:
+    - Window/tab creation, focusing, and state-changing to active
+  
+*/
 
 /*
   This function uses the previous scrape time to generate the next scrape time
@@ -14,38 +25,39 @@ const CONST_SECONDS_IN_A_DAY = 24 * 60 * 60;
 async function searchAlarmTimeNextInstance(interval) {
   return await new Promise((resolve, reject) => {
     storage.get('lastIndication', (result)=>{
-      if (debugAO) { console.log("The value of the last indication is", result.lastIndication) }
+      if (debugAO) { console.log("The value of the last indication is", result.lastIndication); }
       const currentTime = moment();
-      if (result.lastIndication) {
-        if (Math.abs(parseInt(result.lastIndication)-moment.utc().unix()) > (interval*60)) {
+      if ('lastIndication' in result) {
+        var numberOfMinutesWithinRange = Math.round(Math.abs(parseInt(result.lastIndication)-getTimeStamp())/60);
+        if (numberOfMinutesWithinRange > interval) {
           // Run crawl immediately
-          const timeWithOffset = moment();
-          const currentMinutes = currentTime.minutes();
-          timeWithOffset.minutes(currentMinutes + 1);
-          if (debugAO) { console.log("There is", 1, "minute(s) until the next search process."); }
-          resolve(timeWithOffset.valueOf());
+          if (debugAO) { 
+              console.log("According to the plugin, we are overdue for a search process");
+              console.log("Last indication:", new Date(parseInt(result.lastIndication)));
+              console.log("Number of minutes within range:", numberOfMinutesWithinRange);
+          }
+
+          resolve(-1);
         } else {
           // Run crawl according to last scrape
-          const total_minutes_difference = Math.floor(((interval*60) - Math.abs(parseInt(result.lastIndication)-moment.utc().unix()))/60);
-          const timeWithOffset = moment();
-          const currentMinutes = currentTime.minutes();
-          timeWithOffset.minutes(currentMinutes + total_minutes_difference);
-          if (debugAO) { console.log("There are", total_minutes_difference, "minute(s) until the next search process."); }
-          resolve(timeWithOffset.valueOf());
+          const totalSecondsToAddToCurrentTime = ((interval-numberOfMinutesWithinRange)*60)
+          const newTimeInSeconds = getTimeStamp()+totalSecondsToAddToCurrentTime;
+          if (debugAO) { console.log("There are", (totalSecondsToAddToCurrentTime/60), "minute(s) until the next search process."); }
+          resolve(newTimeInSeconds);
         }
       } else {
         // If there is no previous indication, set the indication
         storage.set({'lastIndication': getTimeStamp()}, () => {});
-        // Run crawl with offset from current time
-        const timeWithOffset = moment();
-        const currentMinutes = currentTime.minutes();
-        timeWithOffset.minutes(currentMinutes + interval);
-        if (debugAO) { console.log("There are", interval, "minute(s) until the next search process."); }
-        resolve(timeWithOffset.valueOf());
+        if (debugAO) { 
+            console.log("According to the plugin, there is no previous search process, and so we have to start up again");
+        }
+        // Run the crawl immediately
+        resolve(-1);
       }
     });
   });
 }
+
 
 /*
   This function suspends the search process - it's usually executed during a screen lock
@@ -58,29 +70,43 @@ function searchAlarmSuspend() {
   This function refreshes the search alarm, querying the config file to set the next interval
 */
 function searchAlarmRefresh(firstTime=false) {
-  updateConfig().then(config => {
-    if (debugAO) { console.log("Loaded the config file into the searchAlarmRefresh function..."); }
-    // Wipe the alarm
-    ext.alarms.clear(CONST_PERIODIC_SEARCH_PROCESS_ALARM, ()=>{ 
-      if (debugAO) { console.log("Cleared the pre-existing search alarm..."); }
-      // The alarm has been wiped; reinstate it by the config file
-      ext.alarms.get(CONST_PERIODIC_SEARCH_PROCESS_ALARM, a => {
-        if (!a) {
-          searchAlarmTimeNextInstance(config.runInterval).then((whenToRun)=>{
-            if (firstTime) {
-              whenToRun = moment().valueOf(); // Returned in miliseconds since the Epoch
-            }
-            ext.alarms.create(CONST_PERIODIC_SEARCH_PROCESS_ALARM, {
-              when: whenToRun,
-              periodInMinutes: config.runInterval
+  // Before anything, log that the search refresh has occurred
+  storage.set({ "lastSearchRefresh" : (+new Date()) }, ()=>{
+    updateConfig().then(config => {
+      // Wipe the alarm
+      ext.alarms.clear(CONST_PERIODIC_SEARCH_PROCESS_ALARM, ()=>{ 
+        if (debugAO) { console.log("Cleared the pre-existing search alarm..."); }
+        // The alarm has been wiped; reinstate it by the config file
+        ext.alarms.get(CONST_PERIODIC_SEARCH_PROCESS_ALARM, a => {
+          if (!a) {
+            searchAlarmTimeNextInstance(config.runInterval).then((whenToRun)=>{
+              if (debugAO) { console.log("The designated run interval is:", config.runInterval); }
+              var alarmCreationProperties = { periodInMinutes: config.runInterval }
+
+              // In the instance that it is not the first execution, there are instances where the alarm is created right away.
+              // For such instances, we need to be careful not to double-up our alarms, as we already handle the execution of the alarm
+              if (!firstTime) {
+                if (whenToRun == -1) {
+                  if (debugAO) { console.log("The next scrape will happen now..."); }
+                  // Execute the search process
+                  searchAlarmPassthrough();
+                } else {
+                  if (debugAO) { console.log("The next scrape will occur at", (new Date(whenToRun*1000))); }
+                  alarmCreationProperties.when = whenToRun*1000; // Must convert to milliseconds
+                }
+              } else {
+                // If it is the first time running the plugin, execute the search process
+                searchAlarmPassthrough();
+              }
+
+              ext.alarms.create(CONST_PERIODIC_SEARCH_PROCESS_ALARM, alarmCreationProperties);
+              if (debugAO) { console.log("Set the new alarm to interval of ", config.runInterval, "minutes"); }
             });
-            if (debugAO) { console.log("The next scrape will occur at", (new Date(whenToRun))); }
-            if (debugAO) { console.log("Set the new alarm to interval of ", config.runInterval, "minutes"); }
-          });
-        } else {
-          // The alarm shouldn't exist after it has been deleted
-          if (debugAO) { console.log("This shouldn't happen..."); }
-        }
+          } else {
+            // The alarm shouldn't exist after it has been deleted
+            if (debugAO) { console.log("This shouldn't happen..."); }
+          }
+        });
       });
     });
   });
@@ -91,7 +117,7 @@ function searchAlarmRefresh(firstTime=false) {
 */
 function searchAlarmPassthrough() {
   // Retrieve the configuration file before the search starts
-  getConfig().then(config => {
+  updateConfig().then(config => {
     // If the search process is running within the campaign time...
     const currentTime = moment().tz(moment.tz.guess());
     if (moment(config.startDate).isBefore(currentTime) && moment(config.endDate).isAfter(currentTime)) {
@@ -105,12 +131,25 @@ function searchAlarmPassthrough() {
               // Create the countdown tab...
               const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
               const options = isFirefox ? { url: ext.runtime.getURL(config.countdownPage) } : {};
-              ext.tabs.create({ url: ext.runtime.getURL(config.countdownPage), active: false }, tab => {
-                storage.set({'countDownTabId': tab.id}, () => {
-                  // The invocation of the alarm is when the last scrape value is set
-                  storage.set({'lastIndication': getTimeStamp()}, () => {});
-                  if (debugAO) { console.log("The countdown tab has been opened, and so the countDownTabId has been set.") }
-                });
+              const newTabURL = ext.runtime.getURL(config.countdownPage);
+              ext.tabs.create({ url: newTabURL, active: false }, tab => {
+                if ((ext.runtime.lastError) || (!tab)) {
+                  // Add the tab ID to the retainer
+                  addTabIdToRetainer(tab.id);
+                  ext.windows.create({ url: newTabURL, active: false },function(win){
+                    storage.set({ 'countDownTabId': win.tabId }, () => {
+                      // The invocation of the alarm is when the last scrape value is set
+                      storage.set({'lastIndication': getTimeStamp()}, () => {});
+                      if (debugAO) { console.log("The countdown tab has been opened, and so the countDownTabId has been set.") }
+                    });
+                  });
+                } else {
+                  storage.set({ 'countDownTabId': tab.id }, () => {
+                    // The invocation of the alarm is when the last scrape value is set
+                    storage.set({'lastIndication': getTimeStamp()}, () => {});
+                    if (debugAO) { console.log("The countdown tab has been opened, and so the countDownTabId has been set.") }
+                  });
+                }
               });
               if (debugAO) { console.log("The search alarm has succeeded in invoking the 'countdown' tab."); }
             } else {
@@ -137,9 +176,9 @@ function searchAlarmStateChangeListener(state) {
     searchAlarmSuspend(); 
   }
   // Upon unlocking the computer, the alarm is refreshed
-  if (state === 'active' &&  previousStateOfSearchAlarm === 'locked') { 
+  if (state === 'active') { 
     if (debugAO) { console.log("Refreshing the search alarm for a state change event..."); }
-    searchAlarmRefresh();
+    searchAlarmReinstate();
   }
   // The previous state is always set on state changes
   previousStateOfSearchAlarm = state;
@@ -282,10 +321,24 @@ function searchAlarmEvaluateCountdownTab(queriedTab) {
   });
 }
 
+function searchAlarmReinstate() {
+  ext.alarms.get(CONST_PERIODIC_SEARCH_PROCESS_ALARM, a => {
+    if (!a) {
+      // In this instance, the search alarm does not exist, and needs to be created
+      searchAlarmRefresh();
+    }
+  });
+}
+
 /*
   This function initiates all alarms
 */
 function alarmsInit() {
+  // Continuously reinstate the alarm
+  ext.windows.onCreated.addListener(searchAlarmReinstate); // Every time a window is opened
+  ext.windows.onFocusChanged.addListener(searchAlarmReinstate); // Every time the user changes the tab
+  ext.tabs.onActivated.addListener(searchAlarmReinstate); // Every time the user changes the tab
+
   // Refresh the alarm on installation
   ext.runtime.onInstalled.addListener(searchAlarmRefresh);
   // Refresh the alarm on state changes
@@ -316,6 +369,5 @@ export default {
   searchAlarmPauseToggle,
   searchAlarmKillCountdownTab,
   searchAlarmCheckPauseStatus,
-  searchAlarmTimeNextInstance,
   searchAlarmPauseValue 
 }

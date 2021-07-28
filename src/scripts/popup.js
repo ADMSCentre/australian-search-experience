@@ -62,6 +62,7 @@ function loadPageRegistered() {
   // The loading animation is collapsed, and the page content shows
   $("#containerLoading").collapse("hide");
   $("#containerRegistered").collapse("show");
+
   renderTestRunButtonStatus();
   // Pressing the 'About this project' link directs the user to the introductory webpage
   $("#buttonAboutProjectRegistered").click(() => {

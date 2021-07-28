@@ -5,6 +5,18 @@ import moment from 'moment';
 import { getConfig, debugAO } from '../config';
 
 /*
+  This is the Fisher-Yates-Durstenfeld shuffle algorithm
+*/
+export function shuffleArray(inputArray) {
+  var outputArray = inputArray;
+  for (let i = outputArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [outputArray[i], outputArray[j]] = [outputArray[j], outputArray[i]];
+  }
+  return outputArray;
+}
+
+/*
   This function adds trailing zeros onto the countdown for pausing the plugin
 */
 export function renderNormaliseClockValue(value) {

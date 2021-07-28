@@ -1,5 +1,6 @@
 import ext from '../utils/utilitiesCrossBrowser';
 import storage from '../utils/utilitiesStorage';
+import { shuffleArray } from '../utils/utilitiesAssistant';
 import { apiConfig, debugAO, getConfig, CONST_BROWSER_TYPE, CONST_MANIFEST_VERSION_INTEGER, CONST_BROWSER_TOGGLE_FORCE } from '../config';
 import moment from 'moment-timezone';
 import { 
@@ -64,6 +65,72 @@ var CONST_REGEX_CUSTOM_FLAGS = {
   "RECURSE" : [customFlagBehaviourRecursePositive, customFlagBehaviourRecurseNegative]
 }
 
+const CONST_MAX_ITEMS_ON_TAB_ID_RETAINER = 100;
+const CONST_MAX_NUMBER_OF_TABS_IN_SEARCH_PROCESS_WINDOW = 3;
+
+/*
+  This function determines if a tab is a member of the current search routine
+*/
+async function checkTabIsMemberOfSearchRoutine(tabId) {
+  return await new Promise((resolve, reject) => {
+    storage.get("searchRoutineReferenceObject", (result) => {
+      if (("searchRoutineReferenceObject" in result) && (result.searchRoutineReferenceObject != null)) {
+        var queueSettings = result.searchRoutineReferenceObject['searchRoutineQueueSettings'];
+        var found = false;
+        for (var i = 0; i < queueSettings.length; i ++) {
+          if (queueSettings[i].tabId == tabId) {
+            found = true;
+          }
+        }
+        return resolve(found);
+      } else {
+        return resolve(false);
+      }
+    });
+  });
+}
+
+/*
+  This function adds a tab ID to the retainer
+*/
+function addTabIdToRetainer(tabId) {
+  storage.get('tabIdRetainer', (result) => {
+    if ('tabIdRetainer' in result) {
+      var temporaryList = result.tabIdRetainer;
+      temporaryList.push(tabId);
+      if (temporaryList.length > CONST_MAX_ITEMS_ON_TAB_ID_RETAINER) {
+        temporaryList.shift();
+      }
+      storage.set({ 'tabIdRetainer': temporaryList }, () => {
+        // Do nothing
+      });
+    } else {
+      storage.set({ 'tabIdRetainer': [tabId] }, () => {
+        // Do nothing
+      });
+    }
+  });
+}
+
+/*
+  Recently, an error has appeared that has caused windows to spin up with excessively many tabs. 
+  For such instances, this function provides a failsafe to prevent more than three tabs existing in the window at once.
+  If more tabs exist, then it destroys the entire window and ends the search process prematurely.
+*/
+function checkTabWindowFailsafe(windowId) {
+  safelyExecuteOnWindow(windowId).then((successWindow)=>{
+    if (successWindow) {
+      ext.tabs.query({ "windowId" : windowId }, (result) => {
+        if (debugAO) { console.log("Indexing the tabs of the current search process window:", result); }
+        if (result.length > CONST_MAX_NUMBER_OF_TABS_IN_SEARCH_PROCESS_WINDOW) {
+          if (debugAO) { console.log("Ending the search process early due to disallowed tab creation."); }
+          searchRoutineCleanUp();
+        }
+      });
+    }
+  });
+}
+
 /*
   This function prevents users from accessing the search routine page when an instance is not running
 */
@@ -82,7 +149,10 @@ function mediateSearchRoutine() {
         var tabsRemoved = 0;
         for (var i = 0; i < tabManagerObject.length; i ++) {
           if ((searchRoutineReferenceObject == null) || (tabManagerObject[i].id != searchRoutineReferenceObject["tabId"])) {
-            safelyRemoveTab(tabManagerObject[i].id);
+            // Don't remove the tab, remove the window of the tab (to catch any unaccounted tabs)
+            console.log(tabManagerObject[i]);
+            safelyRemoveWindow(tabManagerObject[i].windowId);
+            // safelyRemoveTab(tabManagerObject[i].id);
             tabsRemoved ++;
           }
         }
@@ -136,9 +206,13 @@ function searchRoutineBegin(config, argWindowId, argTabId, argPluginInstanceId) 
       storage.set({'interfaceToggle': searchRoutineReferenceObject["interfaceToggle"] }, () => {});
       // The alarm beginning value is the current time plus a few seconds
       var alarmSettingCumulative = searchRoutineReferenceObject["timeOfInitiationUNIX"] + CONST_TIME_BEFORE_SEARCH_ROUTINE_QUEUE_STARTS_MILLISECONDS;
+      // Create a shuffled routine to improve data acquisition for arbitrary search instance drop-offs...
+      var shuffled_selectors = shuffleArray(config[searchRoutineReferenceObject["selectorsType"]]);
+      var shuffled_keywords = shuffleArray(config["keywords"])
       // For every interface, keyword, and load type, generate a queue element
-      for (var selectorElement_i = 0; selectorElement_i < config[searchRoutineReferenceObject["selectorsType"]].length; selectorElement_i ++) {
-        for (var keywordElement_i = 0; keywordElement_i < config["keywords"].length; keywordElement_i ++) {
+
+      for (var selectorElement_i = 0; selectorElement_i < shuffled_selectors.length; selectorElement_i ++) {
+        for (var keywordElement_i = 0; keywordElement_i < shuffled_keywords.length; keywordElement_i ++) {
           for (var loadType_i = 0; loadType_i < 2; loadType_i ++) {
             // Cumulatively set the alarm times
             alarmSettingCumulative += (Boolean(loadType_i) ? 
@@ -148,9 +222,9 @@ function searchRoutineBegin(config, argWindowId, argTabId, argPluginInstanceId) 
             searchRoutineReferenceObject["searchRoutineQueueSettings"].push({
               "id" : makeId(),
               "tabId" : null, // This will eventually be instantiated
-              "platform" : config[searchRoutineReferenceObject["selectorsType"]][selectorElement_i]["platform"],
+              "platform" : shuffled_selectors[selectorElement_i]["platform"],
               "interface" : searchRoutineReferenceObject["interfaceToggle"],
-              "keyword" : config["keywords"][keywordElement_i],
+              "keyword" : shuffled_keywords[keywordElement_i],
               "loadType" : (Boolean(loadType_i) ? "loadDown" : "loadUp"),
               "alarmSetting" : alarmSettingCumulative
             });
@@ -174,10 +248,12 @@ function searchRoutineBegin(config, argWindowId, argTabId, argPluginInstanceId) 
       // Action the first entry
       var searchRoutineQueuePositionStart = 0;
       storage.set({ 'searchRoutineQueuePosition': searchRoutineQueuePositionStart }, () => {
-        searchRoutineAlarmAction(
-        searchRoutineReferenceObject, 
-        searchRoutineReferenceObject["searchRoutineQueueSettings"][searchRoutineQueuePositionStart]["id"], 
-        searchRoutineReferenceObject["searchRoutineQueueSettings"][searchRoutineQueuePositionStart]);
+        storage.set({ 'searchRoutinePulse': (+new Date()) }, () => {
+          searchRoutineAlarmAction(
+          searchRoutineReferenceObject, 
+          searchRoutineReferenceObject["searchRoutineQueueSettings"][searchRoutineQueuePositionStart]["id"], 
+          searchRoutineReferenceObject["searchRoutineQueueSettings"][searchRoutineQueuePositionStart]);
+        }); // We use this value to check for dead search processes
       });
       // Set the ending alarm
       searchRoutineReferenceObject["searchRoutineQueueEndingAlarm"] = searchRoutineReferenceObject["searchRoutineQueueSettings"][(searchRoutineReferenceObject["searchRoutineQueueSettings"].length-1)]["id"];
@@ -196,7 +272,7 @@ function searchRoutineBegin(config, argWindowId, argTabId, argPluginInstanceId) 
 /*
   This runs the next action in the search routine 
 */
-function searchRoutineRunNextStep() {
+function searchRoutineRunNextStep(callerTabId) {
   if (debugAO) {
     console.log("Attempting next step");
   }
@@ -210,30 +286,27 @@ function searchRoutineRunNextStep() {
     storage.get("searchRoutineReferenceObject", (result) => {
       // We check if the position belongs to the search routine
       if (("searchRoutineReferenceObject" in result) && (result.searchRoutineReferenceObject != null)) {
-        var searchRoutineReferenceObject = result.searchRoutineReferenceObject;
-        for (var i = alarm_i+1; i <= alarm_i+2; i ++) {
-          if (i < searchRoutineReferenceObject["searchRoutineQueueSettings"].length) {
-            searchRoutineAlarmAction(searchRoutineReferenceObject, searchRoutineReferenceObject["searchRoutineQueueSettings"][i]["id"], searchRoutineReferenceObject["searchRoutineQueueSettings"][i]); 
+        // Before entering the next phase of the search routine, we determine if it was called by the correct caller 
+        checkTabIsMemberOfSearchRoutine(callerTabId).then((found) => {
+          if (!found) {
+            safelyRemoveTab(callerTabId);
+          } else {
+            var searchRoutineReferenceObject = result.searchRoutineReferenceObject;
+            for (var i = alarm_i+1; i <= alarm_i+2; i ++) {
+              if (i < searchRoutineReferenceObject["searchRoutineQueueSettings"].length) {
+                searchRoutineAlarmAction(searchRoutineReferenceObject, searchRoutineReferenceObject["searchRoutineQueueSettings"][i]["id"], searchRoutineReferenceObject["searchRoutineQueueSettings"][i]); 
+              }
+            }
+            storage.set({ 'searchRoutineQueuePosition': alarm_i+2 }, () => {});
           }
-        }
-        storage.set({ 'searchRoutineQueuePosition': alarm_i+2 }, () => {});
-        /*
-        for (var i = 0; i < searchRoutineReferenceObject["searchRoutineQueueSettings"].length; i ++) {
-          // If so...
-          if (debugAO) {
-            console.log("indexed ", searchRoutineReferenceObject["searchRoutineQueueSettings"][i]["id"]);
-          }
-          if (i == alarm_i) {
-            if (debugAO) { console.log("A search routine queue alarm has been successfully detected:", searchRoutineReferenceObject["searchRoutineQueueSettings"][i]); }
-            // We action the alarm
-            if (debugAO) { console.log("Running next queue step for: ", searchRoutineReferenceObject["searchRoutineQueueSettings"][i]) };
-
-            searchRoutineAlarmAction(searchRoutineReferenceObject, searchRoutineReferenceObject["searchRoutineQueueSettings"][alarm_i]["id"], searchRoutineReferenceObject["searchRoutineQueueSettings"][alarm_i]);
-          }
-        }
-        */
+        });
       } else {
         // Otherwise, there is no search routine to index
+        if (debugAO) {
+          console.log("The search process is still attempting to step after the searchRoutineReferenceObject has been wiped. This is caused by user intervention. Forcing a backdoor cleanup now...");
+          safelyRemoveTab(callerTabId);
+          searchRoutineBackdoorCleanUp();
+        }
       }
     });
 
@@ -278,6 +351,10 @@ function searchRoutineAlarmAction(argSearchRoutineReferenceObject, searchRoutine
                   windowId: searchRoutineReferenceObject["windowId"]
                 }, tab => {
                   if(!ext.runtime.lastError) {
+                    // Add the tab ID to the retainer
+                    addTabIdToRetainer(tab.id);
+                    // Run the failsafe for instances where multiple tabs spin up
+                    checkTabWindowFailsafe(tab.windowId);
                     // Set the tab of the current search routine event to the newly created tab
                     searchRoutineThisQueueSettingsObject["tabId"] = tab.id;
                     // Then cycle through all events that are native to this interface, keyword, and platform...
@@ -885,6 +962,30 @@ function searchRoutineInit() {
 }
 
 
+/*
+  Sometimes a search process tab is left open even after the search process finishes. In this case, we can invoke for
+  all tabs of this kind to disappear by isolating the open tabs to those which have the desired query parameters
+*/
+function searchRoutineBackdoorCleanUp() {
+  storage.get('tabIdRetainer', (result) => {
+    if ('tabIdRetainer' in result) {
+      ext.tabs.query(Object(), (result_b) => {
+        if (ext.runtime.lastError) {
+          // This can happen when the user is dragging the tab; will continue to wait.
+        } else {
+          if (debugAO) { console.log("Retained tabs:", result); }
+          if (debugAO) { console.log("Presently open tabs:", result_b); }
+          for (var i = 0; i < result_b.length; i ++) {
+            if (result.tabIdRetainer.indexOf(result_b[i].id) != -1) {
+              safelyRemoveTab(result_b[i].id);
+              if (debugAO) { console.log("Found a bad tab; removing it now..."); }
+            }
+          }
+        }
+      });
+    }
+  });
+}
 
 
 
@@ -893,7 +994,9 @@ export default {
   searchRoutineInit,
   searchRoutineBegin,
   mediateSearchRoutine,
-  searchRoutineRunNextStep
+  searchRoutineRunNextStep,
+  searchRoutineCleanUp,
+  addTabIdToRetainer
 }
 
 

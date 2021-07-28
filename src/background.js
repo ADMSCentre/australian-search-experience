@@ -24,15 +24,23 @@ function handleSearchRoutine() {
   updateConfig().then((config) => {
     // Then determine the current window (so that we may re-focus it)
     ext.windows.getCurrent(window => {
-      var currentWindowFocusedStatus = window.focused;
-      //We then create another window for the search routine
+
+      if(ext.runtime.lastError) { if (debugAO) { console.log("Caught a non-existent window error."); }
+                  }
       var windowProperties = {
           width: CONST_SEARCH_ROUTINE_WINDOW_WIDTH,
           height: CONST_SEARCH_ROUTINE_WINDOW_HEIGHT,
-          top: window.height - CONST_SEARCH_ROUTINE_WINDOW_TOP_OFFSET,
           url: ext.runtime.getURL(config.searchProcessPage),
           focused: false
         };
+
+      // If the previous window exists (sometimes the event may call without a window)...
+      if (window) {
+        var currentWindowFocusedStatus = window.focused;
+        //We then create another window for the search routine
+        windowProperties.top = window.height - CONST_SEARCH_ROUTINE_WINDOW_TOP_OFFSET;
+      }
+
       // The Firefox Browser does not support creating windows that are naturally unfocussed
       if (CONST_BROWSER_TYPE == 'firefox') {
         delete windowProperties.focused;
@@ -41,9 +49,19 @@ function handleSearchRoutine() {
       ext.windows.create(windowProperties, newWindow => {
         // We re-focus the original window
         newWindow.focused = false;
+        // Add the tab of the search process window to the retainer
+        SearchRoutine.addTabIdToRetainer(newWindow.tabs[0].id);
           // We set the focus back to the previous window
           setTimeout(function(){ 
-            ext.windows.update(window.id, {focused: currentWindowFocusedStatus}); }, 
+              // If the previous window exists...
+              if (window) {
+                ext.windows.update(window.id, {focused: currentWindowFocusedStatus}, () => {
+                  if(ext.runtime.lastError) {
+                    if (debugAO) { console.log("Caught a non-existent window error."); }
+                  }
+                }); 
+              } 
+            }, 
             CONST_TIME_DELAY_REFOCUS_WINDOW_SEARCH_ROUTINE_MILISECONDS);
           // And simultaneously, we begin the search routine
           SearchRoutine.searchRoutineBegin( config, newWindow.id, newWindow.tabs[0].id);
@@ -88,7 +106,8 @@ function messageRouter(request, sender, sendResponse) {
     var has_hash_key = (this_hash_key_object.hash_key) ? true : false;
     switch (request.action) {
       // Run a test search routine
-      case 'test-search-routine': if ((has_hash_key || CONST_OVERRIDE_REGISTRATION)) { handleSearchRoutine(); } // There is currently a benign error that is caused when the test routine runs on an open search routine
+      case 'test-search-routine': if ((has_hash_key || CONST_OVERRIDE_REGISTRATION)) { 
+        handleSearchRoutine(); } // There is currently a benign error that is caused when the test routine runs on an open search routine
       break ;
       // Mediate a search routine
       case 'mediate-search-routine' : SearchRoutine.mediateSearchRoutine();
@@ -100,7 +119,9 @@ function messageRouter(request, sender, sendResponse) {
       // Force the next step of the search queue
       case 'force-search-routine-step' : 
         if (debugAO) { console.log("Running the next step in the search queue"); }
-        SearchRoutine.searchRoutineRunNextStep();
+
+        storage.set({ 'searchRoutinePulse': (+new Date()) }, () => {}); // We use this value to check for dead search processes
+        SearchRoutine.searchRoutineRunNextStep(sender.sender.tab.id);
       break;
       // Run the search routine from the countdown
       case 'run-from-countdown': 

@@ -131,6 +131,12 @@ button {
     text-align: center;
 }
 
+.text-yellow-in-popup {
+	font-size: 0.7rem !important;
+    color: rgb(255, 227, 79);
+    text-align: center;
+}
+
 .popup-ending-image {
 	width: 100%;
 	height: 60px;

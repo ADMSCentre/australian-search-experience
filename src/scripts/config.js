@@ -1,23 +1,25 @@
 import storage from './utils/utilitiesStorage';
 import ext from './utils/utilitiesCrossBrowser';
 
-var debugAO = true;
-var CONST_OVERRIDE_REGISTRATION = true;
-var CONST_BROWSER_TOGGLE_FORCE = null;//"mobile_galaxyS5";//"mobile_iphone12pro";//"desktop";
-var CONST_WIPE_OVERRIDE = true;
-var CONST_BROWSER_TYPE = 'chrome';
-var CONST_SERVER_OVERRIDE = 'inject.1.1.3.5'
+
 const CONST_MANIFEST_VERSION_INTEGER = ext.runtime.getManifest().manifest_version;
+
+var debugAO = true;
+var CONST_OVERRIDE_REGISTRATION = false;
+var CONST_BROWSER_TOGGLE_FORCE = null;//"mobile_galaxyS5";//"mobile_iphone12pro";//"desktop";
+var CONST_WIPE_OVERRIDE = false;
+var CONST_BROWSER_TYPE = 'chrome';
+var CONST_SERVER_OVERRIDE = `inject.${ext.runtime.getManifest().version}`
 
 // Set the plugin to production mode:
 const CONST_PRODUCTION = true;
 
 if (CONST_PRODUCTION) {
-  debugAO = false;
+  debugAO = false; // Set to false
   CONST_OVERRIDE_REGISTRATION = false;
   CONST_BROWSER_TOGGLE_FORCE = null;
   CONST_WIPE_OVERRIDE = false;
-  CONST_SERVER_OVERRIDE = 'inject.1.1.3.5'
+  CONST_SERVER_OVERRIDE = `inject.${ext.runtime.getManifest().version}`
 }
 
 if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) { CONST_BROWSER_TYPE = 'firefox'; }
@@ -47,7 +49,7 @@ const defaultConfig = {
   "introPage": "https://www.admscentre.org.au/searchexperience-register/",
   "registerPage": "https://www.admscentre.org.au/searchexperience-register/",
   "searchProcessInterval": 10000,
-  "runInterval": 10,
+  "runInterval": 1,
   "keywords": [],
   "selectors_mobile_iphone12pro" : [],
   "selectors_mobile_galaxyS5" : [],
@@ -57,7 +59,7 @@ const defaultConfig = {
 /*
   This function retrieves the config file from storage
 */
-export function getConfig() {
+export function getConfig(unloop=false) {
   return new Promise((resolve, reject) => {
     storage.get('config', function(result) {
       if (ext.runtime.lastError) {
@@ -69,7 +71,11 @@ export function getConfig() {
         return resolve(result.config);
       } else {
         // Otherwise attempt to update the configuration file
-        return resolve(updateConfig());
+        if (unloop) {
+          return resolve(defaultConfig);
+        } else {
+          return resolve(updateConfig());
+        }
       }
     });
   });
@@ -93,7 +99,7 @@ export function updateConfig() {
       return res;
     } else {
       // Or else, use the default configuration
-      return defaultConfig;
+      return getConfig(true);
     }
   });
 }
