@@ -1,0 +1,117 @@
+[
+	{
+		"description": "The base object ID for this search instance; this is generated at the point of insertion into BigQuery.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The version of the extension; encoded as a four-digit number without dot points.",
+	    "mode": "REQUIRED",
+	    "name": "version",
+	    "type": "INT64"
+	},
+	{
+		"description": "The activation code for the user.",
+	    "mode": "REQUIRED",
+	    "name": "hash_key",
+	    "type": "STRING"
+	},
+	{
+		"description": "The user-agent string for the browser.",
+	    "mode": "REQUIRED",
+	    "name": "user_agent",
+	    "type": "STRING"
+	},
+	{
+		"description": "The web browser program (e.g. Google Chrome)",
+	    "mode": "REQUIRED",
+	    "name": "browser_type",
+	    "type": "STRING"
+	},
+	{
+		"description": "The keyword that was search (e.g. Apple)",
+	    "mode": "REQUIRED",
+	    "name": "keyword",
+	    "type": "STRING"
+	},
+	{
+		"description": "Physical machine type (e.g. Desktop)",
+	    "mode": "REQUIRED",
+	    "name": "machine_type",
+	    "type": "STRING"
+	},
+	{
+		"description": "The search engine platform (e.g. Youtube)",
+	    "mode": "REQUIRED",
+	    "name": "search_platform",
+	    "type": "STRING"
+	},
+	{
+		"description": "The plugin ID that is provided by the browser's extension store.",
+	    "mode": "REQUIRED",
+	    "name": "plugin_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The date at which the search instance was retrieved.",
+	    "mode": "REQUIRED",
+	    "name": "time_of_retrieval",
+	    "type": "TIMESTAMP"
+	},
+	{
+		"description": "The localised language setting of the browser (e.g. English).",
+	    "mode": "REQUIRED",
+	    "name": "localisation",
+	    "type": "STRING"
+	},
+	{
+		"description": "The URL that was searched for this search instance.",
+	    "mode": "REQUIRED",
+	    "name": "url",
+	    "type": "STRING"
+	},
+	{
+		"description": "Whether or not the user was logged into the search engine for this search instance.",
+	    "mode": "REQUIRED",
+	    "name": "logged_in",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "The approximated number of results returned for this search instance on the Google Videos search engine (desktop browsers only).",
+	    "mode": "NULLABLE",
+	    "name": "number_of_results_approximate",
+	    "type": "INT64"
+	},
+	{
+		"description": "The approximate number of seconds taken to load the results given in the Google Videos search instance (desktop browsers only).",
+	    "mode": "NULLABLE",
+	    "name": "seconds_taken_to_load_approximate",
+	    "type": "FLOAT64"
+	},
+	{
+		"description": "The compressed list of titles for all suggestions presented on the page of this Google Videos search instance; reconstructs a list of JSON objects with the 'suggestion_image_thumbnail_list' field.",
+	    "mode": "REPEATED",
+	    "name": "suggestion_title_list",
+	    "type": "STRING"
+	},
+	{
+		"description": "The compressed list of images (either as a URL or Base64 string) for all suggestions presented on the page of this Google Videos search instance; reconstructs a list of JSON objects with the 'suggestion_title_list' field.",
+	    "mode": "REPEATED",
+	    "name": "suggestion_image_thumbnail_list",
+	    "type": "STRING"
+	}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+

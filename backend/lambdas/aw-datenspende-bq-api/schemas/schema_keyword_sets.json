@@ -1,0 +1,26 @@
+[
+	{
+		"description": "The ID that corresponds to this revision of the keyword set.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The date that this revision of the keyword set was implemented.",
+	    "mode": "NULLABLE",
+	    "name": "date_added",
+	    "type": "TIMESTAMP"
+	},
+	{
+		"description": "The version of the plugin that implements these keywords.",
+	    "mode": "NULLABLE",
+	    "name": "version",
+	    "type": "STRING"
+	},
+	{
+		"description": "The set of keywords for this revision.",
+	    "mode": "REPEATED",
+	    "name": "keyword_set",
+	    "type": "STRING"
+	}
+]

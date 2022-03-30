@@ -1,0 +1,224 @@
+[
+	{
+		"description": "The base object ID for this Youtube search instance; this is generated at the point of insertion into BigQuery.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The version of the extension; encoded as a four-digit number without dot points.",
+	    "mode": "REQUIRED",
+	    "name": "version",
+	    "type": "INT64"
+	},
+	{
+		"description": "The activation code for the user.",
+	    "mode": "REQUIRED",
+	    "name": "hash_key",
+	    "type": "STRING"
+	},
+	{
+		"description": "The user-agent string for the browser.",
+	    "mode": "REQUIRED",
+	    "name": "user_agent",
+	    "type": "STRING"
+	},
+	{
+		"description": "The web browser program (e.g. Google Chrome)",
+	    "mode": "REQUIRED",
+	    "name": "browser_type",
+	    "type": "STRING"
+	},
+	{
+		"description": "The keyword that was search (e.g. Apple)",
+	    "mode": "REQUIRED",
+	    "name": "keyword",
+	    "type": "STRING"
+	},
+	{
+		"description": "Physical machine type (e.g. Desktop)",
+	    "mode": "REQUIRED",
+	    "name": "machine_type",
+	    "type": "STRING"
+	},
+	{
+		"description": "The search engine platform (e.g. Youtube)",
+	    "mode": "REQUIRED",
+	    "name": "search_platform",
+	    "type": "STRING"
+	},
+	{
+		"description": "The plugin ID that is provided by the browser's extension store.",
+	    "mode": "REQUIRED",
+	    "name": "plugin_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The date at which the search instance was retrieved.",
+	    "mode": "REQUIRED",
+	    "name": "time_of_retrieval",
+	    "type": "TIMESTAMP"
+	},
+	{
+		"description": "The localised language setting of the browser (e.g. English).",
+	    "mode": "REQUIRED",
+	    "name": "localisation",
+	    "type": "STRING"
+	},
+	{
+		"description": "The URL that was searched for this search instance.",
+	    "mode": "REQUIRED",
+	    "name": "url",
+	    "type": "STRING"
+	},
+	{
+		"description": "Whether or not the user was logged into the search engine for this search instance.",
+	    "mode": "REQUIRED",
+	    "name": "logged_in",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description" : "Whether or not the compact result object is featured on the page that has been returned.",
+		"mode" : "REQUIRED",
+		"name" : "compact_result_object_exists",
+		"type" : "BOOLEAN"
+	},
+	{
+		"description" : "The title of the compact result object.",
+		"mode" : "NULLABLE",
+		"name" : "compact_result_object_title",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The subtitle of the compact result object.",
+		"mode" : "NULLABLE",
+		"name" : "compact_result_object_subtitle",
+		"type" : "STRING"
+	},
+	{
+		"description" : "Whether or not the compact result object has a Youtube 'paid content' badge (desktop only).",
+		"mode" : "NULLABLE",
+		"name" : "compact_result_object_badge_paid_item",
+		"type" : "BOOLEAN"
+	},
+	{
+		"description" : "The image (either as a URL or Base64 string) featured in the compact result object.",
+		"mode" : "NULLABLE",
+		"name" : "compact_result_object_image_thumbnail",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The set of images (either as URLs or Base64 strings) corresponding to the collage of the compact result object.",
+		"mode" : "REPEATED",
+		"name" : "compact_result_object_image_set",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The title of the 'call to action' button of the compact result object.",
+		"mode" : "NULLABLE",
+		"name" : "compact_result_object_call_to_action_button_title",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The source URL of the 'call to action' button of the compact result object.",
+		"mode" : "NULLABLE",
+		"name" : "compact_result_object_call_to_action_button_url",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The list of images (either as URLs or Base64 strings) for all tabulated cards of the compact result object; reconstructs a list of JSON objects with the 'compact_result_object_tabulated_card_titles' and 'compact_result_object_tabulated_card_source_urls' fields.",
+		"mode" : "REPEATED",
+		"name" : "compact_result_object_tabulated_card_image_thumbnails",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The list of titles for all tabulated cards of the compact result object; reconstructs a list of JSON objects with the 'compact_result_object_tabulated_card_image_thumbnails' and 'compact_result_object_tabulated_card_source_urls' fields.",
+		"mode" : "REPEATED",
+		"name" : "compact_result_object_tabulated_card_titles",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The list of source URLs for all tabulated cards of the compact result object; reconstructs a list of JSON objects with the 'compact_result_object_tabulated_card_image_thumbnails' and 'compact_result_object_tabulated_card_titles' fields.",
+		"mode" : "REPEATED",
+		"name" : "compact_result_object_tabulated_card_source_urls",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The list of titles for all tabulated results of the compact result object (desktop only); reconstructs a list of JSON objects with the 'compact_result_object_tabulated_result_running_times', 'compact_result_object_tabulated_result_source_urls', 'compact_result_object_tabulated_result_subtitle_volatile_number_of_views' and 'compact_result_object_tabulated_result_subtitle_volatile_time_of_publication' fields.",
+		"mode" : "REPEATED",
+		"name" : "compact_result_object_tabulated_result_titles",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The list of volatile publication times for all tabulated results of the compact result object (desktop only); reconstructs a list of JSON objects with the 'compact_result_object_tabulated_result_running_times', 'compact_result_object_tabulated_result_source_urls', 'compact_result_object_tabulated_result_subtitle_volatile_number_of_views' and 'compact_result_object_tabulated_result_titles' fields.",
+		"mode" : "REPEATED",
+		"name" : "compact_result_object_tabulated_result_subtitle_volatile_time_of_publication",
+		"type" : "DATETIME"
+	},
+	{
+		"description" : "The list of volatile numbers of views for all tabulated results of the compact result object (desktop only); reconstructs a list of JSON objects with the 'compact_result_object_tabulated_result_running_times', 'compact_result_object_tabulated_result_source_urls', 'compact_result_object_tabulated_result_subtitle_volatile_time_of_publication' and 'compact_result_object_tabulated_result_titles' fields.",
+		"mode" : "REPEATED",
+		"name" : "compact_result_object_tabulated_result_subtitle_volatile_number_of_views",
+		"type" : "INT64"
+	},
+	{
+		"description" : "The list of source URLs for all tabulated results of the compact result object (desktop only); reconstructs a list of JSON objects with the 'compact_result_object_tabulated_result_running_times', 'compact_result_object_tabulated_result_subtitle_volatile_number_of_views', 'compact_result_object_tabulated_result_subtitle_volatile_time_of_publication' and 'compact_result_object_tabulated_result_titles' fields.",
+		"mode" : "REPEATED",
+		"name" : "compact_result_object_tabulated_result_source_urls",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The list of running times (in seconds) for all tabulated results of the compact result object (desktop only); reconstructs a list of JSON objects with the 'compact_result_object_tabulated_result_source_urls', 'compact_result_object_tabulated_result_subtitle_volatile_number_of_views', 'compact_result_object_tabulated_result_subtitle_volatile_time_of_publication' and 'compact_result_object_tabulated_result_titles' fields.",
+		"mode" : "REPEATED",
+		"name" : "compact_result_object_tabulated_result_running_times",
+		"type" : "INT64"
+	},
+	{
+		"description" : "Whether or not this Youtube search instance has a set of dropdowns (desktop only) in its compact result object has.",
+		"mode" : "REQUIRED",
+		"name" : "compact_result_object_dropdown_exists",
+		"type" : "BOOLEAN"
+	},
+	{
+		"description" : "The order in which the various kinds of results are presented on the page that is returned for this search instance.",
+		"mode" : "REPEATED",
+		"name" : "order_of_results",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The list of titles for all tabulated shelves presented on the page that is returned for this search instance.",
+		"mode" : "REPEATED",
+		"name" : "tabulated_shelves_titles",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The title of the compact heading displayed when searching for TV shows (mobile only).",
+		"mode" : "NULLABLE",
+		"name" : "compact_show_header_title",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The image (either as a URL or Base64 string) presented with the compact heading displayed when searching for TV shows (mobile only).",
+		"mode" : "NULLABLE",
+		"name" : "compact_show_header_image_thumbnail",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The list of images (either as URLs or Base64 strings) that correspond to the tabulated results for search terms that people also search for (desktop only); reconstructs a list of JSON objects with the 'tabulated_people_also_search_for_titles' and 'tabulated_people_also_search_for_link_urls' fields.",
+		"mode" : "REPEATED",
+		"name" : "tabulated_people_also_search_for_image_thumbnails",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The list of titles that correspond to the tabulated results for search terms that people also search for (desktop only); reconstructs a list of JSON objects with the 'tabulated_people_also_search_for_image_thumbnails' and 'tabulated_people_also_search_for_link_urls' fields.",
+		"mode" : "REPEATED",
+		"name" : "tabulated_people_also_search_for_titles",
+		"type" : "STRING"
+	},
+	{
+		"description" : "The list of titles that correspond to the tabulated results for search terms that people also search for (desktop only); reconstructs a list of JSON objects with the 'tabulated_people_also_search_for_image_thumbnails' and 'tabulated_people_also_search_for_titles' fields.",
+		"mode" : "REPEATED",
+		"name" : "tabulated_people_also_search_for_link_urls",
+		"type" : "STRING"
+	}
+]

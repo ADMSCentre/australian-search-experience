@@ -1,0 +1,2484 @@
+{
+	"endDate": "2024-10-01T00:00:00+02:00",
+	"startDate": "2019-07-05T00:00:00+02:00",
+	"introPage": "https://www.admscentre.org.au/searchexperience-register/",
+	"keywords": [
+	    "Liberal Party",
+	    "National Party",
+	    "Labor Party",
+	    "Greens",
+	    "One Nation",
+	    "Scott Morrison",
+	    "Barnaby Joyce",
+	    "Anthony Albanese",
+	    "Adam Bandt",
+	    "Pauline Hanson",
+	    "COVID",
+	    "Vaccine",
+	    "Travel rules",
+	    "Quarantine",
+	    "Lockdown",
+	    "Wuhan",
+	    "Home loan",
+	    "Mortgage broker",
+	    "Cash loan",
+	    "Cash advance",
+	    "Superannuation",
+	    "Critical Race Theory",
+	    "Feminism",
+	    "Black Lives Matter",
+	    "Uluru Statement",
+	    "Voice to Parliament",
+	    "eating healthy can prevent what diseases",
+	    "cinnamon and honey water benefits",
+	    "what kind of fat to avoid",
+	    "knee pain what to do",
+	    "why are some parents concerned about vaccines",
+	    "what are the advantages and disadvantages of attenuated vaccines",
+	    "should i get vaccinated",
+	    "should i avoid getting vaccinated",
+	    "Tokyo Olympics",
+	    "Tokyo 2021",
+	    "Australian movies",
+	    "Indigenous movies"
+	],
+	"landingPage": "https://www.admscentre.org.au/searchexperience/",
+	"registerPage": "https://www.admscentre.org.au/searchexperience-register/",
+	"countdownPage": "pages/countdown.html",
+	"sharePage": "pages/share.html",
+	"searchProcessPage": "pages/search_process.html",
+	"searchProcessInterval": 7000,
+	"runInterval": 240,
+	"selectors_mobile_iphone12pro": [
+		{
+			"platform": "youtube",
+			"url": "https://www.youtube.com/results?search_query=DYNAMIC_OPTIONS_KEYWORD",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED]\"logged_in\",\"value\":\"1\""
+				],
+				"order_of_results": [
+					"[FLAG_LISTIFY_MATCHES]compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|searchRefinementCardRenderer(?=\")|compactPlaylistRenderer|compactShowRenderer|promotedSparklesTextSearchRenderer"
+				],
+				"tabulated_videos": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=compactVideoRenderer).*?(?=compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|horizontalCardListRenderer|searchRefinementCardRenderer|promotedSparklesTextSearchRenderer|compactPlaylistRenderer|compactShowRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"title\").*?(?=],\")[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"longBylineText\").*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"time_of_publication": [
+						"[FLAG_UNESCAPE][FLAG_FZTIME](?<=publishedTimeText\":{\"runs\":\\[{\"text\":\").*?(?=\")"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com/watch?v=}-(?<=\"videoId\":\").*?(?=\")"
+					],
+					"running_time": [
+						"[FLAG_FZDURATION](?<=thumbnailOverlayTimeStatusRenderer\":{\"text\":{\"runs\":\\[{\"text\":\").*?(?=\")",
+						"(?<=thumbnailOverlayTimeStatusRenderer\":{\"text\":{\"runs\":\\[{\"text\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"number_of_views": [
+						"[FLAG_FZVIEWS](?<=viewCountText\":{\"runs\":\\[{\"text\":\").*?(?= views)",
+						"[FLAG_FZVIEWS](?<=viewCountText\":{\"runs\":\\[).*?(?=\\])[FLAG_RECURSE](?<=text\":\").*?(?=\")"
+					],
+					"publisher_verified": [
+						"[FLAG_INDEXED]BADGE_STYLE_TYPE_VERIFIED"
+					],
+					"publisher_url": [
+						"-{https://www.youtube.com}-(?<=\"commandMetadata\":{\"webCommandMetadata\":{\"url\":\").*?(?=\")"
+					],
+					"badge_closed_captions": [
+						"[FLAG_INDEXED]BADGE_STYLE_TYPE_SIMPLE\",\"label\":\"CC\""
+					]
+				},
+				"tabulated_channels": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=compactChannelRenderer).*?(?=compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|horizontalCardListRenderer|searchRefinementCardRenderer|promotedSparklesTextSearchRenderer|compactPlaylistRenderer|compactShowRenderer|$)"
+					],
+					"publisher": [
+						"(?<=\"displayName\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_YOUTUBE_URL_CLEAN][FLAG_UNESCAPE](?<=thumbnail\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"publisher_verified": [
+						"[FLAG_INDEXED]BADGE_STYLE_TYPE_VERIFIED"
+					],
+					"number_of_subscribers": [
+						"[FLAG_NUMBER](?<=subscriberCountText\":{\"runs\":\\[{\"text\":\").*?(?= subscribers\")"
+					],
+					"number_of_published_videos": [
+						"[FLAG_NUMBER](?<=videoCountText\":{\"runs\":\\[{\"text\":\").*?(?=\")"
+					]
+				},
+				"tabulated_shelves": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=richListHeaderRenderer\":{\"title\":{\"runs\":\\[).*?(?=\\]})"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"text\":\").*?(?=\")"
+					]
+				},
+				"compact_result_object": {
+					"_object": [
+						"(?<=universalWatchCardRenderer).*?$"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=title\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"subtitle": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=subtitle\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=\"avatar\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"image_set": [
+						"[FLAG_UNESCAPE][FLAG_LISTIFY_MATCHES](?<=heroImage\").*?(?=accessibility)[FLAG_RECURSE](?<=url\":\").*?(?=\")"
+					],
+					"call_to_action_button_title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=callToActionButtonRenderer\":{\"label\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"call_to_action_button_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com}-(?<=callToAction).*$[FLAG_RECURSE](?<=\"webCommandMetadata\":{\"url\":\").*?(?=\")"
+					],
+					"tabulated_cards": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=searchRefinementCardRenderer\").*?(?=richListHeaderRenderer)[FLAG_RECURSE](?<=searchRefinementCardRenderer\").*?(?=searchRefinementCardRenderer)"
+						],
+						"image_thumbnail": [
+							"[FLAG_UNESCAPE](?<=thumbnails\":\\[{\"url\":\").*?(?=\")"
+						],
+						"title": [
+							"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"query\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=text\":\").*?(?=\")"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE]-{https://www.youtube.com/watch?v=}-(?<=webCommandMetadata\":{\"url\":\").*?(?=\")"
+						]
+					}
+				},
+				"tabulated_playlists": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=compactPlaylistRenderer).*?(?=compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|horizontalCardListRenderer|searchRefinementCardRenderer|promotedSparklesTextSearchRenderer|compactPlaylistRenderer|compactShowRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=\"title\":{\"simpleText\":\").*?(?=\")",
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"title\").*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com/watch?list=}-(?<=playlistId\":\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=shortBylineText\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"publisher_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com}-(?<=shortBylineText\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"url\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=playlistVideoThumbnailRenderer\":{\"thumbnail\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"number_of_videos": [
+						"[FLAG_NUMBER](?<=videoCountText\":{\"runs\":\\[{\"text\":\").*?(?=\")"
+					]
+				},
+				"compact_show_header": {
+					"_object": [
+						"(?<=compactShowRenderer).*?(?=compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|horizontalCardListRenderer|searchRefinementCardRenderer|promotedSparklesTextSearchRenderer|compactPlaylistRenderer|compactShowRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=title\":{\"runs\":\\[).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=thumbnail\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					]
+				},
+				"tabulated_promotions_top_shelf": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=promotedSparklesTextSearchRenderer).*?(?=compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|horizontalCardListRenderer|searchRefinementCardRenderer|promotedSparklesTextSearchRenderer|compactPlaylistRenderer|compactShowRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"title\":{).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"text": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"descriptionText\":{\"runs\":).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"website_url": [
+						"[FLAG_UNESCAPE](?<=\"websiteText\":{\"runs\":).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"call_to_action_button_title": [
+						"[FLAG_UNESCAPE](?<=\"ctaButton\").*?(}})[FLAG_RECURSE](?<=text\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"call_to_action_button_url": [
+						"[FLAG_UNESCAPE](?<=\"ctaButton\").*?(}})[FLAG_RECURSE](?<=\"url\":\").*?(?=\")"
+					]
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		},
+		{
+			"platform": "google_news",
+			"url": "https://news.google.com/search?hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED]<div class=\"gb_mb\">"
+				],
+				"news_poster_result": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES][FLAG_NEWS_REMOVE_TAIL](?<=AF_initDataCallback\\({key: 'ds:1').*?(?=\\);</script>)[FLAG_RECURSE](?<=[a-z]{2}\\|).*?Full coverage of this story.*?(?=\\]\\])"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=\"],\").*?(?=\",\")[FLAG_RECURSE](?<=],\").*$",
+						"(?<=\"],\").*?(?=\")"
+					],
+					"subtitle": [
+						"[FLAG_UNESCAPE](?<=\\[\\],null,null,\").*?(?=\")",
+						"(?<=\",\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=\",\\[\\[\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE]\\],null,\\[[0-9]+,\\[[0-9]+.*$[FLAG_RECURSE](?<=\"],\").*?(?=\")"
+					],
+					"time_of_publication": [
+						"[FLAG_FZTIME][0-9]{10}"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE](?<=,null,\").*?(?=\")"
+					]
+				},
+				"news_results": {
+					"_i": [
+						"[FLAG_NEWS_REMOVE_DOUBLEUPS][FLAG_LISTIFY_MATCHES](?<=AF_initDataCallback\\({key: 'ds:1').*?(?=\\);</script>)[FLAG_RECURSE](?<=aa\\|C).*?(?=aa\\|C)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][a-z]+\\|.*$[FLAG_RECURSE](?<=\"],\").*?(?=\")",
+						"[FLAG_UNESCAPE]^.*$[FLAG_RECURSE](?<=\"],\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=\\[\\[\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE][a-z]+\\|.*$[FLAG_RECURSE](?<=],\").*$[FLAG_RECURSE](?<=],\").*?(?=\")",
+						"[FLAG_UNESCAPE](?<=],\").*$[FLAG_RECURSE](?<=],\").*?(?=\")"
+					],
+					"time_of_publication": [
+						"[FLAG_FZTIME][0-9]{12}|[0-9]{11}|[0-9]{10}|[0-9]{9}"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE](?<=true,\").*?(?=\",)",
+						"[FLAG_UNESCAPE](?<=null,\").*?(?=\",)"
+					]
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		},
+		{
+			"platform": "google_search",
+			"url": "https://google.com/search?ned=DYNAMIC_NAVIGATOR_LANGUAGE&hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED]Google Account:"
+				],
+				"main_panel": {
+					"_object": [
+						"^.*$"
+					],
+					"result_types": [
+						"[FLAG_LISTIFY_MATCHES][FLAG_STRIP_HTML](?<=id=\"hdtb-msb\").*?(?=</g-popup>)[FLAG_RECURSE](?<=hdtb-mitem\">).*?(?=</div>)"
+					],
+					"module_top_stories": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=class=\"fhQnRd\").*?(?=class=\"xvWBpb\")"
+						],
+						"tabulated_columns": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<g-inner-card).*?(?=</g-inner-card>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher": [
+								"[FLAG_UNESCAPE](?<=<g-img class=\"T1ohsf\">).*?(?=</g-img>)[FLAG_RECURSE](?<=alt=\").*?(?=\")",
+								"[FLAG_UNESCAPE](?<=g-img><span>).*?(?=<)"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=<div class=\"mCBkyc).*?(?=<)[FLAG_RECURSE](?<=>).*?$"
+							],
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=ecEXdc\"><span>).*?(?=<)"
+							],
+							"is_video": [
+								"[FLAG_INDEXED]qB1pae"
+							],
+							"media_thumbnail_url": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						}
+					},
+					"module_people_also_ask": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=\"related-question-pair wQiwMc\").*?(?=</div></div></div></div></div></div>)"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=data-q=\").*?(?=\")"
+						],
+						"arrow_links": [
+							"[FLAG_STRIP_HTML][FLAG_UNESCAPE](?<=<cite class=\"iUh30 Zu0yb qLRx3b\">).*?(?=</cite>)"
+						],
+						"stripped_html": {
+							"_object": [
+								"[FLAG_UNESCAPE](?<=class=\"ILfuVd NA6bn).*$[FLAG_RECURSE](?<=>).*$"
+							],
+							"HTML": [
+								"[FLAG_DYNAMIC_HTML]^.*$"
+							],
+							"source_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"media_thumbnail_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						}
+					},
+					"search_results": {
+						"_object": [
+							"^.*$"
+						],
+						"results_promoted_upper": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=id=\"taw\").*?(?=id=\"topstuff\")[FLAG_RECURSE](?<=<div class=\"uEierd\">).*?(?=</div></div></div></div></div></div>)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=role=\"heading\">).*?(?=</div)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"stripped_html": {
+								"_object": [
+									"(?<=class=\"yp\").*$[FLAG_RECURSE](?<=>).*$"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							}
+						},
+						"results_promoted_lower": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=id=\"tadsb\").*(?=id=\"botstuff\")[FLAG_RECURSE](?<=class=\"mnr-c).*?(?=</div></div></div></div></div></div>)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=role=\"heading\">).*?(?=</div)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"stripped_html": {
+								"_object": [
+									"(?<=class=\"yp\").*$[FLAG_RECURSE](?<=>).*$"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							}
+						},
+						"results_snippets": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=class=\"ifM9O\">).*?(?=</div><div style=\"clear:both\"></div>)"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=<div class=\"RqBzHd\">).*$"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=Od5Jsd\">)[0-9a-zA-Z ]+(?=<)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=role=\"heading\">).*?(?=</div>)"
+							]
+						},
+						"results_nonpromoted": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=\"mnr-c xpd|\"mnr-c g\").*?(?=</div></div></div></div></div>|</g-expandable-container></div></div></div>)"
+							],
+							"arrow_links": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=Zu0yb UGIkD qzEoUe\">).*?(?=</div)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=role=\"heading\">).*?(?=</div)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"stripped_html": {
+								"_object": [
+									"(?<=<div class=\"VwiC3b MUxGbd yDYNvb\">).*$"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=<span class=\"MUxGbd wuQ4Ob WZ8Tjf\">)[a-zA-Z0-9 ]+(?=—)"
+							]
+						}
+					},
+					"module_twitter": {
+						"_object": [
+							"(?<=<div class=\"mfMhoc\">Twitter</div>).*?(?=</div></div></div></div></div></div>)"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=<div class=\"zTpPx V7Sr0 p5AXld ellip\"><span>).*?(?=</span>)"
+						],
+						"image_thumbnail": [
+							"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+						],
+						"row_tweets": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<hr role=\"presentation\").*$[FLAG_RECURSE](?<=<g-inner-card).*?(?=</g-inner-card)"
+							],
+							"image_thumbnail": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=<div class=\"xcQxib eadHV\" aria-level=\"3\" role=\"heading\">).*?(?=</g-card-section>)"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=<span>).*?(?=</span>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							]
+						},
+						"column_tweets": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<div class=\"Brgz0 tw-res\").*?(?=<div class=\"Brgz0 tw-res\"|$)"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=>).*?(?=</div></div></div>)"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=</span><span>).*?(?=</span>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							]
+						}
+					},
+					"module_images": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=class=\"B8ZXbb\").*?(?=<span class=\"wUrVib\">View all images</span>)[FLAG_RECURSE](?<=class=\"eA0Zlc PZPZlf ITO9Cc ivg-i CxtVFd\").*?(?=class=\"eA0Zlc PZPZlf ITO9Cc ivg-i CxtVFd\"|$)"
+						],
+						"image_thumbnail": [
+							"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=data-lpage=\").*?(?=\")"
+						]
+					},
+					"module_people_also_search_for": {
+						"_object": [
+							"(?<=<div class=\"mfMhoc\">People also search for</div>).*?(?=</div></div></div></div></div></div></div></div></div>)",
+							"(?<=<span class=\"mfMhoc\">People also search for</span>).*?(?=</div></div></div></div><div jscontroller)",
+							"(?<=<span class=\"mfMhoc\">People also search for</span>).*?(?=>Feedback<)"
+						],
+						"people": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=div jsname=\"FIjJCe\").*?(?=div jsname=\"FIjJCe\"|$)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=alt=\").*?(?=\")"
+							],
+							"image_thumbnail": [
+								"(?<= src=\").*?(?=\")"
+							]
+						},
+						"tabulated_rows": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<div jsname=\"Cpkphb\").*?(?=<div jsname=\"Cpkphb\"|</div></div></div></div></div>)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=<span>).*?(?=<)"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=</span>).*$"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							}
+						}
+					},
+					"module_related_searches": {
+						"_object": [
+							"(?<=<span class=\"mfMhoc\">Related searches</span>).*?(?=Page Navigation)"
+						],
+						"tabulated_rows": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<a class=\"F3dFTe).*?(?=<a class=\"F3dFTe|$)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=<span>).*?(?=</span>)"
+							]
+						}
+					},
+					"module_video_box": {
+						"video": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=class=\"iDbFld).*?(?=class=\"iDbFld|</div></div></div></div></div></div></div></div></div></div>)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=role=\"heading\").*?(?=</div)[FLAG_RECURSE](?<=>).*$"
+							],
+							"time_of_publication": [
+								"[FLAG_UNESCAPE][FLAG_FZTIME](?<=0\">).*?(?=<)"
+							],
+							"running_time": [
+								"[FLAG_FZDURATION][FLAG_UNESCAPE](?<=\"vjP9hb\">).*?(?=<)"
+							],
+							"image_thumbnail": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							]
+						}
+					},
+					"module_available_outlinks": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=<div class=\"mfMhoc\">Profiles</div>).*?(?=</div></div></div></div>)[FLAG_RECURSE](?<=<kp-carousel-item).*?(?=</kp-carousel-item)"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+						],
+						"publisher": [
+							"[FLAG_UNESCAPE](?<=CtCigf gBIQub\">).*?(?=<)"
+						]
+					}
+				},
+				"side_panel": {
+					"side_panel_upper": {
+						"_object": [
+							"(?<=class=\"K20DDe HdaFGf otrRac YipI0 JXFbbc Uo6gve ySjHwc vbvWnd).*?(?=</g-img>)",
+							"(?<=class=\"K20DDe HdaFGf otrRac YipI0 R9GLFb JXFbbc Uo6gve ySjHwc vbvWnd).*?(?=</g-img>)",
+							"(?<=class=\"K20DDe HdaFGf otrRac YipI0 JXFbbc Uo6gve ySjHwc).*?(?=<sticky-header)"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=class=\"u9DLmf\">).*?(?=<)",
+							"[FLAG_UNESCAPE](?<=class=\"mfMhoc\">).*?(?=<)"
+						],
+						"subtitle": [
+							"[FLAG_UNESCAPE](?<=data-attrid=\"subtitle\">).*?(?=<)"
+						],
+						"image_thumbnail": [
+							"[FLAG_UNESCAPE](?<=\" data-lpage=\").*?(?=\")"
+						]
+					},
+					"side_panel_lower": {
+						"_object": [
+							"(?<=class=\"vnLNtd mnr-c TjcfIc eE3xqf B03h3d).*?(?=>Feedback<)",
+							"(?<=class=\"UDZeY fAgajc).*?(?=>Feedback<)"
+						],
+						"is_requesting_claimer": [
+							"[FLAG_INDEXED]Claim this knowledge panel"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+						],
+						"stripped_html_primary": {
+							"_object": [
+								"[FLAG_UNESCAPE](?<=<div class=\"XbtRGb qxsd NV5pMe yF5Gqd wDYxhc\").*?(?=</div></div></div></div></div>)[FLAG_RECURSE](?<=>).*$"
+							],
+							"HTML": [
+								"[FLAG_DYNAMIC_HTML]^.*$"
+							],
+							"source_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"media_thumbnail_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						},
+						"stripped_html_secondaries": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<div class=\"Z1hOCe\">).*?(?=<div class=\"Z1hOCe\">|</div></div></div></div>)"
+							],
+							"HTML": [
+								"[FLAG_DYNAMIC_HTML]^.*$"
+							],
+							"source_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"media_thumbnail_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						}
+					}
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		},
+		{
+			"platform": "google_videos",
+			"url": "https://www.google.com/search?tbm=vid&q=DYNAMIC_OPTIONS_KEYWORD&hl=DYNAMIC_NAVIGATOR_LANGUAGE",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED]<div class=\"gb_mb\">"
+				],
+				"suggestions": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=class=\"d0C20e\").*?(?=class=\"d0C20e\"|</div></div><div)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=<span).*$[FLAG_RECURSE](?<=>).*?(?=<)"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+					]
+				},
+				"tabulated_results": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=<video-voyager>).*?(?=</video-voyager)"
+					],
+					"publisher_url": [
+						"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=V82bz V5pUgb rQTIbb\">).*?(?=<)"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+					],
+					"subtitle": {
+						"_object": [
+							"(?<=<div class=\"b5ZQcf sE3Tte\">).*?(</div>)"
+						],
+						"time_of_publication": [
+							"[FLAG_FZTIME](?<=<span>).*?(?=</span>)"
+						],
+						"publisher": [
+							"[FLAG_UNESCAPE](?<=dDuYUe sE3Tte\">).*?(?=<)"
+						]
+					},
+					"running_time": [
+						"[FLAG_FZDURATION](?<=role=\"presentation\">).*?(?=<)"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+					]
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		}
+	],
+	"selectors_mobile_galaxyS5": [
+		{
+			"platform": "youtube",
+			"url": "https://www.youtube.com/results?search_query=DYNAMIC_OPTIONS_KEYWORD",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED]\"logged_in\",\"value\":\"1\""
+				],
+				"order_of_results": [
+					"[FLAG_LISTIFY_MATCHES]compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|searchRefinementCardRenderer(?=\")|compactPlaylistRenderer|compactShowRenderer|promotedSparklesTextSearchRenderer"
+				],
+				"tabulated_videos": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=compactVideoRenderer).*?(?=compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|horizontalCardListRenderer|searchRefinementCardRenderer|promotedSparklesTextSearchRenderer|compactPlaylistRenderer|compactShowRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"title\").*?(?=],\")[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"longBylineText\").*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"time_of_publication": [
+						"[FLAG_UNESCAPE][FLAG_FZTIME](?<=publishedTimeText\":{\"runs\":\\[{\"text\":\").*?(?=\")"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com/watch?v=}-(?<=\"videoId\":\").*?(?=\")"
+					],
+					"running_time": [
+						"[FLAG_FZDURATION](?<=thumbnailOverlayTimeStatusRenderer\":{\"text\":{\"runs\":\\[{\"text\":\").*?(?=\")",
+						"(?<=thumbnailOverlayTimeStatusRenderer\":{\"text\":{\"runs\":\\[{\"text\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"number_of_views": [
+						"[FLAG_FZVIEWS](?<=viewCountText\":{\"runs\":\\[{\"text\":\").*?(?= views)",
+						"[FLAG_FZVIEWS](?<=viewCountText\":{\"runs\":\\[).*?(?=\\])[FLAG_RECURSE](?<=text\":\").*?(?=\")"
+					],
+					"publisher_verified": [
+						"[FLAG_INDEXED]BADGE_STYLE_TYPE_VERIFIED"
+					],
+					"publisher_url": [
+						"-{https://www.youtube.com}-(?<=\"commandMetadata\":{\"webCommandMetadata\":{\"url\":\").*?(?=\")"
+					],
+					"badge_closed_captions": [
+						"[FLAG_INDEXED]BADGE_STYLE_TYPE_SIMPLE\",\"label\":\"CC\""
+					]
+				},
+				"tabulated_channels": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=compactChannelRenderer).*?(?=compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|horizontalCardListRenderer|searchRefinementCardRenderer|promotedSparklesTextSearchRenderer|compactPlaylistRenderer|compactShowRenderer|$)"
+					],
+					"publisher": [
+						"(?<=\"displayName\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_YOUTUBE_URL_CLEAN][FLAG_UNESCAPE](?<=thumbnail\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"publisher_verified": [
+						"[FLAG_INDEXED]BADGE_STYLE_TYPE_VERIFIED"
+					],
+					"number_of_subscribers": [
+						"[FLAG_NUMBER](?<=subscriberCountText\":{\"runs\":\\[{\"text\":\").*?(?= subscribers\")"
+					],
+					"number_of_published_videos": [
+						"[FLAG_NUMBER](?<=videoCountText\":{\"runs\":\\[{\"text\":\").*?(?=\")"
+					]
+				},
+				"tabulated_shelves": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=richListHeaderRenderer\":{\"title\":{\"runs\":\\[).*?(?=\\]})"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"text\":\").*?(?=\")"
+					]
+				},
+				"compact_result_object": {
+					"_object": [
+						"(?<=universalWatchCardRenderer).*?$"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=title\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"subtitle": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=subtitle\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=\"avatar\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"image_set": [
+						"[FLAG_UNESCAPE][FLAG_LISTIFY_MATCHES](?<=heroImage\").*?(?=accessibility)[FLAG_RECURSE](?<=url\":\").*?(?=\")"
+					],
+					"call_to_action_button_title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=callToActionButtonRenderer\":{\"label\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"call_to_action_button_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com}-(?<=callToAction).*$[FLAG_RECURSE](?<=\"webCommandMetadata\":{\"url\":\").*?(?=\")"
+					],
+					"tabulated_cards": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=searchRefinementCardRenderer\").*?(?=richListHeaderRenderer)[FLAG_RECURSE](?<=searchRefinementCardRenderer\").*?(?=searchRefinementCardRenderer)"
+						],
+						"image_thumbnail": [
+							"[FLAG_UNESCAPE](?<=thumbnails\":\\[{\"url\":\").*?(?=\")"
+						],
+						"title": [
+							"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"query\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=text\":\").*?(?=\")"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE]-{https://www.youtube.com/watch?v=}-(?<=webCommandMetadata\":{\"url\":\").*?(?=\")"
+						]
+					}
+				},
+				"tabulated_playlists": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=compactPlaylistRenderer).*?(?=compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|horizontalCardListRenderer|searchRefinementCardRenderer|promotedSparklesTextSearchRenderer|compactPlaylistRenderer|compactShowRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=\"title\":{\"simpleText\":\").*?(?=\")",
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"title\").*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com/watch?list=}-(?<=playlistId\":\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=shortBylineText\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"publisher_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com}-(?<=shortBylineText\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"url\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=playlistVideoThumbnailRenderer\":{\"thumbnail\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"number_of_videos": [
+						"[FLAG_NUMBER](?<=videoCountText\":{\"runs\":\\[{\"text\":\").*?(?=\")"
+					]
+				},
+				"compact_show_header": {
+					"_object": [
+						"(?<=compactShowRenderer).*?(?=compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|horizontalCardListRenderer|searchRefinementCardRenderer|promotedSparklesTextSearchRenderer|compactPlaylistRenderer|compactShowRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=title\":{\"runs\":\\[).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=thumbnail\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					]
+				},
+				"tabulated_promotions_top_shelf": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=promotedSparklesTextSearchRenderer).*?(?=compactVideoRenderer|compactChannelRenderer|richListHeaderRenderer|universalWatchCardRenderer|horizontalCardListRenderer|searchRefinementCardRenderer|promotedSparklesTextSearchRenderer|compactPlaylistRenderer|compactShowRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"title\":{).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"text": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"descriptionText\":{\"runs\":).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"website_url": [
+						"[FLAG_UNESCAPE](?<=\"websiteText\":{\"runs\":).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"call_to_action_button_title": [
+						"[FLAG_UNESCAPE](?<=\"ctaButton\").*?(}})[FLAG_RECURSE](?<=text\":{\"runs\":\\[).*?(?=\\]})[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"call_to_action_button_url": [
+						"[FLAG_UNESCAPE](?<=\"ctaButton\").*?(}})[FLAG_RECURSE](?<=\"url\":\").*?(?=\")"
+					]
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		},
+		{
+			"platform": "google_news",
+			"url": "https://news.google.com/search?hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED]<div class=\"gb_mb\">"
+				],
+				"news_poster_result": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES][FLAG_NEWS_REMOVE_TAIL](?<=AF_initDataCallback\\({key: 'ds:1').*?(?=\\);</script>)[FLAG_RECURSE](?<=[a-z]{2}\\|).*?Full coverage of this story.*?(?=\\]\\])"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=\"],\").*?(?=\",\")[FLAG_RECURSE](?<=],\").*$",
+						"(?<=\"],\").*?(?=\")"
+					],
+					"subtitle": [
+						"[FLAG_UNESCAPE](?<=\\[\\],null,null,\").*?(?=\")",
+						"(?<=\",\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=\",\\[\\[\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE]\\],null,\\[[0-9]+,\\[[0-9]+.*$[FLAG_RECURSE](?<=\"],\").*?(?=\")"
+					],
+					"time_of_publication": [
+						"[FLAG_FZTIME][0-9]{10}"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE](?<=,null,\").*?(?=\")"
+					]
+				},
+				"news_results": {
+					"_i": [
+						"[FLAG_NEWS_REMOVE_DOUBLEUPS][FLAG_LISTIFY_MATCHES](?<=AF_initDataCallback\\({key: 'ds:1').*?(?=\\);</script>)[FLAG_RECURSE](?<=aa\\|C).*?(?=aa\\|C)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][a-z]+\\|.*$[FLAG_RECURSE](?<=\"],\").*?(?=\")",
+						"[FLAG_UNESCAPE]^.*$[FLAG_RECURSE](?<=\"],\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=\\[\\[\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE][a-z]+\\|.*$[FLAG_RECURSE](?<=],\").*$[FLAG_RECURSE](?<=],\").*?(?=\")",
+						"[FLAG_UNESCAPE](?<=],\").*$[FLAG_RECURSE](?<=],\").*?(?=\")"
+					],
+					"time_of_publication": [
+						"[FLAG_FZTIME][0-9]{12}|[0-9]{11}|[0-9]{10}|[0-9]{9}"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE](?<=true,\").*?(?=\",)",
+						"[FLAG_UNESCAPE](?<=null,\").*?(?=\",)"
+					]
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		},
+		{
+			"platform": "google_search",
+			"url": "https://google.com/search?ned=DYNAMIC_NAVIGATOR_LANGUAGE&hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED]Google Account:"
+				],
+				"main_panel": {
+					"_object": [
+						"^.*$"
+					],
+					"result_types": [
+						"[FLAG_LISTIFY_MATCHES][FLAG_STRIP_HTML](?<=id=\"hdtb-msb\").*?(?=</g-popup>)[FLAG_RECURSE](?<=hdtb-mitem\">).*?(?=</div>)"
+					],
+					"module_top_stories": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=class=\"fhQnRd\").*?(?=class=\"xvWBpb\")"
+						],
+						"tabulated_columns": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<g-inner-card).*?(?=</g-inner-card>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher": [
+								"[FLAG_UNESCAPE](?<=<g-img class=\"T1ohsf\">).*?(?=</g-img>)[FLAG_RECURSE](?<=alt=\").*?(?=\")",
+								"[FLAG_UNESCAPE](?<=g-img><span>).*?(?=<)"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=<div class=\"mCBkyc).*?(?=<)[FLAG_RECURSE](?<=>).*?$"
+							],
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=ecEXdc\"><span>).*?(?=<)"
+							],
+							"is_video": [
+								"[FLAG_INDEXED]qB1pae"
+							],
+							"media_thumbnail_url": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						}
+					},
+					"module_people_also_ask": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=\"related-question-pair wQiwMc\").*?(?=</div></div></div></div></div></div>)"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=data-q=\").*?(?=\")"
+						],
+						"arrow_links": [
+							"[FLAG_STRIP_HTML][FLAG_UNESCAPE](?<=<cite class=\"iUh30 Zu0yb qLRx3b\">).*?(?=</cite>)"
+						],
+						"stripped_html": {
+							"_object": [
+								"[FLAG_UNESCAPE](?<=class=\"ILfuVd NA6bn).*$[FLAG_RECURSE](?<=>).*$"
+							],
+							"HTML": [
+								"[FLAG_DYNAMIC_HTML]^.*$"
+							],
+							"source_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"media_thumbnail_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						}
+					},
+					"search_results": {
+						"_object": [
+							"^.*$"
+						],
+						"results_promoted_upper": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=id=\"taw\").*?(?=id=\"topstuff\")[FLAG_RECURSE](?<=<div class=\"uEierd\">).*?(?=</div></div></div></div></div></div>)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=role=\"heading\">).*?(?=</div)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"stripped_html": {
+								"_object": [
+									"(?<=class=\"yp\").*$[FLAG_RECURSE](?<=>).*$"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							}
+						},
+						"results_promoted_lower": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=id=\"tadsb\").*(?=id=\"botstuff\")[FLAG_RECURSE](?<=class=\"mnr-c).*?(?=</div></div></div></div></div></div>)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=role=\"heading\">).*?(?=</div)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"stripped_html": {
+								"_object": [
+									"(?<=class=\"yp\").*$[FLAG_RECURSE](?<=>).*$"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							}
+						},
+						"results_snippets": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=class=\"ifM9O\">).*?(?=</div><div style=\"clear:both\"></div>)"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=<div class=\"RqBzHd\">).*$"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=Od5Jsd\">)[0-9a-zA-Z ]+(?=<)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=role=\"heading\">).*?(?=</div>)"
+							]
+						},
+						"results_nonpromoted": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=\"mnr-c xpd|\"mnr-c g\").*?(?=</div></div></div></div></div>|</g-expandable-container></div></div></div>)"
+							],
+							"arrow_links": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=Zu0yb UGIkD qzEoUe\">).*?(?=</div)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=role=\"heading\">).*?(?=</div)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"stripped_html": {
+								"_object": [
+									"(?<=<div class=\"VwiC3b MUxGbd yDYNvb\">).*$"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=<span class=\"MUxGbd wuQ4Ob WZ8Tjf\">)[a-zA-Z0-9 ]+(?=—)"
+							]
+						}
+					},
+					"module_twitter": {
+						"_object": [
+							"(?<=<div class=\"mfMhoc\">Twitter</div>).*?(?=</div></div></div></div></div></div>)"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=<div class=\"zTpPx V7Sr0 p5AXld ellip\"><span>).*?(?=</span>)"
+						],
+						"image_thumbnail": [
+							"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+						],
+						"row_tweets": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<hr role=\"presentation\").*$[FLAG_RECURSE](?<=<g-inner-card).*?(?=</g-inner-card)"
+							],
+							"image_thumbnail": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=<div class=\"xcQxib eadHV\" aria-level=\"3\" role=\"heading\">).*?(?=</g-card-section>)"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=<span>).*?(?=</span>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							]
+						},
+						"column_tweets": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<div class=\"Brgz0 tw-res\").*?(?=<div class=\"Brgz0 tw-res\"|$)"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=>).*?(?=</div></div></div>)"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=</span><span>).*?(?=</span>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							]
+						}
+					},
+					"module_images": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=class=\"B8ZXbb\").*?(?=<span class=\"wUrVib\">View all images</span>)[FLAG_RECURSE](?<=class=\"eA0Zlc PZPZlf ITO9Cc ivg-i CxtVFd\").*?(?=class=\"eA0Zlc PZPZlf ITO9Cc ivg-i CxtVFd\"|$)"
+						],
+						"image_thumbnail": [
+							"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=data-lpage=\").*?(?=\")"
+						]
+					},
+					"module_people_also_search_for": {
+						"_object": [
+							"(?<=<div class=\"mfMhoc\">People also search for</div>).*?(?=</div></div></div></div></div></div></div></div></div>)",
+							"(?<=<span class=\"mfMhoc\">People also search for</span>).*?(?=</div></div></div></div><div jscontroller)",
+							"(?<=<span class=\"mfMhoc\">People also search for</span>).*?(?=>Feedback<)"
+						],
+						"people": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=div jsname=\"FIjJCe\").*?(?=div jsname=\"FIjJCe\"|$)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=alt=\").*?(?=\")"
+							],
+							"image_thumbnail": [
+								"(?<= src=\").*?(?=\")"
+							]
+						},
+						"tabulated_rows": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<div jsname=\"Cpkphb\").*?(?=<div jsname=\"Cpkphb\"|</div></div></div></div></div>)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=<span>).*?(?=<)"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=</span>).*$"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							}
+						}
+					},
+					"module_related_searches": {
+						"_object": [
+							"(?<=<span class=\"mfMhoc\">Related searches</span>).*?(?=Page Navigation)"
+						],
+						"tabulated_rows": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<a class=\"F3dFTe).*?(?=<a class=\"F3dFTe|$)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=<span>).*?(?=</span>)"
+							]
+						}
+					},
+					"module_video_box": {
+						"video": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=class=\"iDbFld).*?(?=class=\"iDbFld|</div></div></div></div></div></div></div></div></div></div>)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=role=\"heading\").*?(?=</div)[FLAG_RECURSE](?<=>).*$"
+							],
+							"time_of_publication": [
+								"[FLAG_UNESCAPE][FLAG_FZTIME](?<=0\">).*?(?=<)"
+							],
+							"running_time": [
+								"[FLAG_FZDURATION][FLAG_UNESCAPE](?<=\"vjP9hb\">).*?(?=<)"
+							],
+							"image_thumbnail": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							]
+						}
+					},
+					"module_available_outlinks": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=<div class=\"mfMhoc\">Profiles</div>).*?(?=</div></div></div></div>)[FLAG_RECURSE](?<=<kp-carousel-item).*?(?=</kp-carousel-item)"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+						],
+						"publisher": [
+							"[FLAG_UNESCAPE](?<=CtCigf gBIQub\">).*?(?=<)"
+						]
+					}
+				},
+				"side_panel": {
+					"side_panel_upper": {
+						"_object": [
+							"(?<=class=\"K20DDe HdaFGf otrRac YipI0 JXFbbc Uo6gve ySjHwc vbvWnd).*?(?=</g-img>)",
+							"(?<=class=\"K20DDe HdaFGf otrRac YipI0 R9GLFb JXFbbc Uo6gve ySjHwc vbvWnd).*?(?=</g-img>)",
+							"(?<=class=\"K20DDe HdaFGf otrRac YipI0 JXFbbc Uo6gve ySjHwc).*?(?=<sticky-header)"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=class=\"u9DLmf\">).*?(?=<)",
+							"[FLAG_UNESCAPE](?<=class=\"mfMhoc\">).*?(?=<)"
+						],
+						"subtitle": [
+							"[FLAG_UNESCAPE](?<=data-attrid=\"subtitle\">).*?(?=<)"
+						],
+						"image_thumbnail": [
+							"[FLAG_UNESCAPE](?<=\" data-lpage=\").*?(?=\")"
+						]
+					},
+					"side_panel_lower": {
+						"_object": [
+							"(?<=class=\"vnLNtd mnr-c TjcfIc eE3xqf B03h3d).*?(?=>Feedback<)",
+							"(?<=class=\"UDZeY fAgajc).*?(?=>Feedback<)"
+						],
+						"is_requesting_claimer": [
+							"[FLAG_INDEXED]Claim this knowledge panel"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+						],
+						"stripped_html_primary": {
+							"_object": [
+								"[FLAG_UNESCAPE](?<=<div class=\"XbtRGb qxsd NV5pMe yF5Gqd wDYxhc\").*?(?=</div></div></div></div></div>)[FLAG_RECURSE](?<=>).*$"
+							],
+							"HTML": [
+								"[FLAG_DYNAMIC_HTML]^.*$"
+							],
+							"source_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"media_thumbnail_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						},
+						"stripped_html_secondaries": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=<div class=\"Z1hOCe\">).*?(?=<div class=\"Z1hOCe\">|</div></div></div></div>)"
+							],
+							"HTML": [
+								"[FLAG_DYNAMIC_HTML]^.*$"
+							],
+							"source_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"media_thumbnail_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						}
+					}
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		},
+		{
+			"platform": "google_videos",
+			"url": "https://www.google.com/search?tbm=vid&q=DYNAMIC_OPTIONS_KEYWORD&hl=DYNAMIC_NAVIGATOR_LANGUAGE",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED]<div class=\"gb_mb\">"
+				],
+				"suggestions": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=class=\"d0C20e\").*?(?=class=\"d0C20e\"|</div></div><div)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=<span).*$[FLAG_RECURSE](?<=>).*?(?=<)"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+					]
+				},
+				"tabulated_results": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=<video-voyager>).*?(?=</video-voyager)"
+					],
+					"publisher_url": [
+						"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=V82bz V5pUgb rQTIbb\">).*?(?=<)"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+					],
+					"subtitle": {
+						"_object": [
+							"(?<=<div class=\"b5ZQcf sE3Tte\">).*?(</div>)"
+						],
+						"time_of_publication": [
+							"[FLAG_FZTIME](?<=<span>).*?(?=</span>)"
+						],
+						"publisher": [
+							"[FLAG_UNESCAPE](?<=dDuYUe sE3Tte\">).*?(?=<)"
+						]
+					},
+					"running_time": [
+						"[FLAG_FZDURATION](?<=role=\"presentation\">).*?(?=<)"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+					]
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		}
+	],
+	"selectors_desktop": [
+		{
+			"platform": "youtube",
+			"url": "https://www.youtube.com/results?search_query=DYNAMIC_OPTIONS_KEYWORD",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED](LOGGED_IN\":true)"
+				],
+				"tabulated_channels": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=\"channelRenderer\":{).*?(?=channelRenderer|searchRefinementCardRenderer|displayAdRenderer|movieRenderer|videoRenderer|playlistRenderer|shelfRenderer|promotedSparklesTextSearchRenderer|secondarySearchContainerRenderer|horizontalCardListRenderer|$)"
+					],
+					"publisher": [
+						"(?<=\"title\":{\"simpleText\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_YOUTUBE_URL_CLEAN][FLAG_UNESCAPE](?<=\"thumbnail\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"publisher_verified": [
+						"[FLAG_INDEXED]BADGE_STYLE_TYPE_VERIFIED"
+					],
+					"number_of_subscribers": [
+						"[FLAG_NUMBER](?<=\"subscriberCountText\":{\"accessibility\":{\"accessibilityData\":{\"label\":\").*?(?= subscribers\")"
+					],
+					"number_of_published_videos": [
+						"[FLAG_NUMBER](?<=\"videoCountText\":{\"runs\":\\[{\"text\":\").*?(?=\")",
+						"[FLAG_NUMBER][FLAG_UNESCAPE](?<=\"videoCountText\":{\"simpleText\":\").*?(?=\")"
+					],
+					"text": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"descriptionSnippet\":{).*?(?=\\]},)[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					]
+				},
+				"tabulated_movies": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=\"movieRenderer\":{).*?(?=channelRenderer|searchRefinementCardRenderer|displayAdRenderer|movieRenderer|videoRenderer|playlistRenderer|shelfRenderer|promotedSparklesTextSearchRenderer|secondarySearchContainerRenderer|horizontalCardListRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"title\":{).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"metadata_a": [
+						"[FLAG_UNESCAPE](?<=\"topMetadataItems\":\\[{\"simpleText\":\").*?(?=\")"
+					],
+					"metadata_b": [
+						"[FLAG_UNESCAPE][FLAG_LISTIFY_MATCHES](?<=\"bottomMetadataItems\":\\[).*?(?=\\])[FLAG_RECURSE](?<=simpleText\":\").*?(?=\")"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com/watch?v=}-(?<=videoId\":\").*?(?=\")"
+					],
+					"publisher": [
+						"(?<=longBylineText\":{\"runs\":\\[{\"text\":\").*?(?=\")",
+						"[FLAG_UNESCAPE](?<=\"longBylineText\":{\"simpleText\":\").*?(?=\")"
+					],
+					"running_time": [
+						"[FLAG_FZDURATION](?<=thumbnailOverlayTimeStatusRenderer\":{).*?(?=}}})[FLAG_RECURSE](?<=simpleText\":\").*?(?=\")"
+					],
+					"time_of_publication": [
+						"[FLAG_NULL]"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"number_of_views": [
+						"[FLAG_NULL]"
+					],
+					"byline": [
+						"(?<=\"descriptionSnippet\":{).*?(?=\\]},)[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"publisher_verified": [
+						"[FLAG_INDEXED]BADGE_STYLE_TYPE_VERIFIED"
+					],
+					"badge_closed_captions": [
+						"[FLAG_INDEXED]Closed captions"
+					],
+					"badge_new_video": [
+						"[FLAG_INDEXED]\"BADGE_STYLE_TYPE_SIMPLE\",\"label\":\"New\""
+					],
+					"badge_4k_resolution": [
+						"[FLAG_INDEXED]\"BADGE_STYLE_TYPE_SIMPLE\",\"label\":\"4K\""
+					],
+					"badge_artist": [
+						"[FLAG_INDEXED]OFFICIAL_ARTIST_BADGE"
+					]
+				},
+				"tabulated_people_also_search_for": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=\"searchRefinementCardRenderer\":{).*?(?=\"searchRefinementCardRenderer\":{|watchCardSectionSequenceRenderer|$)"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=(thumbnails\":\\[{\"url\":\")).*?(?=\")[FLAG_RECURSE](?<!(?=/)).*?$"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"query\":{).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"link_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com}-(?<=(webCommandMetadata\":{\"url\":\")).*?(?=\")"
+					]
+				},
+				"tabulated_promotions_top_shelf": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=\"displayAdRenderer\":{).*?(?=channelRenderer|searchRefinementCardRenderer|displayAdRenderer|movieRenderer|videoRenderer|playlistRenderer|shelfRenderer|promotedSparklesTextSearchRenderer|secondarySearchContainerRenderer|horizontalCardListRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"titleText\":{).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"sub_text_a": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"bodyText\":{\"runs\":).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")",
+						"[FLAG_UNESCAPE](?<=\"bodyText\":{\"simpleText\":\").*?(?=\")"
+					],
+					"sub_text_b": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"secondaryText\":{\"runs\":).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")",
+						"[FLAG_UNESCAPE](?<=\"secondaryText\":{\"simpleText\":\").*?(?=\")"
+					],
+					"link_url": [
+						"[FLAG_UNESCAPE](?<=webCommandMetadata\":{\"url\":\").*?(?=\")"
+					]
+				},
+				"tabulated_promotions_in_results": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=<ytd-search-pyv-renderer).*?(</ytd-search-pyv-renderer)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=title=\").*?(?=\")"
+					],
+					"text": [
+						"[FLAG_UNESCAPE](?<=<span id=\"description-text\").*?(?=<)[FLAG_RECURSE](?<=>).*$"
+					],
+					"publisher": [
+						"(?<=dir=\"auto\">).*?(?=<)"
+					],
+					"publisher_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com}-(?<=ytd-channel-name complex-string).*?(?=auto\">)[FLAG_RECURSE](?<=href=\").*?(?=\")"
+					],
+					"time_of_publication": [
+						"[FLAG_NULL]"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+					],
+					"running_time": [
+						"[FLAG_FZDURATION][0-9]+:[0-9]+"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=src=\"//).*?(?=\")"
+					],
+					"number_of_views": [
+						"[FLAG_NUMBER](?<=<span class=\"style-scope ytd-video-meta-block\">).*?(?= views<)"
+					],
+					"publisher_verified": [
+						"[FLAG_INDEXED]badge-style-type-verified"
+					],
+					"badge_closed_captions": [
+						"[FLAG_INDEXED]Closed captions"
+					],
+					"badge_4k_resolution": [
+						"[FLAG_INDEXED]<span class=\"style-scope ytd-badge-supported-renderer\">4K</span>"
+					],
+					"badge_new_video": [
+						"[FLAG_INDEXED]<span class=\"style-scope ytd-badge-supported-renderer\">New</span>"
+					],
+					"badge_artist": [
+						"[FLAG_INDEXED]OFFICIAL_ARTIST_BADGE"
+					]
+				},
+				"tabulated_promotions_over_results": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=\"promotedSparklesTextSearchRenderer\":{).*?(?=channelRenderer|searchRefinementCardRenderer|displayAdRenderer|movieRenderer|videoRenderer|playlistRenderer|shelfRenderer|promotedSparklesTextSearchRenderer|secondarySearchContainerRenderer|horizontalCardListRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=\"title\":{\"simpleText\":\").*?(?=\")"
+					],
+					"text": [
+						"[FLAG_UNESCAPE](?<=descriptionText\":{\"simpleText\":\").*?(?=\")"
+					],
+					"website_url": [
+						"[FLAG_UNESCAPE](?<=websiteText\":{\"runs\":\\[{\"text\":\").*?(?=\")",
+						"[FLAG_UNESCAPE](?<=\"websiteText\":{\"simpleText\":\").*?(?=\")"
+					],
+					"call_to_action_button_title": [
+						"[FLAG_UNESCAPE](?<=\"ctaButton\").*?(}})[FLAG_RECURSE](?<=simpleText\":\").*?(?=\")"
+					],
+					"call_to_action_button_url": [
+						"[FLAG_UNESCAPE](?<=\"ctaButton\").*?(}})[FLAG_RECURSE](?<=\"url\":\").*?(?=\")"
+					],
+					"links_list_titles": [
+						"[FLAG_UNESCAPE][FLAG_LISTIFY_MATCHES](?<={\"title\":{\"runs\":\\[{\"text\":\").*?(?=\",\"textColor\":4278607828})",
+						"[FLAG_UNESCAPE](?<=\"title\":{\"simpleText\":\").*?(?=\")"
+					],
+					"links_list_urls": [
+						"[FLAG_LISTIFY_MATCHES](?<=\"sitelinks\":\\[).*?(?=PROMOTED_SPARKLES_CLICK_BEHAVIOR_TYPE_OPEN_AD)[FLAG_RECURSE](?<=webCommandMetadata\":{\"url\":\").*?(?=\")"
+					]
+				},
+				"tabulated_shelves": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=\"shelfRenderer\":{).*?(?=channelRenderer|searchRefinementCardRenderer|displayAdRenderer|movieRenderer|videoRenderer|playlistRenderer|shelfRenderer|promotedSparklesTextSearchRenderer|secondarySearchContainerRenderer|horizontalCardListRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=\"title\":{\"simpleText\":\").*?(?=\")"
+					]
+				},
+				"order_of_results": [
+					"[FLAG_LISTIFY_MATCHES]channelRenderer|displayAdRenderer|movieRenderer|videoRenderer|playlistRenderer|shelfRenderer|promotedSparklesTextSearchRenderer|secondarySearchContainerRenderer|horizontalCardListRenderer"
+				],
+				"tabulated_videos": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=\"videoRenderer\":{).*?(?=channelRenderer|searchRefinementCardRenderer|displayAdRenderer|movieRenderer|videoRenderer|playlistRenderer|shelfRenderer|promotedSparklesTextSearchRenderer|secondarySearchContainerRenderer|horizontalCardListRenderer|$)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"title\").*?(?=],\")[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"text": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\\[{\"snippetText\").*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE](?<=\"ownerText\").*?(],\")[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"time_of_publication": [
+						"[FLAG_FZTIME](?<=\"publishedTimeText\":{\"simpleText\":\").*?(?=\")"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com/watch?v=}-(?<=\"videoId\":\").*?(?=\")"
+					],
+					"running_time": [
+						"[FLAG_FZDURATION](?<=}},\"simpleText\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"number_of_views": [
+						"[FLAG_FZVIEWS](?<=\"viewCountText\":{\"simpleText\":\").*?(?= views\")"
+					],
+					"publisher_verified": [
+						"[FLAG_INDEXED]BADGE_STYLE_TYPE_VERIFIED"
+					],
+					"publisher_url": [
+						"-{https://www.youtube.com}-(?<=\"commandMetadata\":{\"webCommandMetadata\":{\"url\":\").*?(?=\")"
+					],
+					"badge_closed_captions": [
+						"[FLAG_INDEXED]Closed captions"
+					],
+					"badge_new_video": [
+						"[FLAG_INDEXED]\"BADGE_STYLE_TYPE_SIMPLE\",\"label\":\"New\""
+					],
+					"badge_4k_resolution": [
+						"[FLAG_INDEXED]\"BADGE_STYLE_TYPE_SIMPLE\",\"label\":\"4K\""
+					],
+					"badge_artist": [
+						"[FLAG_INDEXED]OFFICIAL_ARTIST_BADGE"
+					]
+				},
+				"tabulated_playlists": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=\"playlistRenderer\":{).*?(?=channelRenderer|searchRefinementCardRenderer|displayAdRenderer|movieRenderer|videoRenderer|playlistRenderer|shelfRenderer|promotedSparklesTextSearchRenderer|secondarySearchContainerRenderer|horizontalCardListRenderer|$)"
+					],
+					"title": [
+						"(?<=\"title\":{\"simpleText\":\").*?(?=\")",
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"title\").*?(?=],\")[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"source_url": [
+						"-{https://www.youtube.com/watch?list=}-(?<=playlistId\":\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=longBylineText\":{\"runs\":\\[).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")"
+					],
+					"publisher_url": [
+						"-{https://www.youtube.com}-(?<=longBylineText\":{\"runs\":\\[).*?(?=\\])[FLAG_RECURSE](?<=\"url\":\").*?(?=\")"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=playlistVideoThumbnailRenderer\":{\"thumbnail\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"time_of_publication": [
+						"[FLAG_FZTIME](?<=\"publishedTimeText\":{\"simpleText\":\").*?(?=\")"
+					],
+					"number_of_videos": [
+						"[FLAG_NUMBER](?<=videoCountText\":{\"runs\":\\[{\"text\":\").*?(?=\")"
+					],
+					"playlist_showcase_items": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<={\"childVideoRenderer\":).*?(?=\"}},{|\"}}])"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=simpleText\":\").*?(?=\")"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE]-{https://www.youtube.com}-(?<=url\":\").*?(?=\")"
+						],
+						"running_time": [
+							"[FLAG_FZDURATION](?<=\"}},\"simpleText\":\").*?(?=\")"
+						]
+					}
+				},
+				"compact_result_object": {
+					"_object": [
+						"[FLAG_LISTIFY_MATCHES](?<=},\"secondaryContents\":{\"secondarySearchContainerRenderer).*$"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=\"title\":{\"simpleText\":\").*?(?=\")"
+					],
+					"subtitle": [
+						"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=subtitle\":{\"runs\":\\[).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")",
+						"[FLAG_UNESCAPE](?<=\"subtitle\":{\"simpleText\":\").*?(?=\")"
+					],
+					"badge_paid_item": [
+						"[FLAG_INDEXED]BADGE_STYLE_TYPE_SIMPLE\",\"label\":\"\\$\""
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=\"avatar\":{\"thumbnails\":\\[{\"url\":\").*?(?=\")"
+					],
+					"image_set": [
+						"[FLAG_UNESCAPE][FLAG_LISTIFY_MATCHES](?<=heroImage\").*?(?=accessibility)[FLAG_RECURSE](?<=url\":\").*?(?=\")"
+					],
+					"call_to_action_button_title": [
+						"[FLAG_UNESCAPE](?<=callToActionButtonRenderer\":{\"label\":{\"simpleText\":\").*?(?=\")"
+					],
+					"call_to_action_button_url": [
+						"[FLAG_UNESCAPE]-{https://www.youtube.com}-(?<=callToAction).*$[FLAG_RECURSE](?<=\"webCommandMetadata\":{\"url\":\").*?(?=\")"
+					],
+					"tabulated_results": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=watchCardCompactVideoRenderer).*?(?=watchCardCompactVideoRenderer|}}])"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=title\":{\"simpleText\":\").*?(?=\")"
+						],
+						"subtitle": {
+							"_object": [
+								"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=subtitle\":{\"runs\":\\[).*?(?=\\])[FLAG_RECURSE](?<=\"text\":\").*?(?=\")",
+								"[FLAG_UNESCAPE](?<=\"subtitle\":{\"simpleText\":\").*?(?=\")"
+							],
+							"volatile_time_of_publication": [
+								"[FLAG_FZTIME](?<=• ).*$"
+							],
+							"volatile_number_of_views": [
+								"[FLAG_FZVIEWS]^.*(?=•)"
+							]
+						},
+						"source_url": [
+							"[FLAG_UNESCAPE]-{https://www.youtube.com/watch?v=}-(?<=videoId\":\").*?(?=\")"
+						],
+						"running_time": [
+							"[FLAG_FZDURATION](?<=,\"simpleText\":\").*?(?=\")"
+						]
+					},
+					"tabulated_dropdowns": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=dropdownTitles).*?(?=collapsedLabel|$)"
+						],
+						"title_list": [
+							"[FLAG_UNESCAPE][FLAG_LISTIFY_MATCHES](?<=}},\"simpleText\":\").*?(?=\")"
+						],
+						"subtitle_list": [
+							"[FLAG_UNESCAPE][FLAG_LISTIFY_MATCHES](?<=dropdownSubtitles\":\\[).*$[FLAG_RECURSE](?<=simpleText\":\").*?(?=\")"
+						]
+					},
+					"tabulated_cards": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=horizontalCardListRenderer).*?(?=fusionSearchboxRenderer)[FLAG_RECURSE](?<=\"searchRefinementCardRenderer\").*?(?=\"searchRefinementCardRenderer\"|$)"
+						],
+						"image_thumbnail": [
+							"(?<=thumbnails\":\\[{\"url\":\").*?(?=\")"
+						],
+						"title": [
+							"[FLAG_UNESCAPE][FLAG_CONCATENATE_MATCHES](?<=\"query\":{\"runs\":\\[).*?(?=\\])[FLAG_RECURSE](?<=text\":\").*?(?=\")"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE]-{https://www.youtube.com/watch?v=}-(?<=webCommandMetadata\":{\"url\":\").*?(?=\")"
+						]
+					}
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		},
+		{
+			"platform": "google_news",
+			"url": "https://news.google.com/news/search/section/q/DYNAMIC_OPTIONS_KEYWORD?ned=DYNAMIC_NAVIGATOR_LANGUAGE&hl=DYNAMIC_NAVIGATOR_LANGUAGE",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED]Google Account:"
+				],
+				"topic": {
+					"_object": [
+						"[FLAG_LISTIFY_MATCHES](Jur22e).*?(</div></div>)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=h2(.*)>).*?(?=</h2)"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+					]
+				},
+				"news_results": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=class=\"NiLAwe y6IFtc R7GTQ keNKEd j7vNaf nID9nc\">).*?(?=</article>)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=class=\"DY5T1d RZIKme\">).*?(?=</a>)"
+					],
+					"image_thumbnail": [
+						"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+					],
+					"publisher": [
+						"[FLAG_UNESCAPE](?<=data-n-tid=\"9\">).*?(?=<)"
+					],
+					"time_of_publication": [
+						"[FLAG_FZTIME](?<=datetime=\").*?(?=\")"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+					]
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		},
+		{
+			"platform": "google_search",
+			"url": "https://google.com/search?ned=DYNAMIC_NAVIGATOR_LANGUAGE&hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD",
+			"items": {
+				"logged_in": [
+					"(LOGGED_IN\":true)"
+				],
+				"main_panel": {
+					"_object": [
+						"^.*$"
+					],
+					"result_types": [
+						"[FLAG_LISTIFY_MATCHES](?<=id=\"hdtb-msb\").*?(?=</g-popup>)[FLAG_RECURSE](?<=</span>).*?(?=</a|<div|</div)"
+					],
+					"number_of_results_approximate": [
+						"[FLAG_NUMBER](?<=id=\"result-stats\">).*?(<)"
+					],
+					"seconds_taken_to_load_approximate": [
+						"[FLAG_NUMBER](?<=<nobr>).*?(?=<)[FLAG_RECURSE](?<=\\().*?(?= )"
+					],
+					"module_top_stories": {
+						"_object": [
+							"(?<=<h3 class=\"GmE3X\" aria-level=\"2\" role=\"heading\">Top stories).*?(?=</g-section-with-header>)"
+						],
+						"tabulated_rows": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=EPLo7b).*?(?=</div></div></div></a>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=<a href=\").*?(?=\")"
+							],
+							"publisher": [
+								"(?<=<span class=\"wqg8ad\").*?(?=<)[FLAG_RECURSE](?<=>).*$"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=<a href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=class=\"nDgy9d\").*?(?=</div>)[FLAG_RECURSE](?<=>).*$"
+							],
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=class=\"FGlSad\"><span>).*?(?=<)"
+							],
+							"is_video": [
+								"[FLAG_INDEXED]qB1pae"
+							],
+							"media_thumbnail_url": [
+								"(?<=src=\").*?(?=\")"
+							]
+						},
+						"tabulated_columns": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=eJCXmc).*?(?=</div></div></div></a>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher": [
+								"[FLAG_UNESCAPE](?<=<g-img class=\"T1ohsf\">).*?(?=</g-img>)[FLAG_RECURSE](?<=alt=\").*?(?=\")",
+								"[FLAG_UNESCAPE](?<=g-img><span>).*?(?=<)"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=<div class=\"mCBkyc).*?(?=<)[FLAG_RECURSE](?<=>).*?$"
+							],
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=ecEXdc\"><span>).*?(?=<)"
+							],
+							"is_video": [
+								"[FLAG_INDEXED]qB1pae"
+							],
+							"media_thumbnail_url": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						}
+					},
+					"module_local_news": {
+						"_object": [
+							"(?<=<span class=\"M91Dqf mfMhoc vbr5i\">Local news).*?(?=<script )"
+						],
+						"tabulated_columns": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=jscontroller=\"eJCXmc\").*?(?=</div></a></div>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher": [
+								"[FLAG_UNESCAPE](?<=<g-img class=\"T1ohsf\">).*?(?=</g-img>)[FLAG_RECURSE](?<=alt=\").*?(?=\")",
+								"[FLAG_UNESCAPE](?<=g-img><span>).*?(?=<)"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=role=\"heading\").*?(?=<)[FLAG_RECURSE](?<=>).*?$"
+							],
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=ecEXdc\"><span>).*?(?=</span>)"
+							],
+							"is_video": [
+								"[FLAG_INDEXED]qB1pae"
+							],
+							"media_thumbnail_url": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						}
+					},
+					"module_people_also_ask": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=class=\"g kno-kp mnr-c g-blk\").*?(?=class=\"KFFQ0c xKf9F\")[FLAG_RECURSE](?<=<g-accordion-expander).*?(?=</g-accordion-expander>)"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=jsname=\"xXq91c\").*?(?=<)[FLAG_RECURSE](?<=>).*$"
+						],
+						"arrow_links": [
+							"[FLAG_STRIP_HTML][FLAG_UNESCAPE](?<=<div class=\"TbwUpd NJjxre\">).*?(?=</cite></div>)"
+						],
+						"stripped_html": {
+							"_object": [
+								"[FLAG_UNESCAPE](?<=<div class=\"wDYxhc\").*?(?=<div class=\"VWE0hc\">)[FLAG_RECURSE](?<=\">).*?(?=</div></div>)"
+							],
+							"HTML": [
+								"[FLAG_DYNAMIC_HTML]^.*$"
+							],
+							"source_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"media_thumbnail_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						}
+					},
+					"search_results": {
+						"_object": [
+							"^.*$"
+						],
+						"results_promoted_upper": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=id=\"tads\").*?(?=id=\"res\")[FLAG_RECURSE](?<=uEierd).*?(?=uEierd|$)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=role=\"heading\">).*?(?=<)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"stripped_html": {
+								"_object": [
+									"(?<=MUxGbd yDYNvb lyLwlc\">).*?(?=</div></div></div></div>)"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							}
+						},
+						"results_promoted_lower": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=id=\"bottomads\").*?(?=id=\"botstuff\")[FLAG_RECURSE](?<=uEierd).*?(?=uEierd|$)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=role=\"heading\">).*?(?=<)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"stripped_html": {
+								"_object": [
+									"(?<=MUxGbd yDYNvb lyLwlc\">).*?(?=</div></div></div></div>)"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							}
+						},
+						"results_snippets": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=id=\"search\").*?(?=id=\"bottomads\")[FLAG_RECURSE](?<=Featured snippet from the web).*?(?=class=\"g\")"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=<div>).*(?=<div)"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=Od5Jsd\">)[0-9a-zA-Z ]+(?=<)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=role=\"heading\">).*?(?=</div>)"
+							]
+						},
+						"results_nonpromoted": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=id=\"search\").*?(?=id=\"bottomads\")[FLAG_RECURSE](?<=<div class=\"g tF2Cxc\"|</div><div class=\"g\">|</style><div class=\"g\">|<div class=\"hlcw0c\"><div class=\"g\">|<div class=\"g\" data-hveid=\"C[0-9a-zA-Z]{2}QAA\"><h2).*?(?=<div class=\"g tF2Cxc\"|</div><div class=\"g\">|</style><div class=\"g\">|<div class=\"hlcw0c\"><div class=\"g\">|<div class=\"g\" data-hveid=\"C[0-9a-zA-Z]{2}QAA\"><h2|$)"
+							],
+							"arrow_links": [
+								"[FLAG_STRIP_HTML][FLAG_UNESCAPE](?<=<cite class=\"iUh30 Zu0yb qLRx3b tjvcx\">).*?(?=</cite>)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=<h3 class=\"LC20lb DKV0Md\">).*?(?=</h3>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=IsZvec\">).*?(</g-expandable-container>)",
+									"[FLAG_UNESCAPE](?<=IsZvec\">).*?(?=AUiS2)[FLAG_RECURSE]^.*(?=<)"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=<span class=\"MUxGbd wuQ4Ob WZ8Tjf\">)[a-zA-Z0-9 ]+(?=—)"
+							]
+						}
+					},
+					"module_twitter": {
+						"_object": [
+							"(?<=g eejeod).*?(?=</g-section-with-header>)"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=<cite).*?(?=</cite)[FLAG_RECURSE](?<=>).*$"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=<h3 class=\"NsiYH\">).*?(?=</h3>)"
+						],
+						"tweets": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=dHOsHb nlkcvc).*?(?=dHOsHb nlkcvc|$)"
+							],
+							"image_thumbnail": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							],
+							"stripped_html": {
+								"_object": [
+									"[FLAG_UNESCAPE](?<=xcQxib eadHV NdbWE YBEXSb).*?(?=rmxqbe ol1Lrb)[FLAG_RECURSE](?<=/a>).*?(?=<div)"
+								],
+								"HTML": [
+									"[FLAG_DYNAMIC_HTML]^.*$"
+								],
+								"source_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"media_thumbnail_urls": [
+									"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							},
+							"time_of_publication": [
+								"[FLAG_FZTIME](?<=· </span><span class=\"f\">).*?(?=</span)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=xcQxib eadHV NdbWE YBEXSb).*?(?=rmxqbe ol1Lrb)[FLAG_RECURSE](?<=href=\").*?(?=\")"
+							]
+						}
+					},
+					"module_images": {
+						"_object": [
+							"(?<=LnbJhc).*?(?=</g-section-with-header>)"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=heading\">).*?(?=</)"
+						],
+						"images": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=fWhgmd).*?(?=fWhgmd)"
+							],
+							"image_thumbnail": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							],
+							"source_url": [
+								"-{https://www.google.com}-[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							]
+						}
+					},
+					"module_related_searches": {
+						"_object": [
+							"(?<=\"oIk2Cb\").*?(?=role=\"navigation\")"
+						],
+						"carousels": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=YeThId).*?(?=YeThId|akqY6)"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=iKt1P\">).*?(?=<)",
+								"[FLAG_UNESCAPE](?<=JXa4nd\">).*?(?=class=\"fWhgmd\")[FLAG_RECURSE](?<=alt=\").*?(?=\")"
+							],
+							"cards": {
+								"_i": [
+									"[FLAG_LISTIFY_MATCHES](?<=EASEnb PZPZlf).*?(?=EASEnb PZPZlf|$)",
+									"[FLAG_LISTIFY_MATCHES](?<=<explore-desktop-accordion-list-item).*?(?=</explore-desktop-accordion-list-item)"
+								],
+								"source_url": [
+									"-{https://www.google.com}-[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+								],
+								"title": [
+									"[FLAG_UNESCAPE](?<=title=\").*?(?=\")",
+									"[FLAG_UNESCAPE](?<=alt=\").*?(?=\")"
+								],
+								"image_thumbnail": [
+									"[FLAG_YOUTUBE_URL_CLEAN][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								]
+							}
+						},
+						"related_terms": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES]k8XOCe.*$[FLAG_RECURSE]<a.*?/a"
+							],
+							"HTML": [
+								"[FLAG_UNESCAPE][FLAG_DYNAMIC_HTML](?<=OhScic AB4Wff\">).*?(?=</div)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE]-{https://www.google.com}-(?<=href=\").*?(?=\")"
+							]
+						}
+					},
+					"page_numberings": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=<tbody).*?(?=</tbody)[FLAG_RECURSE](?<=<td).*?(?=</td)"
+						],
+						"term": [
+							"[FLAG_UNESCAPE](?<=span>).*?(?=<|$)"
+						]
+					},
+					"module_video_box": {
+						"suggestions": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES](?<=JWQUPc).*?(?=</g-expandable-container>)[FLAG_RECURSE](?<=<a class=\"PEA9ed\").*?(</a>)"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE]-{https://www.google.com}-(?<=href=\").*?(?=\")"
+							],
+							"title": [
+								"(?<=span aria-label).*(?=</span)[FLAG_RECURSE](?<=>).*$"
+							]
+						},
+						"video": {
+							"_i": [
+								"[FLAG_LISTIFY_MATCHES]\"VibNM\".*?w-debug-content"
+							],
+							"title": [
+								"[FLAG_UNESCAPE](?<=role=\"heading\">).*?(?=<)"
+							],
+							"subtitle": [
+								"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=<cite class=\"hDeAhf\">).*?(?=<div class=\"rjmdhd\")"
+							],
+							"time_of_publication": [
+								"[FLAG_UNESCAPE][FLAG_FZTIME](?<=<div class=\"rjmdhd\"><span>).*?(?=</span></div>)"
+							],
+							"running_time": [
+								"[FLAG_FZDURATION][FLAG_UNESCAPE](?<=<span>).*?(?=</span></div>)"
+							],
+							"image_thumbnail": [
+								"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							],
+							"source_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"publisher_url": [
+								"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+							],
+							"markers": {
+								"_i": [
+									"[FLAG_LISTIFY_MATCHES](?<=<img id=).*?(?=UGzvof BA0A6c|</g-fab>)",
+									"[FLAG_LISTIFY_MATCHES](?<=\"dR4P\").*?(?=dR4P|</g-fab>)"
+								],
+								"image_thumbnail": [
+									"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+								],
+								"at_second": [
+									"[FLAG_FZDURATION](?<=From <span>).*?(?=</)"
+								],
+								"title": [
+									"[FLAG_UNESCAPE](?<=<div class=\"B58ezc\">).*?(?=</)"
+								],
+								"source_url": [
+									"[FLAG_UNESCAPE]-{https://www.google.com}-(?<=ping=\").*?(?=\")"
+								]
+							}
+						}
+					},
+					"module_video_showcase": {
+						"_object": [
+							"wDYxhc NFQFxe.*?</div></div></div></div></div></div></div></div>"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=MMgsKf\">).*?(?=<)"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+						],
+						"subtitle": [
+							"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=tjvcx\">).*?(?=</span>)"
+						],
+						"image_thumbnail": [
+							"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+						],
+						"publisher_url": [
+							"[FLAG_UNESCAPE](?<=href=\").*?(?=\")[FLAG_RECURSE]^(?:https?://)?(?:[^@\n]+@)?(?:www\\.)?([^:/\n?]+)"
+						]
+					},
+					"module_available_outlinks": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES]tpa-cc.*?</table>[FLAG_RECURSE](?<=<tr ).*?(?=</tr)"
+						],
+						"source_url": [
+							"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+						],
+						"publisher": [
+							"[FLAG_UNESCAPE](?<=data-original-name=\").*?(?=\")"
+						]
+					},
+					"module_locations": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=\"C7r6Ue\").*?(?=<style)[FLAG_RECURSE](?<=\"w7Dbne\").*?(?=\"w7Dbne\"|$)"
+						],
+						"image_thumbnail": [
+							"[FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+						],
+						"title": [
+							"[FLAG_UNESCAPE](?<=role=\"heading\"><span>).*?(?=</)"
+						],
+						"stripped_html": {
+							"_object": [
+								"[FLAG_UNESCAPE](?<=lqhpac\">).*?</div>(?=</span>)"
+							],
+							"HTML": [
+								"[FLAG_DYNAMIC_HTML]^.*$"
+							],
+							"source_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+							],
+							"media_thumbnail_urls": [
+								"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+							]
+						}
+					}
+				},
+				"side_panel": {
+					"_object": [
+						"(?<=\"TQc1id hSOk2e rhstc4\").*?(?=id=\"bfoot\")"
+					],
+					"is_requesting_claimer": [
+						"[FLAG_INDEXED]jleFbf"
+					],
+					"source_url": [
+						"[FLAG_UNESCAPE]visit_official_site.*?</a>[FLAG_RECURSE](?<=href=\").*?(?=\")"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=h2).*?(?=</h2)[FLAG_RECURSE](?<=\">).*$"
+					],
+					"subtitle": [
+						"(?<=\"wwUB2c PZPZlf\").*?(?=</div)[FLAG_RECURSE](?<=\">).*?(?=</span>)[FLAG_RECURSE](?<=\">).*?$"
+					],
+					"stripped_htmls": {
+						"_i": [
+							"[FLAG_LISTIFY_MATCHES](?<=<div class=\"UDZeY OTFaAf\">).*?(?=</div></div></div></div>|<div class=\"UDZeY OTFaAf\">|$)"
+						],
+						"HTML": [
+							"[FLAG_DYNAMIC_HTML]^.*$"
+						],
+						"source_urls": [
+							"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+						],
+						"media_thumbnail_urls": [
+							"[FLAG_LISTIFY_MATCHES][FLAG_UNESCAPE](?<=src=\").*?(?=\")"
+						]
+					}
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		},
+		{
+			"platform": "google_videos",
+			"url": "https://www.google.com/search?tbm=vid&q=DYNAMIC_OPTIONS_KEYWORD",
+			"items": {
+				"logged_in": [
+					"[FLAG_INDEXED]Google Account:"
+				],
+				"suggestions": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=qfpP8d h3yRU).*?(?=qfpP8d h3yRU|$)"
+					],
+					"title": [
+						"[FLAG_STRIP_HTML](?<=<div class=\"AB4Jjf qPB6Vc\">).*?(?=</span>)"
+					],
+					"image_thumbnail": [
+						"(?<=src=\").*?(?=\")"
+					]
+				},
+				"number_of_results_approximate": [
+					"[FLAG_NUMBER](?<=id=\"result-stats\">).*?(<)"
+				],
+				"seconds_taken_to_load_approximate": [
+					"[FLAG_NUMBER](?<=<nobr>).*?(?=<)[FLAG_RECURSE](?<=\\().*?(?= )"
+				],
+				"tabulated_results": {
+					"_i": [
+						"[FLAG_LISTIFY_MATCHES](?<=<div class=\"g\">).*?(?=<div class=\"g\">|$)"
+					],
+					"header_link_object": {
+						"_object": [
+							"(?<=class=\"fl iUh30\").*?(?=</a>)"
+						],
+						"title": [
+							"(?<=<span>).*?(?=</span>)"
+						],
+						"header_url": [
+							"[FLAG_UNESCAPE](?<=href=\").*?(?=\")"
+						]
+					},
+					"publisher_url": [
+						"(?<=<cite class=\"iUh30 Zu0yb qLRx3b tjvcx\">).*?(?=<)"
+					],
+					"arrow_links": [
+						"[FLAG_STRIP_HTML](?<=<div class=\"TbwUpd\">).*?(?=</span)"
+					],
+					"title": [
+						"[FLAG_UNESCAPE](?<=<h3 class=\"LC20lb DKV0Md\">).*?(?=<)"
+					],
+					"source_url": [
+						"(?<=<a href=\").*?(?=\")"
+					],
+					"text": [
+						"[FLAG_UNESCAPE][FLAG_STRIP_HTML](?<=<span class=\"aCOpRe\"><span>).*?(?=</span>)"
+					],
+					"subtitle": {
+						"_object": [
+							"[FLAG_STRIP_HTML](?<=<div class=\"fG8Fp uo4vr\">).*?(?=</span></div>)"
+						],
+						"time_of_publication": [
+							"[FLAG_FZTIME]^.*(?= ·)"
+						],
+						"publisher": [
+							"[FLAG_UNESCAPE](?<=· Uploaded by ).*$"
+						]
+					},
+					"running_time": [
+						"[FLAG_FZDURATION](?<=<div class=\"ij69rd UHe5G\">).*?(?=<)"
+					],
+					"image_thumbnail": [
+						"(?<=src=\").*?(?=\")"
+					]
+				},
+				"_raw_HTML": [
+					"^.*$"
+				]
+			}
+		}
+	]
+}

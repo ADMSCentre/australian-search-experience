@@ -1,0 +1,86 @@
+[
+	{
+		"description": "The ID of this Google Videos tabulated result.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the batch of search results to which this Google Videos result belongs.",
+	    "mode": "REQUIRED",
+	    "name": "base_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The URL of the publishing organisation/individual's website for this Google Videos search result.",
+	    "mode": "NULLABLE",
+	    "name": "publisher_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The title of this Google Videos search result.",
+	    "mode": "NULLABLE",
+	    "name": "title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The duration (in seconds) of this Google Videos search result.",
+	    "mode": "NULLABLE",
+	    "name": "running_time",
+	    "type": "INT64"
+	},
+	{
+		"description": "The image (either as a URL or Base64 string) of this Google Videos search result.",
+	    "mode": "NULLABLE",
+	    "name": "image_thumbnail",
+	    "type": "STRING"
+	},
+	{
+		"description": "The source URL of this Google Videos search result.",
+	    "mode": "NULLABLE",
+	    "name": "source_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The date that this Google Videos search result was published to the responsible publisher's website.",
+	    "mode": "NULLABLE",
+	    "name": "subtitle_time_of_publication",
+	    "type": "DATETIME"
+	},
+	{
+		"description": "The title of the publisher of this Google Videos search result.",
+	    "mode": "NULLABLE",
+	    "name": "subtitle_publisher",
+	    "type": "STRING"
+	},
+	{
+		"description": "The title in the header of the Google Videos search result (desktop browsers only).",
+	    "mode": "NULLABLE",
+	    "name": "header_link_object_title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The URL in the header of the Google Videos search result (desktop browsers only).",
+	    "mode": "NULLABLE",
+	    "name": "header_link_object_header_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The 'arrow links' description in the header of the Google Videos search result (desktop browsers only).",
+	    "mode": "NULLABLE",
+	    "name": "arrow_links",
+	    "type": "STRING"
+	},
+	{
+		"description": "The description text of the Google Videos search result (desktop browsers only).",
+	    "mode": "NULLABLE",
+	    "name": "text",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list index of the video result.",
+	    "mode": "REQUIRED",
+	    "name": "list_index",
+	    "type": "INT64"
+	}
+]

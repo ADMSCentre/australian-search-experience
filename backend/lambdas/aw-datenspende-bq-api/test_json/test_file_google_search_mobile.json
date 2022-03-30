@@ -1,0 +1,394 @@
+{
+  "version": "1.1.4.0",
+  "hash_key": "6drn38x7v9q0lb51wd6po3cj6we3j3gz",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "browser": "chrome",
+  "keyword": "Black Lives Matter",
+  "interface": "mobile_galaxyS5",
+  "platform": "google_search",
+  "plugin_id": "vrqhat5b6ic890h8jgsrg7kwnht1wnj9",
+  "time_of_retrieval": 1626395352,
+  "localisation": "en-GB",
+  "data": {
+    "logged_in": true,
+    "main_panel": {
+      "module_available_outlinks": [
+        {
+          "source_url" : "123",
+          "publisher" : "456"
+        }
+      ],
+      "module_images": [
+        {
+          "image_thumbnail" : "abc",
+          "source_url" : "123"
+        }
+      ],
+      "module_people_also_ask": [
+        {
+          "title" : "123",
+          "arrow_links" : "123",
+          "stripped_html": {
+            "HTML": "<g-image-section><g-link><a href><img src><span><svg><path></path></svg></span></a></g-link></g-image-section><g-card-section><a href></a>#BlackLivesMatter is more than a love letter. And that’s thanks to y’all.Happy 8 year anniversary, family. To the generations that came before us, and those we have yet to meet...#BLMAnniversary <span>Twitter</span><span> · </span><span>2 days ago</span>",
+            "media_thumbnail_urls": [
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGGSN2RNPzhRMD_22rIhALZ7qdeuKMT_Hg4_1LEHI76GXEWi9xOvMwGzyBa6WRGMaF1WUz_7p&usqp=CAQ&s=10"
+            ],
+            "source_urls": [
+              "https://twitter.com/Blklivesmatter/status/1415119612140691457?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+              "https://twitter.com/Blklivesmatter/status/1415119612140691457?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+            ]
+          }
+        }
+      ],
+      "module_people_also_search_for": {
+        "people" : [
+          {
+            "title" : "123",
+            "image_thumbnail" : "456"
+          }
+        ],
+        "tabulated_rows" : [
+          {
+            "title" : "123",
+            "stripped_html": {
+              "HTML": "<g-image-section><g-link><a href><img src><span><svg><path></path></svg></span></a></g-link></g-image-section><g-card-section><a href></a>#BlackLivesMatter is more than a love letter. And that’s thanks to y’all.Happy 8 year anniversary, family. To the generations that came before us, and those we have yet to meet...#BLMAnniversary <span>Twitter</span><span> · </span><span>2 days ago</span>",
+              "media_thumbnail_urls": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGGSN2RNPzhRMD_22rIhALZ7qdeuKMT_Hg4_1LEHI76GXEWi9xOvMwGzyBa6WRGMaF1WUz_7p&usqp=CAQ&s=10"
+              ],
+              "source_urls": [
+                "https://twitter.com/Blklivesmatter/status/1415119612140691457?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+                "https://twitter.com/Blklivesmatter/status/1415119612140691457?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+              ]
+            }
+          }
+        ]
+      },
+      "module_related_searches": {
+        "tabulated_rows" : [
+          {
+            "title" : "123"
+          }
+        ]
+      },
+      "module_top_stories": [
+        {
+          "tabulated_columns" : [
+            {
+              "source_url" : "123",
+              "publisher" : "abc",
+              "publisher_url" : "123",
+              "title" : "123",
+              "time_of_publication" : "2021-07-14 00:29:12",
+              "is_video" : true,
+              "media_thumbnail_url" : "123"
+
+            }
+          ]
+        }
+      ],
+      "module_twitter": {
+        "column_tweets": [
+          {
+            "source_url": "https://twitter.com/Blklivesmatter/status/1415119612140691457?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "stripped_html": {
+              "HTML": "<g-image-section><g-link><a href><img src><span><svg><path></path></svg></span></a></g-link></g-image-section><g-card-section><a href></a>#BlackLivesMatter is more than a love letter. And that’s thanks to y’all.Happy 8 year anniversary, family. To the generations that came before us, and those we have yet to meet...#BLMAnniversary <span>Twitter</span><span> · </span><span>2 days ago</span>",
+              "media_thumbnail_urls": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGGSN2RNPzhRMD_22rIhALZ7qdeuKMT_Hg4_1LEHI76GXEWi9xOvMwGzyBa6WRGMaF1WUz_7p&usqp=CAQ&s=10"
+              ],
+              "source_urls": [
+                "https://twitter.com/Blklivesmatter/status/1415119612140691457?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+                "https://twitter.com/Blklivesmatter/status/1415119612140691457?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+              ]
+            },
+            "time_of_publication": "2021-07-14 00:29:12"
+          },
+          {
+            "source_url": "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "stripped_html": {
+              "HTML": "<g-image-section><g-link><a href><img src><img src></a></g-link></g-image-section><g-card-section><a href></a>8 years ago today, #BlackLivesMatter was put into the digital world. After generations of rage, pain, love, and abolitionists. We don't just want Black lives to matter. We want to thrive...To 8 years of #BLM—thank you family.#BLMAnniversary <span>Twitter</span><span> · </span><span>2 days ago</span>",
+              "media_thumbnail_urls": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhzegQysYmGPNvYGS3zP0A2Ag20-b6AaxXQ99N3NTtFSnKwXoADqlg_EYLOZ60nw4cMFfGyM&usqp=CAQ&s=10",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt6fxaxNcT0x9Izh_U3MF8_Ccmd0luftbMWk0ocHpLk7WjVLR6jsGAqKgtdsdBl9VGoMUOd8U&usqp=CAQ&s=10"
+              ],
+              "source_urls": [
+                "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+                "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+              ]
+            },
+            "time_of_publication": "2021-07-14 00:29:12"
+          },
+          {
+            "source_url": "https://twitter.com/Blklivesmatter/status/1414964048651722752?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "stripped_html": {
+              "HTML": "<g-card-section><a href></a>#BlackLivesMatter<span>Twitter</span><span> · </span><span>2 days ago</span>",
+              "media_thumbnail_urls": null,
+              "source_urls": [
+                "https://twitter.com/Blklivesmatter/status/1414964048651722752?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+              ]
+            },
+            "time_of_publication": "2021-07-14 00:29:12"
+          }
+        ],
+        "image_thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUbGWK7rTu1doXIAD320Nf1gfdWn072ZgOU-DKKdBEVbaXZlNQ9UHU&usqp=CAQ&s=10",
+        "row_tweets": [
+          {
+            "source_url": "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "stripped_html": {
+              "HTML": "<g-image-section><g-link><a href><img src><img src></a></g-link></g-image-section><g-card-section><a href></a>8 years ago today, #BlackLivesMatter was put into the digital world. After generations of rage, pain, love, and abolitionists. We don't just want Black lives to matter. We want to thrive...To 8 years of #BLM—thank you family.#BLMAnniversary <span>Twitter</span><span> · </span><span>2 days ago</span>",
+              "media_thumbnail_urls": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhzegQysYmGPNvYGS3zP0A2Ag20-b6AaxXQ99N3NTtFSnKwXoADqlg_EYLOZ60nw4cMFfGyM&usqp=CAQ&s=10",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt6fxaxNcT0x9Izh_U3MF8_Ccmd0luftbMWk0ocHpLk7WjVLR6jsGAqKgtdsdBl9VGoMUOd8U&usqp=CAQ&s=10"
+              ],
+              "source_urls": [
+                "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+                "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+              ]
+            },
+            "image_thumbnail" : "abc",
+            "time_of_publication": "2021-07-14 00:29:12"
+          }
+        ],
+        "source_url": "https://twitter.com/Blklivesmatter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+        "title": "Black Lives Matter"
+      },
+      "module_video_box": {
+        "video": [
+          {
+            "title" : "123",
+            "time_of_publication" : "2021-07-14 00:29:12",
+            "running_time" : 123,
+            "image_thumbnail" : "456",
+            "source_url" : "123",
+            "publisher_url" : "123"
+          }
+        ]
+      },
+      "result_types": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g"
+      ],
+      "search_results": {
+        "results_nonpromoted": [
+          {
+            "arrow_links": "https://blacklivesmatter.com",
+            "publisher_url": "https://blacklivesmatter.com",
+            "source_url": "https://blacklivesmatter.com/",
+            "stripped_html": {
+              "HTML": "The official #BlackLivesMatter Global Network builds power to bring justice, healing, and freedom to Black people across the globe.<g-scrolling-carousel><a href>About</a><a href>Herstory</a><a href>Building a Free Black Future</a><a href>News</a><a href>BLM Demands</a><a href>Shop</a><a href>Global Actions</a></g-scrolling-carousel>",
+              "media_thumbnail_urls": null,
+              "source_urls": [
+                "https://blacklivesmatter.com/about/",
+                "https://blacklivesmatter.com/herstory/",
+                "https://blacklivesmatter.com/building-a-free-black-future/",
+                "https://blacklivesmatter.com/news/",
+                "https://blacklivesmatter.com/blm-demands/",
+                "https://store.blacklivesmatter.com/",
+                "https://blacklivesmatter.com/global-actions/"
+              ]
+            },
+            "time_of_publication": null,
+            "title": "Black Lives Matter: Home"
+          },
+          {
+            "arrow_links": "www.nytimes.com",
+            "publisher_url": "https://www.nytimes.com",
+            "source_url": "https://www.nytimes.com/interactive/2020/07/03/us/george-floyd-protests-crowd-size.html",
+            "stripped_html": {
+              "HTML": "<span>3 July 2020 — </span>The recent Black Lives Matter protests peaked on June 6, when half a million people turned out in nearly 550 places across the United States. That was a single day in more than a&nbsp;...People also search for<a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><span></span>",
+              "media_thumbnail_urls": null,
+              "source_urls": null
+            },
+            "time_of_publication": "2020-07-02 14:00:00",
+            "title": "Black Lives Matter May Be the Largest Movement in U.S. History"
+          },
+          {
+            "arrow_links": "https://en.m.wikipedia.org › wiki",
+            "publisher_url": "https://en.m.wikipedia.org",
+            "source_url": "https://en.m.wikipedia.org/wiki/Black_Lives_Matter",
+            "stripped_html": {
+              "HTML": "Black Lives Matter (BLM) is a decentralized political and social movement protesting against incidents of police brutality and all racially motivated violence against black people. While there are specific&nbsp;...<g-scrolling-carousel><a href>Black Lives Matter Global</a><a href>Black Lives Matter Plaza</a><a href>List of Black Lives Matter street...</a><a href>Movement for Black Lives</a><a href>Patrisse Cullors</a><a href>Alicia Garza</a><a href>Opal Tometi</a></g-scrolling-carousel>",
+              "media_thumbnail_urls": null,
+              "source_urls": [
+                "https://en.wikipedia.org/wiki/Black_Lives_Matter_Global_Network_Foundation",
+                "https://en.wikipedia.org/wiki/Black_Lives_Matter_Plaza",
+                "https://en.wikipedia.org/wiki/List_of_Black_Lives_Matter_street_murals",
+                "https://en.wikipedia.org/wiki/Movement_for_Black_Lives",
+                "https://en.wikipedia.org/wiki/Patrisse_Cullors",
+                "https://en.wikipedia.org/wiki/Alicia_Garza",
+                "https://en.wikipedia.org/wiki/Opal_Tometi"
+              ]
+            },
+            "time_of_publication": null,
+            "title": "Black Lives Matter - Wikipedia"
+          },
+          {
+            "arrow_links": "https://www.theguardian.com › world",
+            "publisher_url": "https://www.theguardian.com",
+            "source_url": "https://www.theguardian.com/world/black-lives-matter-movement",
+            "stripped_html": {
+              "HTML": "Football Weekly From the archive: Black Lives Matter and tackling racism – Football Weekly. In June of last year, Max Rushden, Troy Townsend, Elliot Ross and Jordan Jarrett-Bryan discussed how&nbsp;...People also search for<a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><span></span>",
+              "media_thumbnail_urls": null,
+              "source_urls": null
+            },
+            "time_of_publication": null,
+            "title": "Black Lives Matter movement | World | The Guardian"
+          },
+          {
+            "arrow_links": "Instagram app · Installed",
+            "publisher_url": "https://www.instagram.com",
+            "source_url": "https://www.instagram.com/blklivesmatter/?hl=en",
+            "stripped_html": {},
+            "time_of_publication": null,
+            "title": null
+          },
+          {
+            "arrow_links": "Spotify app · Installed",
+            "publisher_url": "https://open.spotify.com",
+            "source_url": "https://open.spotify.com/playlist/37i9dQZF1DWWAqc46ZJdZf",
+            "stripped_html": {},
+            "time_of_publication": null,
+            "title": null
+          },
+          {
+            "arrow_links": "www.bbc.com",
+            "publisher_url": "https://www.bbc.com",
+            "source_url": "https://www.bbc.com/news/explainers-53337780.amp",
+            "stripped_html": {
+              "HTML": "<span>12 June 2021 — </span>Black Lives Matter is a phrase, and notably a hashtag, used to highlight racism, discrimination and inequality experienced by black people. Its use grew in the US after high-&nbsp;...People also search for<a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><span></span>",
+              "media_thumbnail_urls": null,
+              "source_urls": null
+            },
+            "time_of_publication": "2021-06-11 14:00:00",
+            "title": "What is Black Lives Matter and what are the aims?"
+          },
+          {
+            "arrow_links": "https://theconversation.com › topics",
+            "publisher_url": "https://theconversation.com",
+            "source_url": "https://theconversation.com/au/topics/black-lives-matter-everywhere-44608",
+            "stripped_html": {
+              "HTML": "Black Lives Matter is a revolutionary peace movement ... The peace and justice Black Lives Matter seeks require a fundamental transformation of a system that preys on and benefits from Black suffering.People also search for<a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><span></span>",
+              "media_thumbnail_urls": null,
+              "source_urls": null
+            },
+            "time_of_publication": null,
+            "title": "Black Lives Matter Everywhere – News, Research and Analysis – The Conversation – page 1"
+          },
+          {
+            "arrow_links": "https://www.aljazeera.com › tag › bl...",
+            "publisher_url": "https://www.aljazeera.com",
+            "source_url": "https://www.aljazeera.com/tag/black-lives-matter/",
+            "stripped_html": {
+              "HTML": "Stay on top of Black Lives Matter latest developments on the ground with Al Jazeera's fact-based news, exclusive video footage, photos and updated maps.People also search for<a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><span></span>",
+              "media_thumbnail_urls": null,
+              "source_urls": null
+            },
+            "time_of_publication": null,
+            "title": "Black Lives Matter | Today's latest from Al Jazeera"
+          }
+        ],
+        "results_promoted_lower": [
+          {
+            "publisher_url": "https://www.aljazeera.com",
+            "source_url": "https://www.aljazeera.com/tag/black-lives-matter/",
+            "stripped_html": {
+              "HTML": "<g-image-section><g-link><a href><img src><img src></a></g-link></g-image-section><g-card-section><a href></a>8 years ago today, #BlackLivesMatter was put into the digital world. After generations of rage, pain, love, and abolitionists. We don't just want Black lives to matter. We want to thrive...To 8 years of #BLM—thank you family.#BLMAnniversary <span>Twitter</span><span> · </span><span>2 days ago</span>",
+              "media_thumbnail_urls": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhzegQysYmGPNvYGS3zP0A2Ag20-b6AaxXQ99N3NTtFSnKwXoADqlg_EYLOZ60nw4cMFfGyM&usqp=CAQ&s=10",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt6fxaxNcT0x9Izh_U3MF8_Ccmd0luftbMWk0ocHpLk7WjVLR6jsGAqKgtdsdBl9VGoMUOd8U&usqp=CAQ&s=10"
+              ],
+              "source_urls": [
+                "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+                "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+              ]
+            },
+            "title": "Black Lives Matter | Today's latest from Al Jazeera"
+          }
+        ],
+        "results_promoted_upper": [
+          {
+            "publisher_url": "https://www.aljazeera.com",
+            "source_url": "https://www.aljazeera.com/tag/black-lives-matter/",
+            "stripped_html": {
+              "HTML": "<g-image-section><g-link><a href><img src><img src></a></g-link></g-image-section><g-card-section><a href></a>8 years ago today, #BlackLivesMatter was put into the digital world. After generations of rage, pain, love, and abolitionists. We don't just want Black lives to matter. We want to thrive...To 8 years of #BLM—thank you family.#BLMAnniversary <span>Twitter</span><span> · </span><span>2 days ago</span>",
+              "media_thumbnail_urls": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhzegQysYmGPNvYGS3zP0A2Ag20-b6AaxXQ99N3NTtFSnKwXoADqlg_EYLOZ60nw4cMFfGyM&usqp=CAQ&s=10",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt6fxaxNcT0x9Izh_U3MF8_Ccmd0luftbMWk0ocHpLk7WjVLR6jsGAqKgtdsdBl9VGoMUOd8U&usqp=CAQ&s=10"
+              ],
+              "source_urls": [
+                "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+                "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+              ]
+            },
+            "title": "Black Lives Matter | Today's latest from Al Jazeera"
+          }
+        ],
+        "results_snippets": [
+          {
+            "stripped_html": {
+              "HTML": "<g-image-section><g-link><a href><img src><img src></a></g-link></g-image-section><g-card-section><a href></a>8 years ago today, #BlackLivesMatter was put into the digital world. After generations of rage, pain, love, and abolitionists. We don't just want Black lives to matter. We want to thrive...To 8 years of #BLM—thank you family.#BLMAnniversary <span>Twitter</span><span> · </span><span>2 days ago</span>",
+              "media_thumbnail_urls": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhzegQysYmGPNvYGS3zP0A2Ag20-b6AaxXQ99N3NTtFSnKwXoADqlg_EYLOZ60nw4cMFfGyM&usqp=CAQ&s=10",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt6fxaxNcT0x9Izh_U3MF8_Ccmd0luftbMWk0ocHpLk7WjVLR6jsGAqKgtdsdBl9VGoMUOd8U&usqp=CAQ&s=10"
+              ],
+              "source_urls": [
+                "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+                "https://twitter.com/Blklivesmatter/status/1415001168216920067?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+              ]
+            },
+            "time_of_publication": "2021-06-11 14:00:00",
+            "title": "hi"
+          }
+        ]
+      }
+    },
+    "side_panel": {
+      "side_panel_lower": {
+        "is_requesting_claimer": false,
+        "source_url": "https://en.m.wikipedia.org/wiki/Black_Lives_Matter",
+        "stripped_html_primary": {
+          "HTML": "<h>Description</h><span>Black Lives Matter is a decentralized political and social movement protesting against incidents of police brutality and all racially motivated violence against black people.</span><span><span> </span><a href>Wikipedia</a></span>",
+          "media_thumbnail_urls": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhzegQysYmGPNvYGS3zP0A2Ag20-b6AaxXQ99N3NTtFSnKwXoADqlg_EYLOZ60nw4cMFfGyM&usqp=CAQ&s=10",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt6fxaxNcT0x9Izh_U3MF8_Ccmd0luftbMWk0ocHpLk7WjVLR6jsGAqKgtdsdBl9VGoMUOd8U&usqp=CAQ&s=10"
+          ],
+          "source_urls": [
+            "https://en.m.wikipedia.org/wiki/Black_Lives_Matter"
+          ]
+        },
+        "stripped_html_secondaries": [
+          {
+            "HTML": "<h>Description</h><span>Black Lives Matter is a decentralized political and social movement protesting against incidents of police brutality and all racially motivated violence against black people.</span><span><span> </span><a href>Wikipedia</a></span>",
+            "media_thumbnail_urls": [
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhzegQysYmGPNvYGS3zP0A2Ag20-b6AaxXQ99N3NTtFSnKwXoADqlg_EYLOZ60nw4cMFfGyM&usqp=CAQ&s=10",
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt6fxaxNcT0x9Izh_U3MF8_Ccmd0luftbMWk0ocHpLk7WjVLR6jsGAqKgtdsdBl9VGoMUOd8U&usqp=CAQ&s=10"
+            ],
+            "source_urls": [
+              "https://en.m.wikipedia.org/wiki/Black_Lives_Matter"
+            ]
+          },
+          {
+            "HTML": "<h>Description</h><span>Black Lives Matter is a decentralized political and social movement protesting against incidents of police brutality and all racially motivated violence against black people.</span><span><span> </span><a href>Wikipedia</a></span>",
+            "media_thumbnail_urls": [
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhzegQysYmGPNvYGS3zP0A2Ag20-b6AaxXQ99N3NTtFSnKwXoADqlg_EYLOZ60nw4cMFfGyM&usqp=CAQ&s=10",
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt6fxaxNcT0x9Izh_U3MF8_Ccmd0luftbMWk0ocHpLk7WjVLR6jsGAqKgtdsdBl9VGoMUOd8U&usqp=CAQ&s=10"
+            ],
+            "source_urls": [
+              "https://en.m.wikipedia.org/wiki/Black_Lives_Matter"
+            ]
+          }
+        ]
+      },
+      "side_panel_upper": {
+        "image_thumbnail": "123",
+        "subtitle": "456",
+        "title": "Black Lives Matter"
+      }
+    }
+  },
+  "event": "collection"
+}

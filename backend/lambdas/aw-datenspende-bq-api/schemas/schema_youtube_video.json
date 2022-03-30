@@ -1,0 +1,104 @@
+[
+	{
+		"description": "The ID for this Youtube video result.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the Youtube base instance to which this video result belongs.",
+	    "mode": "REQUIRED",
+	    "name": "base_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The index of this result within the list of results.",
+	    "mode": "REQUIRED",
+	    "name": "list_index",
+	    "type": "INT64"
+	},
+	{
+		"description": "The title of this Youtube video result.",
+	    "mode": "NULLABLE",
+	    "name": "title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The text that corresponds to this Youtube video result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "text",
+	    "type": "STRING"
+	},
+	{
+		"description": "The publisher of this Youtube video result.",
+	    "mode": "NULLABLE",
+	    "name": "publisher",
+	    "type": "STRING"
+	},
+	{
+		"description": "The URL of the publisher of this Youtube video result.",
+	    "mode": "NULLABLE",
+	    "name": "publisher_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The time of publication of this Youtube video result.",
+	    "mode": "NULLABLE",
+	    "name": "time_of_publication",
+	    "type": "DATETIME"
+	},
+	{
+		"description": "The source URL of this Youtube video result.",
+	    "mode": "NULLABLE",
+	    "name": "source_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The running time (in seconds) of this Youtube video result.",
+	    "mode": "NULLABLE",
+	    "name": "running_time",
+	    "type": "INT64"
+	},
+	{
+		"description": "The image (either as a URL or Base64 string) that corresponds to this Youtube video result.",
+	    "mode": "NULLABLE",
+	    "name": "image_thumbnail",
+	    "type": "STRING"
+	},
+	{
+		"description": "The number of views for this Youtube video result.",
+	    "mode": "NULLABLE",
+	    "name": "number_of_views",
+	    "type": "INT64"
+	},
+	{
+		"description": "Whether or not this Youtube video result was published by a verified Youtube publisher.",
+	    "mode": "NULLABLE",
+	    "name": "publisher_verified",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this Youtube video result has the 'closed captions' badge.",
+	    "mode": "NULLABLE",
+	    "name": "badge_closed_captions",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this Youtube video result has the 'newly added video' badge (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_new_video",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this Youtube video result has the '4K resolution' badge (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_4k_resolution",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this Youtube video result has the 'official artist' badge (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_artist",
+	    "type": "BOOLEAN"
+	}
+]

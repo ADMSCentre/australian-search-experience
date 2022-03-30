@@ -1,0 +1,56 @@
+[
+	{
+		"description": "The ID for this Youtube channel result.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the Youtube base instance to which this channel result belongs.",
+	    "mode": "REQUIRED",
+	    "name": "base_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The index of this result within the list of results.",
+	    "mode": "REQUIRED",
+	    "name": "list_index",
+	    "type": "INT64"
+	},
+	{
+		"description": "The publisher of this Youtube channel result.",
+	    "mode": "NULLABLE",
+	    "name": "publisher",
+	    "type": "STRING"
+	},
+	{
+		"description": "The image (either as a URL or Base64 string) of this Youtube channel result.",
+	    "mode": "NULLABLE",
+	    "name": "image_thumbnail",
+	    "type": "STRING"
+	},
+	{
+		"description": "Whether or not this Youtube channel result has the Youtube 'verified publisher' badge.",
+	    "mode": "NULLABLE",
+	    "name": "publisher_verified",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "The number of Youtube users who have subscribed to this Youtube channel result.",
+	    "mode": "NULLABLE",
+	    "name": "number_of_subscribers",
+	    "type": "INT64"
+	},
+	{
+		"description": "The number of videos published on this Youtube channel result.",
+	    "mode": "NULLABLE",
+	    "name": "number_of_published_videos",
+	    "type": "INT64"
+	},
+	{
+		"description": "The text blurb presented for this Youtube channel result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "text",
+	    "type": "STRING"
+	}
+]

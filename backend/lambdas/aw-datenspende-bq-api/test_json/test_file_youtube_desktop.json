@@ -1,0 +1,250 @@
+{
+   "version": "1.1.4.3",
+   "hash_key": "9tt0e695z1uohxy2e2126rpu9ledqmnk",
+   "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36",
+   "browser": "chrome",
+   "keyword": "Travel rules",
+   "interface": "desktop",
+   "platform": "youtube",
+   "plugin_id": "b7bhmtcuy3fo540lpll29yrjp5660fb8",
+   "time_of_retrieval": 1626851848,
+   "localisation": "en-US",
+   "data": {
+      "compact_result_object": {
+         "title": "a",
+         "subtitle": "b",
+         "badge_paid_item": false,
+         "image_thumbnail": "c",
+         "image_set": ["d", "e", "f"],
+         "call_to_action_button_title": "g",
+         "call_to_action_button_url": "h",
+         "tabulated_results": [
+            {
+               "title": "i",
+               "subtitle": {
+                  "volatile_time_of_publication": "2021-07-18 07:17:28",
+                  "volatile_number_of_views": 123
+               },
+               "source_url": "k",
+               "running_time": 240
+            }
+         ],
+         "tabulated_dropdowns": [
+            {
+               "title_list": ["l","m","n"],
+               "subtitle_list": ["o","p","q"]
+            }
+         ],
+         "tabulated_cards": [
+            {
+               "image_thumbnail": "r",
+               "title": "s",
+               "source_url": "t"
+            }
+         ]
+         
+      },
+      "logged_in": true,
+      "order_of_results": [
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "shelfRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "shelfRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "shelfRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer",
+         "videoRenderer"
+      ],
+      "tabulated_channels": [
+         {
+            "publisher": "u",
+            "image_thumbnail": "v",
+            "publisher_verified": false,
+            "number_of_subscribers": 100,
+            "number_of_published_videos": 200,
+            "text": "w"
+         }
+      ],
+      "tabulated_movies": [
+         {
+            "title": "x",
+            "metadata_a": "y",
+            "metadata_b": "z",
+            "source_url": "a",
+            "publisher": "b",
+            "running_time": 250,
+            "time_of_publication": "2021-07-18 07:17:28",
+            "image_thumbnail": "d",
+            "number_of_views": null,
+            "byline": "e",
+            "publisher_verified": false,
+            "badge_closed_captions": false,
+            "badge_new_video": false,
+            "badge_4k_resolution": false,
+            "badge_artist": false
+         }
+      ],
+      "tabulated_people_also_search_for": [
+         {
+            "image_thumbnail": "f",
+            "title": "g",
+            "link_url": "h"
+         }
+      ],
+      "tabulated_playlists": [
+         {
+            "title": "i",
+            "source_url": "j",
+            "publisher": "k",
+            "publisher_url": "l",
+            "image_thumbnail": "m",
+            "time_of_publication": "2021-07-18 07:17:28",
+            "number_of_videos": 123,
+            "playlist_showcase_items": [
+               {
+               "title": "o",
+               "source_url": "p",
+               "running_time": 123
+               }
+            ]
+         }
+      ],
+      "tabulated_promotions_in_results": [
+         {
+            "title": "a",
+            "text": "b",
+            "publisher": "c",
+            "publisher_url": "d",
+            "time_of_publication": "2021-07-18 07:17:28",
+            "source_url": "this_is_a_source_url",
+            "running_time": 240,
+            "image_thumbnail": "",
+            "number_of_views": 432,
+            "publisher_verified": false,
+            "badge_closed_captions": false,
+            "badge_4k_resolution": false,
+            "badge_new_video": false,
+            "badge_artist": false
+         }
+      ],
+      "tabulated_promotions_over_results": [
+         {
+            "title": "a",
+            "text": "b",
+            "website_url": "c",
+            "call_to_action_button_title": "d",
+            "call_to_action_button_url": "e",
+            "links_list_titles": ["f","h","i"],
+            "links_list_urls": ["g","j","k"]
+         }
+      ],
+      "tabulated_promotions_top_shelf": [
+         {
+            "title": "l",
+            "image_thumbnail": "m",
+            "sub_text_a": "n",
+            "sub_text_b": "o",
+            "link_url": "p"
+         }
+      ],
+      "tabulated_shelves": [
+         {
+            "title": "Learn while you're at home"
+         },
+         {
+            "title": "People also watched"
+         },
+         {
+            "title": "For you"
+         }
+      ],
+      "tabulated_videos": [
+         {
+            "badge_4k_resolution": false,
+            "badge_artist": false,
+            "badge_closed_captions": false,
+            "badge_new_video": true,
+            "image_thumbnail": "https://i.ytimg.com/vi/sGMAB7Wm4ew/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCpb751Ggn8qigc7pvKrHBFy4Jpjg",
+            "number_of_views": 48134,
+            "publisher": "Sky News",
+            "publisher_url": "https://www.youtube.com/user/skynews",
+            "publisher_verified": true,
+            "running_time": 164,
+            "source_url": "https://www.youtube.com/watch?v=sGMAB7Wm4ew",
+            "text": "The government says the Beta variant is the cause for recent travel restrictions imposed on travel between England and France.",
+            "time_of_publication": "2021-07-18 07:17:28",
+            "title": "COVID-19:  France restrictions bring travel turmoil"
+         },
+         {
+            "badge_4k_resolution": false,
+            "badge_artist": false,
+            "badge_closed_captions": false,
+            "badge_new_video": false,
+            "image_thumbnail": "https://i.ytimg.com/vi/MPx_dm8CIRc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBBiR7KazJVpPUal_N4Tt8YxwNiPQ",
+            "number_of_views": 123272,
+            "publisher": "Global News",
+            "publisher_url": "https://www.youtube.com/user/GlobalToronto",
+            "publisher_verified": true,
+            "running_time": 253,
+            "source_url": "https://www.youtube.com/watch?v=MPx_dm8CIRc",
+            "text": "As of Monday, fully vaccinated Canadians and permanent residents are able to re-enter Canada from outside the country without\u00a0...",
+            "time_of_publication": "2021-07-07 07:17:28",
+            "title": "Canadians reunite as travel rules change, but questions remain"
+         },
+         {
+            "badge_4k_resolution": true,
+            "badge_artist": false,
+            "badge_closed_captions": false,
+            "badge_new_video": false,
+            "image_thumbnail": "https://i.ytimg.com/vi/9H31dBhp7n8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCMTZRbgZz_c1HzKNpnm-9vVOJ0Qg",
+            "number_of_views": 3897,
+            "publisher": "im OUT traveling",
+            "publisher_url": "https://www.youtube.com/channel/UC_kh-rTv2T32vbhn0OYg95Q",
+            "publisher_verified": false,
+            "running_time": 538,
+            "source_url": "https://www.youtube.com/watch?v=9H31dBhp7n8",
+            "text": "This is your Hawaii update If you're traveling to Hawaii soon, here are a few things you need to know regarding the Hawaii travel\u00a0...",
+            "time_of_publication": "2021-07-14 07:17:28",
+            "title": "Traveling to Hawaii soon? Updated Hawaii Travel Restrictions | WHAT YOU NEED TO KNOW!"
+         }
+      ]
+   },
+   "event": "collection"
+}

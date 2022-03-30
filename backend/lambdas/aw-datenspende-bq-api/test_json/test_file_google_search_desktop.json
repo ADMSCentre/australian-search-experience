@@ -1,0 +1,475 @@
+{
+  "version": "1.1.4.3",
+  "hash_key": "i2vvav62aq80qhkcbn4rnznnpr1twcec",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0",
+  "browser": "firefox",
+  "keyword": "should i get vaccinated",
+  "interface": "desktop",
+  "platform": "google_search",
+  "plugin_id": "13u33kvhk0l5ncsnhau235fkzp5h7ulv",
+  "time_of_retrieval": 1626407545,
+  "localisation": "en-US",
+  "data": {
+    "logged_in": true,
+    "main_panel": {
+      "result_types": [
+        "All",
+        "News",
+        "Videos",
+        "Images",
+        "Maps",
+        "More",
+        "Shopping",
+        "Books",
+        "Flights",
+        "Finance"
+      ],
+      "number_of_results_approximate": 1180000000,
+      "seconds_taken_to_load_approximate": 0.49,
+      "module_top_stories": {
+        "tabulated_rows": [
+          {
+            "source_url": "https://www.news.com.au/world/coronavirus/australia/astrazeneca-everything-you-need-to-know-about-the-vaccine/news-story/bd0ed1b4be3360419b671918c2ed5c0c",
+            "publisher": "News.com.au",
+            "publisher_url": "https://www.news.com.au",
+            "title": "AstraZeneca: ",
+            "time_of_publication": "2021-07-15 17:52:25",
+            "is_video": true,
+            "media_thumbnail_url": "data:image/jpeg;base64,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"
+          }
+        ],
+        "tabulated_columns": [
+          {
+            "source_url": "https://www.news.com.au/world/coronavirus/australia/astrazeneca-everything-you-need-to-know-about-the-vaccine/news-story/bd0ed1b4be3360419b671918c2ed5c0c",
+            "publisher": "News.com.au",
+            "publisher_url": "https://www.news.com.au",
+            "title": "AstraZeneca: ",
+            "time_of_publication": "2021-07-15 17:52:25",
+            "is_video": true,
+            "media_thumbnail_url": "data:image/jpeg;base64,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"
+          },
+          {
+            "source_url": "https://www.cnn.com/2021/07/14/health/covid-vaccinated-people-guidelines-wellness/index.html",
+            "publisher": "CNN",
+            "publisher_url": "https://www.cnn.com",
+            "title": "What vaccinated ",
+            "time_of_publication": "2021-07-15 03:52:25",
+            "is_video": true,
+            "media_thumbnail_url": "data:image/jpeg;base64,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"
+          },
+          {
+            "source_url": "https://www.cnbc.com/2021/07/14/should-you-get-a-third-covid-vaccine-dose-booster-shots-explained.html",
+            "publisher": "CNBC",
+            "publisher_url": "https://www.cnbc.com",
+            "title": "Experts: Seeking a ",
+            "time_of_publication": "2021-07-15 03:52:25",
+            "is_video": true,
+            "media_thumbnail_url": "data:image/jpeg;base64,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"
+          },
+          {
+            "source_url": "https://clarksvillenow.com/local/should-you-get-the-covid-19-vaccine-heres-what-clarksville-doctors-say/",
+            "publisher": "Clarksville Now",
+            "publisher_url": "https://clarksvillenow.com",
+            "title": "Should you get the ",
+            "time_of_publication": "2021-07-15 14:52:25",
+            "is_video": false,
+            "media_thumbnail_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4yH1UgNoPPHW-yTdLiPbMWZGlYZVJ_OKBi3yjEmmkSv4vLvdta03sRpF2&usqp=CAI&s"
+          },
+          {
+            "source_url": "https://www.news.com.au/world/coronavirus/australia/covid-vaccine-should-i-get-it/news-story/a1e19004df589fae394a0dc9627e80fa",
+            "publisher": "News.com.au",
+            "publisher_url": "https://www.news.com.au",
+            "title": "Covid vaccine: should I ",
+            "time_of_publication": "2021-07-15 03:52:25",
+            "is_video": true,
+            "media_thumbnail_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVCrqFh2yQHPhqEx6uLrWNID_o4WdqI6ufBQjvmuUE&usqp=CAI&s"
+          },
+          {
+            "source_url": "https://theconversation.com/im-fully-vaccinated-but-feel-sick-should-i-get-tested-for-covid-19-162062",
+            "publisher": "The Conversation",
+            "publisher_url": "https://theconversation.com",
+            "title": "I’m fully vaccinated but ",
+            "time_of_publication": "2021-06-18 03:52:25",
+            "is_video": false,
+            "media_thumbnail_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfpQi4iiQ0rJt3yjZdHicgw7helH08MNp_-WZKTmtjqVPLb0uOTRUH9Ppl&usqp=CAI&s"
+          },
+          {
+            "source_url": "https://www.wfla.com/community/health/coronavirus/who-children-shouldnt-be-vaccinated-for-covid-19-right-now/",
+            "publisher": "WFLA",
+            "publisher_url": "https://www.wfla.com",
+            "title": "WHO: Children ",
+            "time_of_publication": "2021-06-25 03:52:25",
+            "is_video": false,
+            "media_thumbnail_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoi8hmZvPegtWW3M7Yc1os6Xm7o7JKC4BYb7OX7U80KM0K6NVyVoP9EUA9&usqp=CAI&s"
+          },
+          {
+            "source_url": "https://www.healthline.com/health-news/why-you-need-to-get-vaccinated-even-if-youve-already-had-covid-19",
+            "publisher": "Healthline",
+            "publisher_url": "https://www.healthline.com",
+            "title": "Why You Need to Get ",
+            "time_of_publication": "2021-06-18 03:52:25",
+            "is_video": false,
+            "media_thumbnail_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSLz836HV0qVB4z-6fRuI1fpw3Eh4WzebWtHaEp6ewh-c6rO2TsvSq6caK&usqp=CAI&s"
+          },
+          {
+            "source_url": "https://www.nbcchicago.com/news/coronavirus/got-symptoms-you-should-still-get-tested-for-covid-even-if-youre-vaccinated-expert-says/2523141/",
+            "publisher": "NBC Chicago",
+            "publisher_url": "https://www.nbcchicago.com",
+            "title": "Got Symptoms? You ",
+            "time_of_publication": "2021-06-18 03:52:25",
+            "is_video": true,
+            "media_thumbnail_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUELySBJHbYP7sr3ZKRfoiWaHSApuLkhPbASgRWGb&usqp=CAI&s"
+          },
+          {
+            "source_url": "https://www.washingtonpost.com/lifestyle/2021/06/11/covid-vaccine-children-faq/",
+            "publisher": "The Washington Post",
+            "publisher_url": "https://www.washingtonpost.com",
+            "title": "Should my child get a ",
+            "time_of_publication": "2021-06-18 03:52:25",
+            "is_video": false,
+            "media_thumbnail_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5hevKOdoYgq6DoP8mYO6N7hsbfF1YGVSjRWFmOAVjxbie28D8Fj2aI5F&usqp=CAI&s"
+          }
+        ]
+      },
+      "module_local_news": {
+        "tabulated_columns" : [
+          {
+            "source_url": "https://www.news.com.au/world/coronavirus/australia/astrazeneca-everything-you-need-to-know-about-the-vaccine/news-story/bd0ed1b4be3360419b671918c2ed5c0c",
+            "publisher": "News.com.au",
+            "publisher_url": "https://www.news.com.au",
+            "title": "AstraZeneca: ",
+            "time_of_publication": "2021-07-15 17:52:25",
+            "is_video": true,
+            "media_thumbnail_url": "data:image/jpeg;base64,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"
+          }
+        ]
+      },
+      "module_people_also_ask": [
+        {
+          "title": "Why should we get vaccinated for COVID-19?",
+          "arrow_links": "https://www.health.gov.au › covid-19-vaccines › why-sho...",
+          "stripped_html": {
+            "HTML": "<span><span>Higher vaccination rates makes outbreaks much less likely. It also reduces the need for preventive measures, such as border closures and travel restrictions.</span></span>",
+            "source_urls": ["https://www.a.com.au/"],
+            "media_thumbnail_urls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUELySBJHbYP7sr3ZKRfoiWaHSApuLkhPbASgRWGb&usqp=CAI&s"]
+          }
+        },
+        {
+          "title": "Can I still get Covid after the vaccine?",
+          "arrow_links": "https://www.health.gov.au › news › top-3-covid-19-vacci...",
+          "stripped_html": {
+            "HTML": "<span><span>If someone is unlucky to get Covid after having been vaccinated and you can still, in some cases, get Covid after you get vaccinated, even though your chances seem to be lower, it is likely you will experience a much milder disease.</span></span><span>1 July 2021</span>",
+            "source_urls": null,
+            "media_thumbnail_urls": null
+          }
+        },
+        {
+          "title": "What are some common side effects of the COVID-19 vaccine?",
+          "arrow_links": "https://www.health.gov.au › learn-about-covid-19-vaccines",
+          "stripped_html": {
+            "HTML": "<span><p>Common reactions to vaccination include:<br>• pain, redness and/or swelling where you received the needle<br>• mild fever<br>• headache.</p></span><span>17 May 2021</span>",
+            "source_urls": null,
+            "media_thumbnail_urls": null
+          }
+        },
+        {
+          "title": "Can vaccinated people get long Covid?",
+          "arrow_links": "https://www.nbcnews.com › health › health-news › can-va...",
+          "stripped_html": {
+            "HTML": "<span><span>It is theoretically possible for a fully vaccinated person to get long Covid. But doctors contend that it doesn't appear to be a significant risk. Coronavirus infections leading to long-haul Covid-19 in fully vaccinated people are probably very rare, experts say.</span></span><span>19 hours ago</span>",
+            "source_urls": null,
+            "media_thumbnail_urls": null
+          }
+        }
+      ],
+      "search_results": {
+        "results_promoted_upper": [
+          {
+            "title": "Why should I get vaccinated for COVID-19? | Australian ...",
+            "source_url": "https://www.health.gov.au/initiatives-and-programs/covid-19-vaccines/getting-vaccinated-for-covid-19/why-should-i-get-vaccinated-for-covid-19",
+            "publisher_url": "https://www.health.gov.au",
+            "stripped_html": {
+              "HTML": "<span><span>Higher vaccination rates makes outbreaks much less likely. It also reduces the need for preventive measures, such as border closures and travel restrictions.</span></span>",
+              "source_urls": ["https://www.a.com.au/"],
+              "media_thumbnail_urls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUELySBJHbYP7sr3ZKRfoiWaHSApuLkhPbASgRWGb&usqp=CAI&s"]
+            }
+          }
+        ],
+        "results_promoted_lower": [
+          {
+            "title": "Why should I get vaccinated for COVID-19? | Australian ...",
+            "source_url": "https://www.health.gov.au/initiatives-and-programs/covid-19-vaccines/getting-vaccinated-for-covid-19/why-should-i-get-vaccinated-for-covid-19",
+            "publisher_url": "https://www.health.gov.au",
+            "stripped_html": {
+              "HTML": "<span><span>Higher vaccination rates makes outbreaks much less likely. It also reduces the need for preventive measures, such as border closures and travel restrictions.</span></span>",
+              "source_urls": ["https://www.a.com.au/"],
+              "media_thumbnail_urls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUELySBJHbYP7sr3ZKRfoiWaHSApuLkhPbASgRWGb&usqp=CAI&s"]
+            }
+          }
+        ],
+        "results_snippets": [
+          {
+            "title": "Why should I get vaccinated for COVID-19? | Australian ...",
+            "stripped_html": {
+              "HTML": "<span><span>Higher vaccination rates makes outbreaks much less likely. It also reduces the need for preventive measures, such as border closures and travel restrictions.</span></span>",
+              "source_urls": ["https://www.a.com.au/"],
+              "media_thumbnail_urls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUELySBJHbYP7sr3ZKRfoiWaHSApuLkhPbASgRWGb&usqp=CAI&s"]
+            },
+            "time_of_publication": "2021-06-14 14:00:00"
+          }
+        ],
+        "results_nonpromoted": [
+          {
+            "arrow_links": "https://www.health.gov.au › covid-19-vaccines › why-s...",
+            "title": "Why should I get vaccinated for COVID-19? | Australian ...",
+            "source_url": "https://www.health.gov.au/initiatives-and-programs/covid-19-vaccines/getting-vaccinated-for-covid-19/why-should-i-get-vaccinated-for-covid-19",
+            "publisher_url": "https://www.health.gov.au",
+            "stripped_html": {
+              "HTML": "<span><span>Higher vaccination rates makes outbreaks much less likely. It also reduces the need for preventive measures, such as border closures and travel restrictions.</span></span>",
+              "source_urls": ["https://www.a.com.au/"],
+              "media_thumbnail_urls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUELySBJHbYP7sr3ZKRfoiWaHSApuLkhPbASgRWGb&usqp=CAI&s"]
+            },
+            "time_of_publication": "2021-06-14 14:00:00"
+          },
+          {
+            "arrow_links": "https://www.health.gov.au › ... › COVID-19 vaccines",
+            "title": "Getting vaccinated for COVID-19 | Australian Government ...",
+            "source_url": "https://www.health.gov.au/initiatives-and-programs/covid-19-vaccines/getting-vaccinated-for-covid-19",
+            "publisher_url": "https://www.health.gov.au",
+            "stripped_html": {},
+            "time_of_publication": null
+          },
+          {
+            "arrow_links": "https://www.cdc.gov › coronavirus › 2019-ncov › vacc...",
+            "title": "Benefits of Getting a COVID-19 Vaccine | CDC",
+            "source_url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html",
+            "publisher_url": "https://www.cdc.gov",
+            "stripped_html": {},
+            "time_of_publication": "2021-06-14 14:00:00"
+          },
+          {
+            "arrow_links": "https://www.cdc.gov › coronavirus › 2019-ncov › facts",
+            "title": "Myths and Facts about COVID-19 Vaccines | CDC",
+            "source_url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/facts.html",
+            "publisher_url": "https://www.cdc.gov",
+            "stripped_html": {},
+            "time_of_publication": "2021-07-06 14:00:00"
+          },
+          {
+            "arrow_links": "https://www.hopkinsmedicine.org › health › coronavirus",
+            "title": "COVID-19 Vaccine Hesitancy: 12 Things You Need to Know ...",
+            "source_url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus/covid19-vaccine-hesitancy-12-things-you-need-to-know",
+            "publisher_url": "https://www.hopkinsmedicine.org",
+            "stripped_html": {},
+            "time_of_publication": null
+          },
+          {
+            "arrow_links": "https://www.mayoclinic.org › in-depth › art-20484859",
+            "title": "Get the facts about COVID-19 vaccines - Mayo Clinic",
+            "source_url": "https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/coronavirus-vaccine/art-20484859",
+            "publisher_url": "https://www.mayoclinic.org",
+            "stripped_html": {},
+            "time_of_publication": null
+          },
+          {
+            "arrow_links": "https://www.nfid.org › immunization › 10-reasons-to-g...",
+            "title": "10 Reasons To Get Vaccinated – National Foundation for ...",
+            "source_url": "https://www.nfid.org/immunization/10-reasons-to-get-vaccinated/",
+            "publisher_url": "https://www.nfid.org",
+            "stripped_html": {},
+            "time_of_publication": null
+          },
+          {
+            "arrow_links": "https://www.who.int › ... › COVID-19 vaccines",
+            "title": "COVID-19 Vaccines Advice - WHO | World Health Organization",
+            "source_url": "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/covid-19-vaccines/advice",
+            "publisher_url": "https://www.who.int",
+            "stripped_html": {},
+            "time_of_publication": null
+          }
+        ]
+      },
+      "module_twitter": {
+        "source_url" : "https://www.google.com/search?hl=en-US&q=will+the+covid-19+vaccine+prevent+me+from+infecting+others%3F&sa=X&ved=2ahUKEwim4PCb2ObxAhVezjgGHX-qCVQQ1QIwHnoECDAQAQ",
+        "title" : "abc",
+        "tweets" : [
+          {
+            "image_thumbnail" : "123",
+            "source_url": "https://www.health.gov.au/initiatives-and-programs/covid-19-vaccines/getting-vaccinated-for-covid-19/why-should-i-get-vaccinated-for-covid-19",
+            "stripped_html": {
+              "HTML": "<span><span>Higher vaccination rates makes outbreaks much less likely. It also reduces the need for preventive measures, such as border closures and travel restrictions.</span></span>",
+              "source_urls": ["https://www.a.com.au/"],
+              "media_thumbnail_urls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUELySBJHbYP7sr3ZKRfoiWaHSApuLkhPbASgRWGb&usqp=CAI&s"]
+            },
+            "time_of_publication": "2021-06-14 14:00:00"
+          }
+        ]
+      },
+      "module_images": {
+        "title" : "def",
+        "images" : [
+          {
+            "image_thumbnail" : "aaa",
+            "source_url" : "bbb"
+          }
+        ]
+      },
+      "module_related_searches": {
+        "carousels": [
+          {
+            "title" : "carousel 1",
+            "cards" : [
+              {
+                "source_url" : "a source",
+                "title" : "some title",
+                "image_thumbnail" : "here is an image thumbnail"
+              }
+            ]
+          }
+        ],
+        "related_terms": [
+          {
+            "HTML": "<b>will the covid-19 vaccine prevent me from infecting others?</b>",
+            "source_url": "https://www.google.com/search?hl=en-US&q=will+the+covid-19+vaccine+prevent+me+from+infecting+others%3F&sa=X&ved=2ahUKEwim4PCb2ObxAhVezjgGHX-qCVQQ1QIwHnoECDAQAQ"
+          },
+          {
+            "HTML": "<b>reasons to</b> get <b>the covid vaccine</b>",
+            "source_url": "https://www.google.com/search?hl=en-US&q=Reasons+to+get+the+COVID+vaccine&sa=X&ved=2ahUKEwim4PCb2ObxAhVezjgGHX-qCVQQ1QIwH3oECCQQAQ"
+          },
+          {
+            "HTML": "<b>can</b> i <b>choose which covid vaccine</b> i get <b>in australia</b>",
+            "source_url": "https://www.google.com/search?hl=en-US&q=Can+I+choose+which+COVID+vaccine+I+get+in+Australia&sa=X&ved=2ahUKEwim4PCb2ObxAhVezjgGHX-qCVQQ1QIwIHoECCwQAQ"
+          },
+          {
+            "HTML": "<b>benefits of covid-19 vaccine</b>",
+            "source_url": "https://www.google.com/search?hl=en-US&q=Benefits+of+COVID-19+vaccine&sa=X&ved=2ahUKEwim4PCb2ObxAhVezjgGHX-qCVQQ1QIwIXoECCsQAQ"
+          },
+          {
+            "HTML": "<b>which covid vaccine is best</b>",
+            "source_url": "https://www.google.com/search?hl=en-US&q=Which+COVID+vaccine+is+best&sa=X&ved=2ahUKEwim4PCb2ObxAhVezjgGHX-qCVQQ1QIwInoECCkQAQ"
+          },
+          {
+            "HTML": "should i get <b>the covid vaccine</b>",
+            "source_url": "https://www.google.com/search?hl=en-US&q=Should+I+get+the+COVID+vaccine&sa=X&ved=2ahUKEwim4PCb2ObxAhVezjgGHX-qCVQQ1QIwI3oECC0QAQ"
+          },
+          {
+            "HTML": "<b>is covid vaccine free in australia</b>",
+            "source_url": "https://www.google.com/search?hl=en-US&q=Is+COVID+vaccine+free+in+Australia&sa=X&ved=2ahUKEwim4PCb2ObxAhVezjgGHX-qCVQQ1QIwJHoECCMQAQ"
+          }
+        ]
+      },
+      "page_numberings": [
+        {
+          "term": ""
+        },
+        {
+          "term": "1"
+        },
+        {
+          "term": "2"
+        },
+        {
+          "term": "3"
+        },
+        {
+          "term": "4"
+        },
+        {
+          "term": "5"
+        },
+        {
+          "term": "6"
+        },
+        {
+          "term": "7"
+        },
+        {
+          "term": "8"
+        },
+        {
+          "term": "9"
+        },
+        {
+          "term": "10"
+        },
+        {
+          "term": ""
+        }
+      ],
+      "module_video_box": {
+        "suggestions": [
+          {
+            "source_url" : "a source",
+            "title" : "a title"
+          }
+        ],
+        "video": [
+          {
+            "title" : "a video title",
+            "subtitle" : "a subtitle",
+            "time_of_publication" : "2021-06-14 14:00:00",
+            "running_time" : 123,
+            "image_thumbnail" : "a url",
+            "source_url" : "another url",
+            "publisher_url" : "url 3",
+            "markers" : [
+              {
+                "image_thumbnail" : "image thumb",
+                "at_second" : 1,
+                "title" : "how i met your mother",
+                "source_url" : "source url"
+              }
+            ]
+          }
+        ]
+      },
+      "module_video_showcase": {
+        "title" : "a title",
+        "source_url" : "a source url",
+        "subtitle" : "a subtitle",
+        "image_thumbnail" : "an image thumb",
+        "publisher_url" : "a publisher url"
+      },
+      "module_available_outlinks": [
+        {
+          "source_url" : "a source url",
+          "publisher" : "a publisher"
+        }
+      ],
+      "module_locations": [
+        {
+          "image_thumbnail" : "123",
+          "title" : "abc",
+          "stripped_html": {
+            "HTML": "<span><span>Higher vaccination rates makes outbreaks much less likely. It also reduces the need for preventive measures, such as border closures and travel restrictions.</span></span>",
+            "source_urls": ["https://www.a.com.au/"],
+            "media_thumbnail_urls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUELySBJHbYP7sr3ZKRfoiWaHSApuLkhPbASgRWGb&usqp=CAI&s"]
+          }
+        },
+        {
+          "image_thumbnail" : "123",
+          "title" : "abc",
+          "stripped_html": {
+            "HTML": "<span><span>Higher vaccination rates makes outbreaks much less likely. It also reduces the need for preventive measures, such as border closures and travel restrictions.</span></span>",
+            "source_urls": ["https://www.a.com.au/"],
+            "media_thumbnail_urls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUELySBJHbYP7sr3ZKRfoiWaHSApuLkhPbASgRWGb&usqp=CAI&s"]
+          }
+        }
+      ]
+    },
+    "side_panel": {
+      "is_requesting_claimer" : true,
+      "source_url" : "fsdaf",
+      "title" : "1234",
+      "subtitle" : "abc",
+      "stripped_htmls": [
+        {
+          "HTML": "<span><span>Higher vaccination rates makes outbreaks much less likely. It also reduces the need for preventive measures, such as border closures and travel restrictions.</span></span>",
+          "source_urls": ["https://www.a.com.au/"],
+          "media_thumbnail_urls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUELySBJHbYP7sr3ZKRfoiWaHSApuLkhPbASgRWGb&usqp=CAI&s"]
+        }
+      ]
+    }
+  },
+  "event": "collection"
+}

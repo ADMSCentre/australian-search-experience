@@ -1,0 +1,44 @@
+[
+	{
+		"description": "The ID of this Google Search 'people also search for' result (mobile only).",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the Google Search instance to which this result belongs (mobile only).",
+	    "mode": "REQUIRED",
+	    "name": "base_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list index of the result (mobile only).",
+	    "mode": "REQUIRED",
+	    "name": "list_index",
+	    "type": "INT64"
+	},
+	{
+		"description": "The title of the result (mobile only).",
+	    "mode": "NULLABLE",
+	    "name": "title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The stripped HTML of the result (mobile only).",
+	    "mode": "NULLABLE",
+	    "name": "stripped_html_HTML",
+	    "type": "STRING"
+	},
+	{
+		"description": "The URLs obtained from the 'stripped_html_HTML' field (mobile only).",
+	    "mode": "REPEATED",
+	    "name": "stripped_html_source_urls",
+	    "type": "STRING"
+	},
+	{
+		"description": "The images (as Base64 strings or URLs) obtained from the 'stripped_html_HTML' field (mobile only).",
+	    "mode": "REPEATED",
+	    "name": "stripped_html_media_thumbnail_urls",
+	    "type": "STRING"
+	}
+]

@@ -1,0 +1,110 @@
+[
+	{
+		"description": "The ID for this Youtube movie result (desktop only).",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the Youtube base instance to which this movie result belongs (desktop only).",
+	    "mode": "REQUIRED",
+	    "name": "base_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The index of this result within the list of results (desktop only).",
+	    "mode": "REQUIRED",
+	    "name": "list_index",
+	    "type": "INT64"
+	},
+	{
+		"description": "The title of this result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The first metadata slot of this result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "metadata_a",
+	    "type": "STRING"
+	},
+	{
+		"description": "The second metadata slot of this result (desktop only).",
+	    "mode": "REPEATED",
+	    "name": "metadata_b",
+	    "type": "STRING"
+	},
+	{
+		"description": "The source URL of this result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "source_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The publisher of this result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "publisher",
+	    "type": "STRING"
+	},
+	{
+		"description": "The running time (in seconds) of this result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "running_time",
+	    "type": "INT64"
+	},
+	{
+		"description": "The time of publication of this result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "time_of_publication",
+	    "type": "DATETIME"
+	},
+	{
+		"description": "The image (either as a URL or Base64 string) of this result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "image_thumbnail",
+	    "type": "STRING"
+	},
+	{
+		"description": "The number of views that correspond to this result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "number_of_views",
+	    "type": "INT64"
+	},
+	{
+		"description": "The byline of this result (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "byline",
+	    "type": "STRING"
+	},
+	{
+		"description": "Whether or not this result has the Youtube 'verified publisher' badge (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "publisher_verified",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this result has the Youtube 'closed caption' badge (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_closed_captions",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this result has the Youtube 'new video' badge (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_new_video",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this result has the Youtube '4K resolution' badge (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_4k_resolution",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this result has the Youtube 'official artist' badge (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_artist",
+	    "type": "BOOLEAN"
+	}
+]

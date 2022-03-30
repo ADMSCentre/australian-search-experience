@@ -25,48 +25,22 @@ function handleSearchRoutine() {
     // Then determine the current window (so that we may re-focus it)
     ext.windows.getCurrent(window => {
 
-      if(ext.runtime.lastError) { if (debugAO) { console.log("Caught a non-existent window error."); }
-                  }
+      if(ext.runtime.lastError) { 
+        if (debugAO) { console.log("Caught a non-existent window error."); }
+      }
+
       var windowProperties = {
-          width: CONST_SEARCH_ROUTINE_WINDOW_WIDTH,
-          height: CONST_SEARCH_ROUTINE_WINDOW_HEIGHT,
-          url: ext.runtime.getURL(config.searchProcessPage),
-          focused: false
-        };
-
-      // If the previous window exists (sometimes the event may call without a window)...
-      if (window) {
-        var currentWindowFocusedStatus = window.focused;
-        //We then create another window for the search routine
-        windowProperties.top = window.height - CONST_SEARCH_ROUTINE_WINDOW_TOP_OFFSET;
-      }
-
-      // The Firefox Browser does not support creating windows that are naturally unfocussed
-      if (CONST_BROWSER_TYPE == 'firefox') {
-        delete windowProperties.focused;
-      }
+        url: ext.runtime.getURL(config.searchProcessPage),
+        state: "minimized"
+      };
 
       ext.windows.create(windowProperties, newWindow => {
-        // We re-focus the original window
-        newWindow.focused = false;
         // Add the tab of the search process window to the retainer
         SearchRoutine.addTabIdToRetainer(newWindow.tabs[0].id);
-          // We set the focus back to the previous window
-          setTimeout(function(){ 
-              // If the previous window exists...
-              if (window) {
-                ext.windows.update(window.id, {focused: currentWindowFocusedStatus}, () => {
-                  if(ext.runtime.lastError) {
-                    if (debugAO) { console.log("Caught a non-existent window error."); }
-                  }
-                }); 
-              } 
-            }, 
-            CONST_TIME_DELAY_REFOCUS_WINDOW_SEARCH_ROUTINE_MILISECONDS);
-          // And simultaneously, we begin the search routine
-          SearchRoutine.searchRoutineBegin( config, newWindow.id, newWindow.tabs[0].id);
-        });
+        // And simultaneously, we begin the search routine
+        SearchRoutine.searchRoutineBegin( config, newWindow.id, newWindow.tabs[0].id);
       });
+    });
   });
 }
 

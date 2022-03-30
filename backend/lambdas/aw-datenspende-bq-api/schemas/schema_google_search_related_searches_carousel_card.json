@@ -1,0 +1,44 @@
+[
+	{
+		"description": "The ID of this Google Search carousel card (desktop only).",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the Google Search instance to which this carousel card belongs (desktop only).",
+	    "mode": "REQUIRED",
+	    "name": "base_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the carousel to which this carousel card belongs (desktop only).",
+	    "mode": "REQUIRED",
+	    "name": "carousel_index",
+	    "type": "INT64"
+	},
+	{
+		"description": "The list index of the carousel card (desktop only).",
+	    "mode": "REQUIRED",
+	    "name": "list_index",
+	    "type": "INT64"
+	},
+	{
+		"description": "The title of the carousel card (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The source URL of the carousel card (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "source_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The image (as a Base64 string or URL) of the carousel card (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "image_thumbnail",
+	    "type": "STRING"
+	}
+]

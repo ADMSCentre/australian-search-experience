@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  awdatenspendebqapi:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      CodeUri: .
+      Description: ''
+      MemorySize: 512
+      Timeout: 900
+      Role: 'arn:aws:iam::519969025508:role/aw-datenspende-bq-api-role'
+      Events:
+        Schedule1:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 hour)
+        Schedule2:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 hour)
+        Schedule3:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 hour)
+        Schedule4:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 hour)
+        Schedule5:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 hour)

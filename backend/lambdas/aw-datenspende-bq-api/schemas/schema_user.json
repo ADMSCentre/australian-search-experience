@@ -1,0 +1,86 @@
+[
+	{
+		"description": "This is the ID that corresponds to the user of plugin.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The gender of the user : 'm' - male; 'f' - female; 'o' - other.",
+	    "mode": "NULLABLE",
+	    "name": "gender",
+	    "type": "STRING"
+	},
+	{
+		"description": "The gender specification for users who identify neither as male or female.",
+	    "mode": "NULLABLE",
+	    "name": "gender_specify",
+	    "type": "STRING"
+	},
+	{
+		"description": "The age range of the user.",
+	    "mode": "REQUIRED",
+	    "name": "age",
+	    "type": "STRING"
+	},
+	{
+		"description": "The postcode of the user's address",
+	    "mode": "REQUIRED",
+	    "name": "postcode",
+	    "type": "STRING"
+	},
+	{
+		"description": "The income bracket of the user.",
+	    "mode": "REQUIRED",
+	    "name": "income_bracket",
+	    "type": "STRING"
+	},
+	{
+		"description": "The level of education of the user.",
+	    "mode": "NULLABLE",
+	    "name": "level_education",
+	    "type": "STRING"
+	},
+	{
+		"description": "The spoken language of the user.",
+	    "mode": "NULLABLE",
+	    "name": "language",
+	    "type": "STRING"
+	},
+	{
+		"description": "The language specification for users who do not speak one of the languages indicated on the registration form.",
+	    "mode": "NULLABLE",
+	    "name": "language_specify",
+	    "type": "STRING"
+	},
+	{
+		"description": "The employment status of the user.",
+	    "mode": "NULLABLE",
+	    "name": "employment_status",
+	    "type": "STRING"
+	},
+	{
+		"description": "The political party preference of the user.",
+	    "mode": "NULLABLE",
+	    "name": "party_preference",
+	    "type": "STRING"
+	},
+	{
+		"description": "The political party specification for users who do not align with any of the provided political parties on the registration form.",
+	    "mode": "NULLABLE",
+	    "name": "party_preference_specify",
+	    "type": "STRING"
+	},
+	{
+		"description": "The time (as a UNIX 'seconds' timestamp) at which this user account was created.",
+	    "mode": "REQUIRED",
+	    "name": "created_at",
+	    "type": "TIMESTAMP"
+	},
+	{
+		"description": "This is the activation code of the user.",
+	    "mode": "NULLABLE",
+	    "name": "activation_code",
+	    "type": "STRING"
+	}
+]

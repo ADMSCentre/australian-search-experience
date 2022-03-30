@@ -1,0 +1,190 @@
+{
+  "endDate": "2024-10-01T00:00:00+02:00",
+  "startDate": "2019-07-05T00:00:00+02:00",
+  "introPage": "https://www.admscentre.org.au/searchexperience-register/",
+  "keywords": [
+    "Liberal Party",
+    "National Party",
+    "Labor Party",
+    "Greens",
+    "One Nation",
+    "Scott Morrison",
+    "Barnaby Joyce",
+    "Anthony Albanese",
+    "Adam Bandt",
+    "Pauline Hanson",
+    "COVID",
+    "Vaccine",
+    "Travel rules",
+    "Quarantine",
+    "Lockdown",
+    "Wuhan",
+    "Home loan",
+    "Mortgage broker",
+    "Cash loan",
+    "Cash advance",
+    "Superannuation",
+    "Critical Race Theory",
+    "Feminism",
+    "Black Lives Matter",
+    "Uluru Statement",
+    "Voice to Parliament",
+    "eating healthy can prevent what diseases",
+    "cinnamon and honey water benefits",
+    "what kind of fat to avoid",
+    "knee pain what to do",
+    "why are some parents concerned about vaccines",
+    "what are the advantages and disadvantages of attenuated vaccines",
+    "should i get vaccinated",
+    "should i avoid getting vaccinated",
+    "Tokyo Olympics",
+    "Tokyo 2021",
+    "Australian movies",
+    "Indigenous movies"
+  ],
+  "landingPage": "https://www.admscentre.org.au/searchexperience/",
+  "registerPage": "https://www.admscentre.org.au/searchexperience-register/",
+  "countdownPage": "pages/countdown.html",
+  "sharePage": "pages/share.html",
+  "searchProcessPage": "pages/search_process.html",
+  "searchProcessInterval": 6000,
+  "runInterval": 240,
+  "selectors_mobile_iphone12pro" : [
+    {
+     "platform" : "youtube",
+     "url" : "https://www.youtube.com/results?search_query=DYNAMIC_OPTIONS_KEYWORD",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    },
+    {
+     "platform" : "google_news",
+     "url" : "https://news.google.com/search?hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    },
+    {
+     "platform" : "google_search",
+     "url" : "https://www.google.com/search?q=DYNAMIC_OPTIONS_KEYWORD&sclient=mobile-gws-wiz-hp",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    },
+    {
+     "platform" : "google_videos",
+     "url" : "https://www.google.com/search?tbm=vid&q=DYNAMIC_OPTIONS_KEYWORD&hl=DYNAMIC_NAVIGATOR_LANGUAGE",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    }
+   ],
+  "selectors_mobile_galaxyS5" : [
+    {
+     "platform" : "youtube",
+     "url" : "https://www.youtube.com/results?search_query=DYNAMIC_OPTIONS_KEYWORD",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    },
+    {
+     "platform" : "google_news",
+     "url" : "https://news.google.com/search?hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    },
+    {
+     "platform" : "google_search",
+     "url" : "https://www.google.com/search?q=DYNAMIC_OPTIONS_KEYWORD&sclient=mobile-gws-wiz-hp",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    },
+    {
+     "platform" : "google_videos",
+     "url" : "https://www.google.com/search?tbm=vid&q=DYNAMIC_OPTIONS_KEYWORD&hl=DYNAMIC_NAVIGATOR_LANGUAGE",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    }
+   ],
+  "selectors_desktop" : [
+    {
+     "platform" : "youtube",
+     "url" : "https://www.youtube.com/results?search_query=DYNAMIC_OPTIONS_KEYWORD",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    },
+    {
+     "platform" : "google_news",
+     "url" : "https://news.google.com/search?hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    },
+    {
+     "platform" : "google_search",
+     "url" : "https://google.com/search?ned=DYNAMIC_NAVIGATOR_LANGUAGE&hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    },
+    {
+     "platform" : "google_videos",
+     "url" : "https://www.google.com/search?tbm=vid&q=DYNAMIC_OPTIONS_KEYWORD",
+     "logged_in" : ["(LOGGED_IN\":true)"],
+     "items" : {
+        "tabulated_compact_result_card" : {
+          "item" : ["[FLAG_LISTIFY_MATCHES](?<=watchCardSectionSequenceRenderer).*$"],
+          "_raw_HTML" : ["a"]
+        }
+     }
+    }
+   ]
+}

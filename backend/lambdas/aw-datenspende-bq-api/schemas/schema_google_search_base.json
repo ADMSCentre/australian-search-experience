@@ -1,0 +1,297 @@
+[
+	{
+		"description": "The base object ID for this Google Search search instance; this is generated at the point of insertion into BigQuery.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The version of the extension; encoded as a four-digit number without dot points.",
+	    "mode": "REQUIRED",
+	    "name": "version",
+	    "type": "INT64"
+	},
+	{
+		"description": "The activation code for the user.",
+	    "mode": "REQUIRED",
+	    "name": "hash_key",
+	    "type": "STRING"
+	},
+	{
+		"description": "The user-agent string for the browser.",
+	    "mode": "REQUIRED",
+	    "name": "user_agent",
+	    "type": "STRING"
+	},
+	{
+		"description": "The web browser program (e.g. Google Chrome)",
+	    "mode": "REQUIRED",
+	    "name": "browser_type",
+	    "type": "STRING"
+	},
+	{
+		"description": "The keyword that was search (e.g. Apple)",
+	    "mode": "REQUIRED",
+	    "name": "keyword",
+	    "type": "STRING"
+	},
+	{
+		"description": "Physical machine type (e.g. Desktop)",
+	    "mode": "REQUIRED",
+	    "name": "machine_type",
+	    "type": "STRING"
+	},
+	{
+		"description": "The search engine platform (e.g. Youtube)",
+	    "mode": "REQUIRED",
+	    "name": "search_platform",
+	    "type": "STRING"
+	},
+	{
+		"description": "The plugin ID that is provided by the browser's extension store.",
+	    "mode": "REQUIRED",
+	    "name": "plugin_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The date at which the search instance was retrieved.",
+	    "mode": "REQUIRED",
+	    "name": "time_of_retrieval",
+	    "type": "TIMESTAMP"
+	},
+	{
+		"description": "The localised language setting of the browser (e.g. English).",
+	    "mode": "REQUIRED",
+	    "name": "localisation",
+	    "type": "STRING"
+	},
+	{
+		"description": "The URL that was searched for this search instance.",
+	    "mode": "REQUIRED",
+	    "name": "url",
+	    "type": "STRING"
+	},
+	{
+		"description": "Whether or not the user was logged into the search engine for this search instance.",
+	    "mode": "REQUIRED",
+	    "name": "logged_in",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "The types of results (such as 'Videos', 'Images', 'News', etc.) in order of appearance that exist for this search instance.",
+	    "mode": "REPEATED",
+	    "name": "main_panel_result_type",
+	    "type": "STRING"
+	},
+	{
+		"description": "The approximatd number of results that have been returned for this search instance (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_number_of_results_approximate",
+	    "type": "INT64"
+	},
+	{
+		"description": "The approximated number of seconds taken to load the results for this search instance (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_seconds_taken_to_load_approximate",
+	    "type": "FLOAT64"
+	},
+	{
+		"description": "Whether or not the search instance has returned any news stories; this is useful for reconstruction of the JSON object as it eliminates the need to manually query for its existence.",
+	    "mode": "REQUIRED",
+	    "name": "main_panel_news_stories_exists",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not the search instance has returned a 'people also ask' module; this is useful for reconstruction of the JSON object as it eliminates the need to manually query for its existence.",
+	    "mode": "REQUIRED",
+	    "name": "main_panel_people_also_ask_exists",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not the search instance has returned a Twitter module; this is useful for reconstruction of the JSON object as it eliminates the need to manually query for its existence.",
+	    "mode": "REQUIRED",
+	    "name": "main_panel_module_twitter_exists",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "The URL of the user associated with the Twitter module that has been returned for this search instance.",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_module_twitter_source_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The title of the user associated with the Twitter module that has been returned for this search instance.",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_module_twitter_title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The image (as a Base64 string or a URL) of the user associated with the Twitter module that has been returned for this search instance (mobile only).",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_module_twitter_image_thumbnail",
+	    "type": "STRING"
+	},
+	{
+		"description": "The title of the 'Images' module that has been returned for this search instance (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_module_images_title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of image thumbnails (as a set of Base64 strings or URLs) of the 'Images' module that has been returned for this search instance; reconstructs a list of JSON objects with the 'main_panel_module_images_source_urls' field.",
+	    "mode": "REPEATED",
+	    "name": "main_panel_module_images_image_thumbnails",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of source URLs of the 'Images' module that has been returned for this search instance; reconstructs a list of JSON objects with the 'main_panel_module_images_image_thumbnails' field.",
+	    "mode": "REPEATED",
+	    "name": "main_panel_module_images_source_urls",
+	    "type": "STRING"
+	},
+	{
+		"description": "Whether or not the search instance has returned a 'video box' module; this is useful for reconstruction of the JSON object as it eliminates the need to manually query for its existence.",
+	    "mode": "REQUIRED",
+	    "name": "main_panel_module_videobox_exists",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not the search instance has returned an 'outlinks' module; this is useful for reconstruction of the JSON object as it eliminates the need to manually query for its existence.",
+	    "mode": "REQUIRED",
+	    "name": "main_panel_module_outlinks_exists",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not the search instance has returned a 'locations' module; this is useful for reconstruction of the JSON object as it eliminates the need to manually query for its existence.",
+	    "mode": "REQUIRED",
+	    "name": "main_panel_module_locations_exists",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "The title of the 'Showcase Video' module that has been returned for this search instance (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_module_video_showcase_title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The source URL of the 'Showcase Video' module that has been returned for this search instance (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_module_video_showcase_source_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The subtitle of the 'Showcase Video' module that has been returned for this search instance (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_module_video_showcase_subtitle",
+	    "type": "STRING"
+	},
+	{
+		"description": "The image (as a Base64 string or a URL) of the 'Showcase Video' module that has been returned for this search instance (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_module_video_showcase_image_thumbnail",
+	    "type": "STRING"
+	},
+	{
+		"description": "The URL of the publisher of the 'Showcase Video' module that has been returned for this search instance (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_module_video_showcase_publisher_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "Whether or not the search instance has returned a side panel; this is useful for reconstruction of the JSON object as it eliminates the need to manually query for its existence.",
+	    "mode": "REQUIRED",
+	    "name": "main_panel_side_panel_exists",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not the side panel is requesting that a user should claim it.",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_side_panel_is_requesting_claimer",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "The source URL of the side panel that has been returned for this instance.",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_side_panel_source_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The title of the side panel that has been returned for this instance.",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_side_panel_title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The subtitle of the side panel that has been returned for this instance.",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_side_panel_subtitle",
+	    "type": "STRING"
+	},
+	{
+		"description": "The image (as a Base64 string or URL) of the side panel that has been returned for this instance (mobile only).",
+	    "mode": "NULLABLE",
+	    "name": "main_panel_side_panel_image_thumbnail",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of titles of the 'related searches' module that has been returned for this search instance (mobile only).",
+	    "mode": "REPEATED",
+	    "name": "main_panel_related_searches_tabulated_row_titles",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of source URLs of the 'related searches' module that has been returned for this search instance; reconstructs a list of JSON objects with the 'main_panel_related_searches_term_HTMLs' field (desktop only).",
+	    "mode": "REPEATED",
+	    "name": "main_panel_related_searches_term_source_urls",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of stripped HTML strings of the 'related searches' module that has been returned for this search instance; reconstructs a list of JSON objects with the 'main_panel_related_searches_term_source_urls' field (desktop only).",
+	    "mode": "REPEATED",
+	    "name": "main_panel_related_searches_term_HTMLs",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of titles of the carousels of the 'related searches' module that has been returned for this search instance (desktop only)",
+	    "mode": "REPEATED",
+	    "name": "main_panel_related_searches_carousel_titles",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of numbered pages (of search result pages) that have been returned for this search instance (desktop only).",
+	    "mode": "REPEATED",
+	    "name": "main_panel_page_numberings",
+	    "type": "INT64"
+	},
+	{
+		"description": "The titles of the 'people' elements in the 'people also search for' module returned for this search instance; reconstructs a list of JSON objects with the 'main_panel_people_also_search_for_people_image_thumbnails' field (mobile only).",
+	    "mode": "REPEATED",
+	    "name": "main_panel_people_also_search_for_people_titles",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of images (as Base64 strings or URLs) of the 'people' elements in the 'people also search for' module returned for this search instance; reconstructs a list of JSON objects with the 'main_panel_people_also_search_for_people_titles' field (mobile only).",
+	    "mode": "REPEATED",
+	    "name": "main_panel_people_also_search_for_people_image_thumbnails",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of source URLs of the 'outlinks' module that has been returned for this search instance; reconstructs a list of JSON objects with the 'main_panel_outlinks_publishers' field.",
+	    "mode": "REPEATED",
+	    "name": "main_panel_outlinks_source_urls",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of publisher names of the 'outlinks' module that has been returned for this search instance; reconstructs a list of JSON objects with the 'main_panel_outlinks_source_urls' field.",
+	    "mode": "REPEATED",
+	    "name": "main_panel_outlinks_publishers",
+	    "type": "STRING"
+	}
+]
+
+
+
+
+
+
+

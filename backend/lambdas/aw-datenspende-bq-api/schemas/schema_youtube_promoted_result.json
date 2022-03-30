@@ -1,0 +1,140 @@
+[
+	{
+		"description": "The ID for this promoted Youtube result.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the Youtube base instance to which this promoted result belongs.",
+	    "mode": "REQUIRED",
+	    "name": "base_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The index of this result within the list of results.",
+	    "mode": "REQUIRED",
+	    "name": "list_index",
+	    "type": "INT64"
+	},
+	{
+		"description": "The way in which this promoted content was served to the user; 'in_results' - within the results (desktop only), 'top_shelf' - in the top shelf of the page, 'over_results' - presented just before the results of the page.",
+	    "mode": "REQUIRED",
+	    "name": "type",
+	    "type": "STRING"
+	},
+	{
+		"description": "The title of the promoted Youtube result.",
+	    "mode": "NULLABLE",
+	    "name": "title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The source URL of the promoted Youtube result (only featured in results of 'in_results' type).",
+	    "mode": "NULLABLE",
+	    "name": "source_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The upper byline text of the promoted Youtube result.",
+	    "mode": "NULLABLE",
+	    "name": "sub_text_a",
+	    "type": "STRING"
+	},
+	{
+		"description": "The lower byline text of the promoted Youtube result (only featured in results of 'top_shelf' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "sub_text_b",
+	    "type": "STRING"
+	},
+	{
+		"description": "The title of the 'call to action' button of the promoted Youtube result (only featured in results of the 'top_shelf' or 'over_results' types).",
+	    "mode": "NULLABLE",
+	    "name": "call_to_action_button_title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The source URL of the 'call to action' button of the promoted Youtube result (only featured in results of the 'top_shelf' or 'over_results' types).",
+	    "mode": "NULLABLE",
+	    "name": "call_to_action_button_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of titles within the sub-links of this promoted Youtube result (only featured in results of the 'over_results' type); (desktop only); reconstructs a list of JSON objects with the 'links_list_urls' field.",
+	    "mode": "REPEATED",
+	    "name": "links_list_titles",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of source URLs within the sub-links of this promoted Youtube result (only featured in results of the 'over_results' type); (desktop only); reconstructs a list of JSON objects with the 'links_list_titles' field.",
+	    "mode": "REPEATED",
+	    "name": "links_list_urls",
+	    "type": "STRING"
+	},
+	{
+		"description": "The publisher of the promoted Youtube result (only featured in results of the 'in_results' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "publisher",
+	    "type": "STRING"
+	},
+	{
+		"description": "The source URL of the publisher of the promoted Youtube result (only featured in results of the 'in_results' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "publisher_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The time of publication of the promoted Youtube result (only featured in results of the 'in_results' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "time_of_publication",
+	    "type": "DATETIME"
+	},
+	{
+		"description": "The running time (in seconds) of the promoted Youtube result (only featured in results of the 'in_results' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "running_time",
+	    "type": "INT64"
+	},
+	{
+		"description": "The image (either as a URL or Base64 string) for the promoted Youtube result (only featured in results of the 'in_results' and 'top_shelf' types); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "image_thumbnail",
+	    "type": "STRING"
+	},
+	{
+		"description": "The number of views that correspond to this promoted Youtube result (only featured in results of the 'in_results' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "number_of_views",
+	    "type": "INT64"
+	},
+	{
+		"description": "Whether or not this promoted Youtube result is from a verified publisher (only featured in results of the 'in_results' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "publisher_verified",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this promoted Youtube result has the 'closed captions' badge (only featured in results of the 'in_results' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_closed_captions",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this promoted Youtube result has the '4K resolution' badge (only featured in results of the 'in_results' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_4k_resolution",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this promoted Youtube result has the 'newly added video' badge (only featured in results of the 'in_results' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_new_video",
+	    "type": "BOOLEAN"
+	},
+	{
+		"description": "Whether or not this promoted Youtube result has the 'official artist' badge (only featured in results of the 'in_results' type); (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "badge_artist",
+	    "type": "BOOLEAN"
+	}
+]

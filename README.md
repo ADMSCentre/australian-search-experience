@@ -24,6 +24,16 @@ The infrastructure of this project is compiled as a cross-browser search plugin 
 
 If you would like to compile the unpacked extension, you will need a current installation of `npm`. Navigate to the cloned folder and then run the command `npm install`. This will install the necessary modules for the extension. Then run the command `npm run buildmv2` (for Mozilla Firefox and Blink Opera) or `npm run buildmv3` (for Google Chrome or Microsoft Edge), depending on which browser you will be using.
 
+### Backend
+
+Included with this code is the `backend` folder, which includes all extended functionality of the plugin that resides on external infrastructure. For the project, we use Amazon Web Services and Google Cloud products, specifically S3, DynamoDB, Lambda, EventBridge, and BigQuery.
+
+In the `backend\lambdas` folder is the annotated source code for all AWS Lambda functions, which handle functionality that relates to accepting submitted data donations (see `backend\lambdas\aw-datenspende-api`), paginating said data donations (see `backend\lambdas\aw-datenspende-pull`), sanitising the data and pushing it to Google BigQuery for more advanced analysis (see `backend\lambdas\aw-datenspende-bq-api`), and viewing quick statistics about the data (see `backend\lambdas\aw-datenspende-quickstats`).
+
+_Note: While the necessary configuration details to reinstantiate the AWS Lambda functions are provided here in YAML format, the configuration details for the relevant DynamoDB/BigQuery tables, S3 buckets, and EventBridge rules aren't, given that very little data constitutes their configuration. In later commits, this data will be added in the form of associated notes to assist with reinstantiating the entire server infrastructure if necessary._
+
+The backend folder also includes the front-end website code that individuals submit to register their access to the plugin (see `backend\acquisition-form`), as well as the assistant script required to submit 'real-time' changes to the keywords that are queried by the plugin's search routines, as well as the ephemeral scraping mechanisms used to obtain data relative to each platform.
+
 <!-- CONTACT -->
 ### Contact
 

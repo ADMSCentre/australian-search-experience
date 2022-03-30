@@ -1,0 +1,38 @@
+[
+	{
+		"description": "The ID of this Google Search side panel snippet.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the Google Search instance to which this side panel snippet belongs.",
+	    "mode": "REQUIRED",
+	    "name": "base_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list index of the side panel snippet.",
+	    "mode": "REQUIRED",
+	    "name": "list_index",
+	    "type": "INT64"
+	},
+	{
+		"description": "The stripped HTML of the side panel snippet.",
+	    "mode": "NULLABLE",
+	    "name": "HTML",
+	    "type": "STRING"
+	},
+	{
+		"description": "The URLs obtained from the 'stripped_html_HTML' field.",
+	    "mode": "REPEATED",
+	    "name": "source_urls",
+	    "type": "STRING"
+	},
+	{
+		"description": "The images (as Base64 strings or URLs) obtained from the 'stripped_html_HTML' field.",
+	    "mode": "REPEATED",
+	    "name": "media_thumbnail_urls",
+	    "type": "STRING"
+	}
+]

@@ -146,16 +146,25 @@ function mediateSearchRoutine() {
           searchRoutineReferenceObject = result.searchRoutineReferenceObject;
         }
         // Remove all tabs that are not associated with the reference object of the search routine (if it exists ofcourse)
-        var tabsRemoved = 0;
-        for (var i = 0; i < tabManagerObject.length; i ++) {
-          if ((searchRoutineReferenceObject == null) || (tabManagerObject[i].id != searchRoutineReferenceObject["tabId"])) {
-            // Don't remove the tab, remove the window of the tab (to catch any unaccounted tabs)
-            console.log(tabManagerObject[i]);
-            safelyRemoveWindow(tabManagerObject[i].windowId);
-            // safelyRemoveTab(tabManagerObject[i].id);
-            tabsRemoved ++;
+        ext.windows.getAll((allWindowsManagerObject)=>{
+          // Determine how many windows are open; if there is only one window, prepare to add another window before closing the current one...
+          var createWindowOnDelete = ((allWindowsManagerObject != undefined) && (allWindowsManagerObject.constructor == Array) && (allWindowsManagerObject.length == 1));
+          var tabsRemoved = 0;
+          for (var i = 0; i < tabManagerObject.length; i ++) {
+            if ((searchRoutineReferenceObject == null) || (tabManagerObject[i].id != searchRoutineReferenceObject["tabId"])) {
+              // Don't remove the tab, remove the window of the tab (to catch any unaccounted tabs)
+              console.log(tabManagerObject[i]);
+              // However, if this is the only window, before deleting this window, open a separate tab.
+              if (createWindowOnDelete) {
+                  ext.windows.create();
+              }
+              // Then delete the associated window...
+              safelyRemoveWindow(tabManagerObject[i].windowId);
+              // Although this variable is updated synchronously (during an async event), it isn't of concern
+              tabsRemoved ++;
+            }
           }
-        }
+        });
         if (debugAO) { console.log(`Attempted removal of ${tabsRemoved} tabs`); }
       });
     });
@@ -417,7 +426,7 @@ function searchRoutineAlarmAction(argSearchRoutineReferenceObject, searchRoutine
                       if (debugAO) { console.log("A result has been returned:", results); }
                       // Remove the tab of the page we just visited
                       safelyRemoveTab(searchRoutineThisQueueSettingsObject["tabId"]);
-                      if (!(ext.runtime.lastError || results === undefined)) {
+                      if (!(ext.runtime.lastError || results === undefined)) {
                         // Return the result back to the callback function, ready to be sent up to the server
                         searchRoutineAlarmActionCallback(
                           searchRoutineReferenceObject, 

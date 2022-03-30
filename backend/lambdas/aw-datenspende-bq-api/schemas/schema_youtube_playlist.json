@@ -1,0 +1,80 @@
+[
+	{
+		"description": "The ID for this Youtube playlist result.",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the Youtube base instance to which this playlist result belongs.",
+	    "mode": "REQUIRED",
+	    "name": "base_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The index of this result within the list of results.",
+	    "mode": "REQUIRED",
+	    "name": "list_index",
+	    "type": "INT64"
+	},
+	{
+		"description": "The title of this Youtube playlist result.",
+	    "mode": "NULLABLE",
+	    "name": "title",
+	    "type": "STRING"
+	},
+	{
+		"description": "The source URL of this Youtube playlist result.",
+	    "mode": "NULLABLE",
+	    "name": "source_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The publisher of this Youtube playlist result.",
+	    "mode": "NULLABLE",
+	    "name": "publisher",
+	    "type": "STRING"
+	},
+	{
+		"description": "The URL of the publisher of this Youtube playlist result.",
+	    "mode": "NULLABLE",
+	    "name": "publisher_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The image (either as a URL or Base64 string) of this Youtube playlist result.",
+	    "mode": "NULLABLE",
+	    "name": "image_thumbnail",
+	    "type": "STRING"
+	},
+	{
+		"description": "The publication time of this Youtube playlist result; (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "time_of_publication",
+	    "type": "DATETIME"
+	},
+	{
+		"description": "The number of videos featured in this Youtube playlist result.",
+	    "mode": "NULLABLE",
+	    "name": "number_of_videos",
+	    "type": "INT64"
+	},
+	{
+		"description": "The list of titles within this Youtube playlist result; reconstructs a list of JSON objects with the 'playlist_showcase_items_source_urls' and 'playlist_showcase_items_running_times' fields; (desktop only).",
+	    "mode": "REPEATED",
+	    "name": "playlist_showcase_items_titles",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of source URLs within this Youtube playlist result; reconstructs a list of JSON objects with the 'playlist_showcase_items_titles' and 'playlist_showcase_items_running_times' fields; (desktop only).",
+	    "mode": "REPEATED",
+	    "name": "playlist_showcase_items_source_urls",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of running times (in seconds) within this Youtube playlist result; reconstructs a list of JSON objects with the 'playlist_showcase_items_titles' and 'playlist_showcase_items_source_urls' fields; (desktop only).",
+	    "mode": "REPEATED",
+	    "name": "playlist_showcase_items_running_times",
+	    "type": "INT64"
+	}
+]

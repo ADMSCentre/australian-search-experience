@@ -1,0 +1,32 @@
+[
+	{
+		"description": "The ID of this Google Search Video module (desktop only).",
+	    "mode": "REQUIRED",
+	    "name": "id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The ID of the Google Search instance to which this Video module belongs (desktop only).",
+	    "mode": "REQUIRED",
+	    "name": "base_id",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list index of the Video module (desktop only).",
+	    "mode": "REQUIRED",
+	    "name": "list_index",
+	    "type": "INT64"
+	},
+	{
+		"description": "The list of source URLs of the 'suggestions' sub-module of this Video module; reconstructs a list of JSON objects with the 'suggestions_titles' field (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "source_url",
+	    "type": "STRING"
+	},
+	{
+		"description": "The list of titles of the 'suggestions' sub-module of this Video module; reconstructs a list of JSON objects with the 'suggestions_source_urls' field (desktop only).",
+	    "mode": "NULLABLE",
+	    "name": "title",
+	    "type": "STRING"
+	}
+]

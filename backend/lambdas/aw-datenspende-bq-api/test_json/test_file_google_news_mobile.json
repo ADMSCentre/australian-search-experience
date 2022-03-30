@@ -1,0 +1,227 @@
+{
+   "version": "1.1.4.3",
+   "hash_key": "yl8v3l8hrk6ev1504k11wyz2af53j823",
+   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36",
+   "browser": "chrome",
+   "keyword": "COVID",
+   "interface": "mobile_galaxyS5",
+   "platform": "google_news",
+   "plugin_id": "dmv1hfyxe7328g7z9x1lps2xp9ec2cxl",
+   "time_of_retrieval": 1626646153,
+   "localisation": "en",
+   "data": {
+      "logged_in": true,
+      "news_poster_result": [
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/1RErDtLcKVIN6jkr6OhrVlesOXiMlN-kGgb9kCJFd2ASinwclw9EyjueFrKfbWwWSsXderpwxvyiz5OoXQ",
+            "publisher": "ABC News",
+            "source_url": "https://www.abc.net.au/news/2021-07-19/nsw-lockdown-results-five-days-gladys-berejiklian/100303084",
+            "subtitle": "The results of NSW's tougher lockdown could take up to five days to become apparent, NSW Premier Gladys Berejiklian has warned while making a plea for patience.",
+            "time_of_publication": "2021-07-18 18:41:19",
+            "title": "Results from NSW's COVID lockdown could take five days to show, Premier Gladys Berejiklian says"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/7pJbwxd-BjLxsnzITomC0r3qphO7lTRlVQRNiJIiGJ2n2eZxarhyLZhAgjtSXLjn9wMZw-8eydlDpgnnhg",
+            "publisher": "Sydney Morning Herald",
+            "source_url": "https://www.smh.com.au/national/nsw/growing-calls-to-liberate-areas-outside-sydney-s-covid-19-hotspots-20210715-p58a0i.html",
+            "subtitle": "NSW Chief Health Officer Kerry Chant last week said locking down areas around Sydney with few COVID-19 cases was justified because residents worked across the city.",
+            "time_of_publication": "2021-07-18 19:00:00",
+            "title": "Growing calls to liberate areas outside Sydney\u2019s COVID-19 hotspots"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/iK5z_7ducm6W0pS-ySFK-KdTk7MGakAgMH5VuUp4MINgh9JgOQDjvqRd7ifnxcGIvhqjW0xugo26fQrRug8",
+            "publisher": "The Guardian Australia",
+            "source_url": "https://www.theguardian.com/australia-news/2021/jul/18/nsw-covid-update-105-new-cases-reported-and-one-death-as-berejiklian-relaxes-south-west-sydney-rules",
+            "subtitle": "New South Wales health authorities announced 105 new local cases on Sunday, with 27 of them out in the community while they were infectious.",
+            "time_of_publication": "2021-07-18 05:12:00",
+            "title": "NSW Covid update: Gladys Berejiklian relaxes south-west Sydney rules on workers despite 105 new cases"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/7ZV4UQ1huM3uQf_9g4v4o8_Sb9l-1qE0uQ1h2ju05wGlqdyIlbe7LeAqqsjs1mwgdG204kooUVIe0lcd1w",
+            "publisher": "9News",
+            "source_url": "https://www.9news.com.au/national/australia-coronavirus-update-nsw-police-launch-covid19-beach-crackdown/9e2dd4d4-c8e5-495f-bce2-ac51713a62d2",
+            "subtitle": "The NSW Police Force announced the crackdown on Sunday night, announcing ",
+            "time_of_publication": "2021-07-18 10:17:10",
+            "title": "NSW police launch COVID-19 beach crackdown"
+         },
+         {
+            "image_thumbnail": null,
+            "publisher": "Daily Telegraph",
+            "source_url": "https://www.dailytelegraph.com.au/breaking-news/105-new-local-cases-of-covid19-recorded-in-nsw/news-story/5bc84ff5efdd9f64b3fbfbf0977a7d10",
+            "subtitle": "NSW recorded 105 new cases of Covid-19 on Sunday and another death was linked to the disease, health authorities confirmed.",
+            "time_of_publication": "2021-07-18 12:34:24",
+            "title": "Covid cases NSW: Gladys Berejiklian reveals 105 new infections"
+         },
+         {
+            "image_thumbnail": null,
+            "publisher": null,
+            "source_url": "",
+            "subtitle": "stories/CAAqOQgKIjNDQklTSURvSmMzUnZjbmt0TXpZd1NoTUtFUWpnb0tta2s0QU1FWWpZdG9aMFlGSDlLQUFQAQ",
+            "time_of_publication": null,
+            "title": "ui|9bc864bc-08bf-46f0-b5d2-c470d482afcb"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/68DTUAGWEYZuFcHm6cSj4cVGoVchTuyuoO9TYg2KwEN3aLe_cS0aOs403J-Od-2FCHHEM63WfLcBXfZf3Jk",
+            "publisher": "ABC News",
+            "source_url": "https://www.abc.net.au/news/2021-07-19/covid-live-blog-nsw-victoria-latest-news/100303554",
+            "subtitle": "The number of exposure sites in Victoria has reached almost 280, including numerous places in regional Victoria.",
+            "time_of_publication": "2021-07-18 20:59:54",
+            "title": "COVID live blog: Victoria's exposure site lists grows to almost 280, including a dozen regional locations"
+         },
+         {
+            "image_thumbnail": "https://lh6.googleusercontent.com/proxy/toMyLRhU-muyzmYHurEz3V2Por0L4ZKnm8ayvjksei9oe7p4SjeFfk7CZvxubBMBWqlne0Ra4TtHpM_8hZE2d8wOMydc1Pa5l6Du_tv-G7xQ3CR8MNCrEVA87ruvQJCFR1tMqORelXmFrS69lgtKX7SEyW7kkjA9zTrqzvgC7_TQYth3WEXfmaEqawkZQhMOceY3uLi11dJ1Orsmefa3DPA8Q2rWmjRQw2OeCjOpPr3LyhjvnnVWs7m88HAwu7k7q_eKi3m3",
+            "publisher": "The Sydney Morning Herald",
+            "source_url": "https://www.smh.com.au/national/australia-news-live-fresh-rules-for-sydney-s-lockdown-covid-19-cases-spread-into-regional-victoria-20210719-p58atn.html",
+            "subtitle": "As we reported earlier, Australian border officials have cancelled the visa of far-right British commentator Katie Hopkins after she bragged about flouting hotel quarantine rules on social media.",
+            "time_of_publication": "2021-07-18 21:58:01",
+            "title": "Australia news LIVE: Fresh rules for Sydney\u2019s lockdown; COVID-19 cases spread into regional Victoria"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/oYa-nuuwvdLae52jNMXs17KyHBhiVSzlHtvmuJvfzY2JI2OKdPpYOPMAGOYXcIMV0npymAVJCBkcw3K855E",
+            "publisher": "The Age",
+            "source_url": "https://www.theage.com.au/national/victoria/victoria-records-19-new-local-cases-of-covid-19-all-linked-to-current-outbreak-20210717-p58aip.html",
+            "subtitle": "Victoria recorded 19 new local cases of coronavirus on Saturday, as new sites at popular tourist spot Phillip Island, a Richmond gym and a Docklands office building swelled the list of high-risk exposure sites to 165.",
+            "time_of_publication": "2021-07-16 22:57:03",
+            "title": "\u2018This lockdown was needed\u2019: 18 of 19 new local COVID cases were infectious in Victorian community"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/smfV-ymFQYinmew1xQqea4PUlm82qzXTDZVM4su78_EJ4j1VQGwlnROqYpeHY242GcYZ319oSyFrv0LXbb8",
+            "publisher": "The Guardian Australia",
+            "source_url": "https://www.theguardian.com/australia-news/2021/jul/18/victoria-covid-update-daniel-andrews-has-no-plans-to-lift-lockdown-early-as-new-case-recorded-in-mildura",
+            "subtitle": "Victorian premier Daniel Andrews says it is too early to tell whether there will be an extension of the state\u2019s five-day Covid-19 lockdown.",
+            "time_of_publication": "2021-07-18 08:00:00",
+            "title": "Victoria Covid update: Daniel Andrews has no plans to lift lockdown early, as new case recorded in Mildura"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/IlrKp2bL-guRk9AsnAI2z-qJQxbCWV-2AWeXJJgJt1qKbZYv-YE9dJ3qEAWzqVOtBIw7GylZS58Stm98xKo",
+            "publisher": "7NEWS.com.au",
+            "source_url": "https://7news.com.au/lifestyle/health-wellbeing/victoria-covid-exposure-site-lists-grows-to-include-south-melbourne-market-mildura-and-dan-murphys-c-3441438",
+            "subtitle": "Victoria\u2019s coronavirus exposure site list has ballooned to more than 270 venues as the state prepares to find out if the snap lockdown will be extended.",
+            "time_of_publication": "2021-07-18 21:48:00",
+            "title": "Victoria COVID exposure site lists grows to include South Melbourne Market, Mildura and Dan Murphy\u2019s"
+         }
+      ],
+      "news_results": [
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/7pJbwxd-BjLxsnzITomC0r3qphO7lTRlVQRNiJIiGJ2n2eZxarhyLZhAgjtSXLjn9wMZw-8eydlDpgnnhg",
+            "publisher": "Sydney Morning Herald",
+            "source_url": "https://www.smh.com.au/national/nsw/growing-calls-to-liberate-areas-outside-sydney-s-covid-19-hotspots-20210715-p58a0i.html",
+            "time_of_publication": "2021-07-18 19:00:00",
+            "title": "Growing calls to liberate areas outside Sydney\u2019s COVID-19 hotspots"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/iK5z_7ducm6W0pS-ySFK-KdTk7MGakAgMH5VuUp4MINgh9JgOQDjvqRd7ifnxcGIvhqjW0xugo26fQrRug8",
+            "publisher": "The Guardian Australia",
+            "source_url": "https://www.theguardian.com/australia-news/2021/jul/18/nsw-covid-update-105-new-cases-reported-and-one-death-as-berejiklian-relaxes-south-west-sydney-rules",
+            "time_of_publication": "2021-07-18 05:12:00",
+            "title": "NSW Covid update: Gladys Berejiklian relaxes south-west Sydney rules on workers despite 105 new cases"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/7ZV4UQ1huM3uQf_9g4v4o8_Sb9l-1qE0uQ1h2ju05wGlqdyIlbe7LeAqqsjs1mwgdG204kooUVIe0lcd1w",
+            "publisher": "9News",
+            "source_url": "https://www.9news.com.au/national/australia-coronavirus-update-nsw-police-launch-covid19-beach-crackdown/9e2dd4d4-c8e5-495f-bce2-ac51713a62d2",
+            "time_of_publication": "2021-07-18 10:17:10",
+            "title": "NSW police launch COVID-19 beach crackdown"
+         },
+         {
+            "image_thumbnail": "https://lh6.googleusercontent.com/proxy/8XgqwXNKQpp1bbMR1uKtLQtsqt-oQOImghGzqSwU6Lnie5L1LKWLBr1l8sU5KNi4QFXxnsuMQvrTxU-nrRU4Kx4lqa7qzIbL4SMWlCTa0cZ4SHKtTaQkiSdpA07fFre11_0",
+            "publisher": "Daily Telegraph",
+            "source_url": "https://www.dailytelegraph.com.au/breaking-news/105-new-local-cases-of-covid19-recorded-in-nsw/news-story/5bc84ff5efdd9f64b3fbfbf0977a7d10",
+            "time_of_publication": "2021-07-18 12:34:24",
+            "title": "Covid cases NSW: Gladys Berejiklian reveals 105 new infections"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/68DTUAGWEYZuFcHm6cSj4cVGoVchTuyuoO9TYg2KwEN3aLe_cS0aOs403J-Od-2FCHHEM63WfLcBXfZf3Jk",
+            "publisher": "COVID live blog: Victoria's exposure site lists grows to almost 280, including a dozen regional locations",
+            "source_url": "https://www.abc.net.au/news/2021-07-19/covid-live-blog-nsw-victoria-latest-news/100303554",
+            "time_of_publication": "2021-07-18 20:59:54",
+            "title": "ui|9bc864bc-08bf-46f0-b5d2-c470d482afcb"
+         },
+         {
+            "image_thumbnail": "https://lh6.googleusercontent.com/proxy/toMyLRhU-muyzmYHurEz3V2Por0L4ZKnm8ayvjksei9oe7p4SjeFfk7CZvxubBMBWqlne0Ra4TtHpM_8hZE2d8wOMydc1Pa5l6Du_tv-G7xQ3CR8MNCrEVA87ruvQJCFR1tMqORelXmFrS69lgtKX7SEyW7kkjA9zTrqzvgC7_TQYth3WEXfmaEqawkZQhMOceY3uLi11dJ1Orsmefa3DPA8Q2rWmjRQw2OeCjOpPr3LyhjvnnVWs7m88HAwu7k7q_eKi3m3",
+            "publisher": "The Sydney Morning Herald",
+            "source_url": "https://www.smh.com.au/national/australia-news-live-fresh-rules-for-sydney-s-lockdown-covid-19-cases-spread-into-regional-victoria-20210719-p58atn.html",
+            "time_of_publication": "2021-07-18 21:58:01",
+            "title": "Australia news LIVE: Fresh rules for Sydney\u2019s lockdown; COVID-19 cases spread into regional Victoria"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/oYa-nuuwvdLae52jNMXs17KyHBhiVSzlHtvmuJvfzY2JI2OKdPpYOPMAGOYXcIMV0npymAVJCBkcw3K855E",
+            "publisher": "The Age",
+            "source_url": "https://www.theage.com.au/national/victoria/victoria-records-19-new-local-cases-of-covid-19-all-linked-to-current-outbreak-20210717-p58aip.html",
+            "time_of_publication": "2021-07-16 22:57:03",
+            "title": "\u2018This lockdown was needed\u2019: 18 of 19 new local COVID cases were infectious in Victorian community"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/smfV-ymFQYinmew1xQqea4PUlm82qzXTDZVM4su78_EJ4j1VQGwlnROqYpeHY242GcYZ319oSyFrv0LXbb8",
+            "publisher": "The Guardian Australia",
+            "source_url": "https://www.theguardian.com/australia-news/2021/jul/18/victoria-covid-update-daniel-andrews-has-no-plans-to-lift-lockdown-early-as-new-case-recorded-in-mildura",
+            "time_of_publication": "2021-07-18 08:00:00",
+            "title": "Victoria Covid update: Daniel Andrews has no plans to lift lockdown early, as new case recorded in Mildura"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/IlrKp2bL-guRk9AsnAI2z-qJQxbCWV-2AWeXJJgJt1qKbZYv-YE9dJ3qEAWzqVOtBIw7GylZS58Stm98xKo",
+            "publisher": "7NEWS.com.au",
+            "source_url": "https://7news.com.au/lifestyle/health-wellbeing/victoria-covid-exposure-site-lists-grows-to-include-south-melbourne-market-mildura-and-dan-murphys-c-3441438",
+            "time_of_publication": "2021-07-18 21:48:00",
+            "title": "Victoria COVID exposure site lists grows to include South Melbourne Market, Mildura and Dan Murphy\u2019s"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/L1_UXkvYs5royvIuDcZBMB_ADB3E5a9cq7ORHmR6oZ4Yu50goXttkI9WJtip3JL7B8-mpjsZQ9roOjiB_w",
+            "publisher": "ABC News",
+            "source_url": "https://www.abc.net.au/news/2021-07-18/covid-19-two-athletes-test-positive-in-olympic-village/100302896",
+            "time_of_publication": "2021-07-18 06:24:52",
+            "title": "Two athletes in Tokyo Olympic Village test positive to COVID-19 ahead of Games opening ceremony"
+         },
+         {
+            "image_thumbnail": "Go to WA Health",
+            "publisher": "WA Health",
+            "source_url": "https://ww2.health.wa.gov.au/Media-releases/2021/COVID-19-update-18-July-2021",
+            "time_of_publication": "2021-07-18 02:01:32",
+            "title": "COVID-19 update 18 July 2021"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/izDB-nNPWTqbmxvzxtY0NgBMT_botsa-9SSEolSzGWPTphMhtaJBxJivLGnrt3EiZXyFsPsHv-bHl7R_Fzw",
+            "publisher": "The Guardian Australia",
+            "source_url": "https://www.theguardian.com/australia-news/2021/jul/19/australians-believe-states-managing-covid-pandemic-better-than-canberra-study-finds",
+            "time_of_publication": "2021-07-18 21:27:00",
+            "title": "Australians believe states managing Covid pandemic better than Canberra, study finds"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/L2EAB4mGCYYjz-IcozsXV2_QMJRA7rd47wZaxvqagE9eDeZT4fqrwP-R3JGi0ojxpbev5o085iYmFST0ug",
+            "publisher": "ABC News",
+            "source_url": "https://www.abc.net.au/news/2021-07-19/boris-johnson-backflips-on-self-isolation-decision/100303504",
+            "time_of_publication": "2021-07-18 19:33:26",
+            "title": "Boris Johnson backflips on decision to avoid self-isolation after COVID-19 case contact"
+         },
+         {
+            "image_thumbnail": "https://lh4.googleusercontent.com/proxy/tXSACW5x4mTDG44Lvj_Y0EGMHnbgERHvnp_iyBPyIAXWwgOHYOZmnQHBjvyeD-tJagjg3DZOd-UbTeAlBxWGUcbcjgRfVruqgaZxYocFNbsgfKIdwBtluZaXeL-LwoLJyoj6GdeFnMEwTthppOppWhVCAPErfkldTY5tXf060VroLSOcxNcflqlVwTLJ6NZbMSk4hsv2CsZkDyzH6_9-PTGwB9zJr7Th9u0gOEGNxgt80tWVm8Tk8HLkT6Mj1NOjUhfaTQ",
+            "publisher": "Australian Government Department of Health",
+            "source_url": "https://www.health.gov.au/resources/publications/coronavirus-covid-19-at-a-glance-15-july-2021",
+            "time_of_publication": "2021-07-15 22:31:51",
+            "title": "Coronavirus (COVID-19) at a glance \u2013 15 July 2021"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/0ADjDMw2W_S-SvTUF7MUKoSXyCDnXeVKQgb6kh5PUTCHC4E2MWztf81FdRz7E2wyyNSFj_4rLUdXQGOssg",
+            "publisher": "ABC News",
+            "source_url": "https://www.abc.net.au/news/2021-07-19/sunshine-coast-covid-july-dodging-bullets/100302952",
+            "time_of_publication": "2021-07-18 20:53:20",
+            "title": "'Can't dodge bullets forever' say Sunshine Coast businesses after several COVID near misses"
+         },
+         {
+            "image_thumbnail": "Go to WA Health",
+            "publisher": "WA Health",
+            "source_url": "https://ww2.health.wa.gov.au/Media-releases/2021/COVID-19-update-17-July-2021",
+            "time_of_publication": "2021-07-17 03:35:08",
+            "title": "COVID-19 update 17 July 2021"
+         },
+         {
+            "image_thumbnail": "https://lh3.googleusercontent.com/sRSl9f_wdqUXj3tevNefBssm0rGzb6iJdTrjUE2QvfTscnr_qf--YmDQymoE8O-ajtnnruiyaEUjO6EmEq4",
+            "publisher": "ABC News",
+            "source_url": "https://www.abc.net.au/news/2021-07-18/covid-lockdown-health-emergency-not-a-crisis/100298320",
+            "time_of_publication": "2021-07-17 19:00:00",
+            "title": "COVID lockdown highlights the best of our society, not the worst"
+         }
+      ]
+   },
+   "event": "collection"
+}
