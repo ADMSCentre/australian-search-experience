@@ -1,0 +1,20 @@
+[
+	{
+		"description": "The UUID (that references to key name of the resource within the relevant AWS S3 bucket) of the relationship.",
+	    "mode": "REQUIRED",
+	    "name": "s3",
+	    "type": "STRING"
+	},
+	{
+		"description": "The UUID of the Google BigQuery base object of the relationship.",
+	    "mode": "REQUIRED",
+	    "name": "bigquery",
+	    "type": "STRING"
+	},
+	{
+		"description": "The base object type of the Google BigQuery UUID.",
+	    "mode": "REQUIRED",
+	    "name": "type",
+	    "type": "STRING"
+	}
+]

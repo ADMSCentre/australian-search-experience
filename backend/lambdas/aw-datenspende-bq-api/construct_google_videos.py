@@ -12,16 +12,20 @@ table_properties = get_table_properties()
 '''
 	This function inserts the Google Video JSON object into the BigQuery JSON file (for upload at a later stage)
 '''
-def insertion_google_videos(source_json, mode=None, params=None, s3routine=False):
+def insertion_google_videos(source_json, mode=None, params=None, s3routine=False, s3uuid=None):
 	s3_data_list = []
 	base_url = "https://www.google.com/search?tbm=vid&q=DYNAMIC_OPTIONS_KEYWORD&hl=DYNAMIC_NAVIGATOR_LANGUAGE"
 	try:
 		try:
 			if (mode != None):
 				this_json = dict()
-				table_properties[mode]["iterator"] = str(uuid.uuid4())
+				bigquery_uuid = str(uuid.uuid4())
+				table_properties[mode]["iterator"] = bigquery_uuid
 				this_json["id"] = table_properties[mode]["iterator"]
 				if (mode == "google_videos_base"):
+					# Add the connecting details that link the Google BigQuery entries to the S3 records
+					s3_data_list.append({ "mode": "s3_bigquery", "json" : { "s3" : s3uuid, "bigquery" : bigquery_uuid, "type" : "google_videos" }})
+					# Base details
 					this_json["version"] = safecast(int,source_json.get("version").replace(".", ""))
 					this_json["hash_key"] = source_json.get("hash_key")
 					this_json["user_agent"] = source_json.get("user_agent")
@@ -61,13 +65,13 @@ def insertion_google_videos(source_json, mode=None, params=None, s3routine=False
 					this_json["text"] = source_json.get("text")
 			else:
 				# Construction event
-				s3_data_list.extend(insertion_google_videos(source_json, "google_videos_base", None, s3routine))
+				s3_data_list.extend(insertion_google_videos(source_json, "google_videos_base", None, s3routine, s3uuid))
 				if ((source_json.get("data") != None) 
 					and (source_json["data"].get("tabulated_results") != None) 
 					and (len(source_json["data"]["tabulated_results"]) > 0)):
 						for i in range(len(source_json["data"]["tabulated_results"])):
 							tabulated_result = source_json["data"]["tabulated_results"][i]
-							s3_data_list.extend(insertion_google_videos(tabulated_result, "google_videos_tabulated_result", {"list_index" : i}, s3routine))
+							s3_data_list.extend(insertion_google_videos(tabulated_result, "google_videos_tabulated_result", {"list_index" : i}, s3routine, s3uuid))
 		except Exception  as e:
 			print(e)
 			pass

@@ -117,6 +117,7 @@ exports.handler = async (event) => {
 
 		    	// Attempt to add the data to the necessary table within DynamoDB
 		    	try {
+		    		var oneWeekInSeconds = 604800;
 			    	dynamoDB.put({ 
 			    		"TableName": awDatenspendeTable, 
 			    		"Item": { 
@@ -126,6 +127,7 @@ exports.handler = async (event) => {
 			    			"platform" : eventBodyParsed.platform,
 			    			"plugin_id" : eventBodyParsed.plugin_id,
 			    			"time_of_retrieval" : parseInt(eventBodyParsed.time_of_retrieval),
+			    			"TTL" : parseInt(eventBodyParsed.time_of_retrieval)+oneWeekInSeconds,
 			    			"user_agent" : eventBodyParsed.user_agent,
 			    			"hash_key" : eventBodyParsed.hash_key, 
 			    			"version" : eventBodyParsed.version

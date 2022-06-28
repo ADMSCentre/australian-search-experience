@@ -12,16 +12,19 @@ table_properties = get_table_properties()
 '''
 	Construct the necessary insertion of the data
 '''
-def insertion_google_news(source_json, mode=None, params=None, s3routine=False):
+def insertion_google_news(source_json, mode=None, params=None, s3routine=False, s3uuid=None):
 	s3_data_list = []
 	base_url = "https://news.google.com/search?hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD"
 	interface = safeget(source_json,["interface"]) # May initialise as None in some instances; should work where relevant
 	try:
 		if (mode != None):
 			this_json = dict()
-			table_properties[mode]["iterator"] = str(uuid.uuid4())
+			bigquery_uuid = str(uuid.uuid4())
+			table_properties[mode]["iterator"] = bigquery_uuid
 			this_json["id"] = table_properties[mode]["iterator"]
 			if (mode == "google_news_base"):
+				# Add the connecting details that link the Google BigQuery entries to the S3 records
+				s3_data_list.append({ "mode": "s3_bigquery", "json" : { "s3" : s3uuid, "bigquery" : bigquery_uuid, "type" : "google_news" }})
 				# Base details
 				this_json["version"] = safecast(int,source_json.get("version").replace(".", ""))
 				this_json["hash_key"] = source_json.get("hash_key")
@@ -56,7 +59,7 @@ def insertion_google_news(source_json, mode=None, params=None, s3routine=False):
 				this_json["source_url"] = safeget(source_json,["source_url"])
 		else:
 			# Construction event
-			s3_data_list.extend(insertion_google_news(source_json, "google_news_base", None, s3routine))
+			s3_data_list.extend(insertion_google_news(source_json, "google_news_base", None, s3routine, s3uuid))
 			# Google News results
 			interface_news_result = "desktop"
 			if (interface != "desktop"):
@@ -65,12 +68,12 @@ def insertion_google_news(source_json, mode=None, params=None, s3routine=False):
 				tabulated_poster_results = safeget(source_json,["data","news_poster_result"])
 				if (tabulated_poster_results != None) and (type(tabulated_poster_results) == list):
 					for i in range(len(tabulated_poster_results)):
-						s3_data_list.extend(insertion_google_news(tabulated_poster_results[i], "google_news_result", {"list_index" : i, "type" : "mobile_poster"}, s3routine))
+						s3_data_list.extend(insertion_google_news(tabulated_poster_results[i], "google_news_result", {"list_index" : i, "type" : "mobile_poster"}, s3routine, s3uuid))
 			# General news results
 			tabulated_results = safeget(source_json,["data","news_results"])
 			if (tabulated_results != None) and (type(tabulated_results) == list):
 				for i in range(len(tabulated_results)):
-					s3_data_list.extend(insertion_google_news(tabulated_results[i], "google_news_result", {"list_index" : i, "type" : interface_news_result}, s3routine))
+					s3_data_list.extend(insertion_google_news(tabulated_results[i], "google_news_result", {"list_index" : i, "type" : interface_news_result}, s3routine, s3uuid))
 
 		if (mode != None):
 			if (s3routine):

@@ -23,15 +23,18 @@ def compact_result_object_exists(data):
 		return False
 
 
-def insertion_youtube(source_json, mode=None, params=None, s3routine=False):
+def insertion_youtube(source_json, mode=None, params=None, s3routine=False, s3uuid=None):
 	s3_data_list = []
 	base_url = "https://www.youtube.com/results?search_query=DYNAMIC_OPTIONS_KEYWORD"
 	try:
 		if (mode != None):
 			this_json = dict()
-			table_properties[mode]["iterator"] = str(uuid.uuid4())
+			bigquery_uuid = str(uuid.uuid4())
+			table_properties[mode]["iterator"] = bigquery_uuid
 			this_json["id"] = table_properties[mode]["iterator"]
 			if (mode == "youtube_base"):
+				# Add the connecting details that link the Google BigQuery entries to the S3 records
+				s3_data_list.append({ "mode": "s3_bigquery", "json" : { "s3" : s3uuid, "bigquery" : bigquery_uuid, "type" : "youtube" }})
 				# Base details
 				this_json["version"] = safecast(int,safeget(source_json,["version"]).replace(".", "")) 
 				this_json["hash_key"] = safeget(source_json,["hash_key"])
@@ -189,58 +192,58 @@ def insertion_youtube(source_json, mode=None, params=None, s3routine=False):
 			
 		else:
 			# Construction event
-			s3_data_list.extend(insertion_youtube(source_json, "youtube_base", None, s3routine))
+			s3_data_list.extend(insertion_youtube(source_json, "youtube_base", None, s3routine, s3uuid))
 
 			# Youtube channels
 			tabulated_channels = safeget(source_json,["data","tabulated_channels"])
 			if (tabulated_channels != None) and (type(tabulated_channels) == list):
 				for i in range(len(tabulated_channels)):
-					s3_data_list.extend(insertion_youtube(tabulated_channels[i], "youtube_channel", {"list_index" : i}, s3routine))
+					s3_data_list.extend(insertion_youtube(tabulated_channels[i], "youtube_channel", {"list_index" : i}, s3routine, s3uuid))
 
 			# Youtube movie
 			tabulated_movies = safeget(source_json,["data","tabulated_movies"])
 			if (tabulated_movies != None) and (type(tabulated_movies) == list):
 				for i in range(len(tabulated_movies)):
-					s3_data_list.extend(insertion_youtube(tabulated_movies[i], "youtube_movie", {"list_index" : i}, s3routine))
+					s3_data_list.extend(insertion_youtube(tabulated_movies[i], "youtube_movie", {"list_index" : i}, s3routine, s3uuid))
 
 			# Youtube playlist
 			tabulated_playlists = safeget(source_json,["data","tabulated_playlists"])
 			if (tabulated_playlists != None) and (type(tabulated_playlists) == list):
 				for i in range(len(tabulated_playlists)):
-					s3_data_list.extend(insertion_youtube(tabulated_playlists[i], "youtube_playlist", {"list_index" : i}, s3routine))
+					s3_data_list.extend(insertion_youtube(tabulated_playlists[i], "youtube_playlist", {"list_index" : i}, s3routine, s3uuid))
 
 			# Youtube promoted result
 			tabulated_promotions_in_results = safeget(source_json,["data","tabulated_promotions_in_results"])
 			interface = safeget(source_json,["interface"])
 			if (tabulated_promotions_in_results != None) and (type(tabulated_promotions_in_results) == list):
 				for i in range(len(tabulated_promotions_in_results)):
-					s3_data_list.extend(insertion_youtube(tabulated_promotions_in_results[i], "youtube_promoted_result", {"list_index" : i, "type" : "in_results", "interface" : interface}, s3routine))
+					s3_data_list.extend(insertion_youtube(tabulated_promotions_in_results[i], "youtube_promoted_result", {"list_index" : i, "type" : "in_results", "interface" : interface}, s3routine, s3uuid))
 
 			tabulated_promotions_over_results = safeget(source_json,["data","tabulated_promotions_over_results"])
 			if (tabulated_promotions_over_results != None) and (type(tabulated_promotions_over_results) == list):
 				for i in range(len(tabulated_promotions_over_results)):
-					s3_data_list.extend(insertion_youtube(tabulated_promotions_over_results[i], "youtube_promoted_result", {"list_index" : i, "type" : "over_results", "interface" : interface}, s3routine))
+					s3_data_list.extend(insertion_youtube(tabulated_promotions_over_results[i], "youtube_promoted_result", {"list_index" : i, "type" : "over_results", "interface" : interface}, s3routine, s3uuid))
 
 			tabulated_promotions_top_shelf = safeget(source_json,["data","tabulated_promotions_top_shelf"])
 			if (tabulated_promotions_top_shelf != None) and (type(tabulated_promotions_top_shelf) == list):
 				for i in range(len(tabulated_promotions_top_shelf)):
-					s3_data_list.extend(insertion_youtube(tabulated_promotions_top_shelf[i], "youtube_promoted_result", {"list_index" : i, "type" : "top_shelf", "interface" : interface}, s3routine))
+					s3_data_list.extend(insertion_youtube(tabulated_promotions_top_shelf[i], "youtube_promoted_result", {"list_index" : i, "type" : "top_shelf", "interface" : interface}, s3routine, s3uuid))
 
 			# Youtube compact result object dropdowns
 			tabulated_compact_result_object_dropdowns = safeget(source_json,["data","compact_result_object","tabulated_dropdowns"])
 			if (tabulated_compact_result_object_dropdowns != None) and (type(tabulated_compact_result_object_dropdowns) == list):
 				for i in range(len(tabulated_compact_result_object_dropdowns)):
-					s3_data_list.extend(insertion_youtube(tabulated_compact_result_object_dropdowns[i], "youtube_dropdown", {"list_index" : i}, s3routine))
+					s3_data_list.extend(insertion_youtube(tabulated_compact_result_object_dropdowns[i], "youtube_dropdown", {"list_index" : i}, s3routine, s3uuid))
 
 			# Youtube video
 			tabulated_videos = safeget(source_json,["data","tabulated_videos"])
 			if (tabulated_videos != None) and (type(tabulated_videos) == list):
 				for i in range(len(tabulated_videos)):
-					s3_data_list.extend(insertion_youtube(tabulated_videos[i], "youtube_video", {"list_index" : i}, s3routine))
+					s3_data_list.extend(insertion_youtube(tabulated_videos[i], "youtube_video", {"list_index" : i}, s3routine, s3uuid))
 			tabulated_results = safeget(source_json,["data","tabulated_results"])
 			if (tabulated_results != None) and (type(tabulated_results) == list):
 				for i in range(len(tabulated_results)):
-					s3_data_list.extend(insertion_youtube(tabulated_results[i], "youtube_video", {"list_index" : i}, s3routine))
+					s3_data_list.extend(insertion_youtube(tabulated_results[i], "youtube_video", {"list_index" : i}, s3routine, s3uuid))
 		if (mode != None):
 			if (s3routine):
 				s3_data_list.append({"mode": mode, "json" : this_json})

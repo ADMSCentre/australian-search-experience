@@ -13,7 +13,6 @@ import sys
 import boto3
 import requests
 import sys
-import sys
 import copy
 import os
 import re
@@ -38,7 +37,7 @@ CONST_SCHEMA_FOLDER_NAME = "schemas"
 CONST_SEQUENTIAL_MODE_ATTEMPTS = 3
 CONST_DYNAMODB_TICKER_TABLE_NAME = "aw-datenspende-bq-ticker"
 CONST_SANITISED_JSON_FOLDER_NAME = "sanitised_json"
-CONSTANT_AWS_LAMBDA_BQ_ARN = "arn:aws:lambda:us-east-2:519969025508:function:aw-datenspende-bq-api"
+CONSTANT_AWS_LAMBDA_BQ_ARN = "arn:aws:lambda:us-east-2:519969025508:function:aw-datenspende-bq-api-v2"
 CONSTANT_API_ENDPOINT = "https://65i9k6fick.execute-api.us-east-2.amazonaws.com/aw-datenspende-api"
 CONSTANT_S3_BUCKET_NAME = "aw-datenspende-bucket"
 CONSTANT_PROJECT_ID = json.loads(open(os.environ["GOOGLE_APPLICATION_CREDENTIALS"], 'r').read())['project_id']
@@ -120,18 +119,18 @@ def upload_json_to_bigquery_from_file(table_id, fname, schema):
 '''
 	Route the JSON construction (depending on the platform)
 '''
-def route_json_construction(source_json, s3routine=False):
+def route_json_construction(source_json, s3routine=False, s3uuid=None):
 	json_version = source_json.get("version")
 	if (json_version != None):
 		if (int(json_version.replace(".","")) >= 1135):
 			if (source_json.get("platform") == "google_videos"):
-				return insertion_google_videos(source_json, None, None, s3routine)
+				return insertion_google_videos(source_json, None, None, s3routine, s3uuid)
 			if (source_json.get("platform") == "google_search"):
-				return insertion_google_search(source_json, None, None, s3routine)
+				return insertion_google_search(source_json, None, None, s3routine, s3uuid)
 			if (source_json.get("platform") == "youtube"):
-				return insertion_youtube(source_json, None, None, s3routine)
+				return insertion_youtube(source_json, None, None, s3routine, s3uuid)
 			if (source_json.get("platform") == "google_news"):
-				return insertion_google_news(source_json, None, None, s3routine)
+				return insertion_google_news(source_json, None, None, s3routine, s3uuid)
 		else:
 			print("\t- Averting item of version %s" % (json_version))
 
@@ -395,15 +394,16 @@ if __name__ == "__main__":
 		statistics_schema = json.loads(open("schema_statistics_template.json").read())
 		# For all schemas, generated corresponding stats
 		for s in CONST_TABLE_SCHEMA_FILES:
-			s_field = s.replace("schema_","")
-			s_field = s.replace(".json","")
-			for x in ["_total_elements_n","_failed_elements_n","_succeeded_elements_n"]:
-				statistics_schema.append({
-					"description" : "A field associated with the number of processed elements in a given schema.",
-					"mode" : "NULLABLE",
-					"name" : s_field+x,
-					"type" : "INT64"
-					})
+			if ("s3_bigquery" not in s):
+				s_field = s.replace("schema_","")
+				s_field = s.replace(".json","")
+				for x in ["_total_elements_n","_failed_elements_n","_succeeded_elements_n"]:
+					statistics_schema.append({
+						"description" : "A field associated with the number of processed elements in a given schema.",
+						"mode" : "NULLABLE",
+						"name" : s_field+x,
+						"type" : "INT64"
+						})
 		# Create the JSON schema for this table
 		with open("schema_statistics.json", 'w') as file:
 			file.write(json.dumps(statistics_schema))
@@ -515,6 +515,10 @@ if __name__ == "__main__":
 		schema_keyword_sets = json.loads(open("schemas/schema_keyword_sets.json").read())
 		bq.delete_table(formal_table_id("keyword_sets"), not_found_ok=True)
 		bq.create_table(bigquery.Table(formal_table_id("keyword_sets"), schema=schema_keyword_sets))
+	elif (sys.argv[1] == "bq_create_s3_bigquery_table"):
+		schema_s3_bigquery = json.loads(open("schemas/schema_s3_bigquery.json").read())
+		bq.delete_table(formal_table_id("s3_bigquery"), not_found_ok=True)
+		bq.create_table(bigquery.Table(formal_table_id("s3_bigquery"), schema=schema_s3_bigquery))
 	else:
 		'''
 			Synthesize fo

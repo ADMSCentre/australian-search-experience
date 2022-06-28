@@ -99,15 +99,19 @@ def google_search_images_module(this_json, main_panel, source_json):
 '''
 	Construct the necessary insertion of the data
 '''
-def insertion_google_search(source_json, mode=None, params=None, s3routine=False):
+def insertion_google_search(source_json, mode=None, params=None, s3routine=False, s3uuid=None):
 	s3_data_list = []
 	base_url = "https://google.com/search?ned=DYNAMIC_NAVIGATOR_LANGUAGE&hl=DYNAMIC_NAVIGATOR_LANGUAGE&q=DYNAMIC_OPTIONS_KEYWORD"
+	# We retain the UUID for BigQuery insertion
 	try:
 		if (mode != None):
 			this_json = dict()
-			table_properties[mode]["iterator"] = str(uuid.uuid4())
+			bigquery_uuid = str(uuid.uuid4())
+			table_properties[mode]["iterator"] = bigquery_uuid
 			this_json["id"] = table_properties[mode]["iterator"]
 			if (mode == "google_search_base"):
+				# Add the connecting details that link the Google BigQuery entries to the S3 records
+				s3_data_list.append({ "mode": "s3_bigquery", "json" : { "s3" : s3uuid, "bigquery" : bigquery_uuid, "type" : "google_search" }})
 				# Base details
 				this_json["version"] = safecast(int,source_json.get("version").replace(".", ""))
 				this_json["hash_key"] = source_json.get("hash_key")
@@ -289,7 +293,7 @@ def insertion_google_search(source_json, mode=None, params=None, s3routine=False
 					this_json["markers_source_urls"] = safelist(str, source_json.get("markers"), False, "source_url")
 		else:
 			# Construction event
-			s3_data_list.extend(insertion_google_search(source_json, "google_search_base", None, s3routine))
+			s3_data_list.extend(insertion_google_search(source_json, "google_search_base", None, s3routine, s3uuid))
 			if ((type(source_json) == dict) and (source_json.get("data") != None)):
 				if ((type(source_json["data"]) == dict) and (source_json["data"].get("side_panel") != None)):
 					if (source_json.get("interface") != "desktop"):
@@ -310,74 +314,74 @@ def insertion_google_search(source_json, mode=None, params=None, s3routine=False
 									"source_urls" : source_json["data"]["side_panel"].get("side_panel_lower").get("stripped_html_secondaries")[i].get("source_urls")
 									})
 						for i in range(len(list_of_snippets)):
-							s3_data_list.extend(insertion_google_search(list_of_snippets[i], "google_search_side_panel_snippet", {"list_index" : i}, s3routine))
+							s3_data_list.extend(insertion_google_search(list_of_snippets[i], "google_search_side_panel_snippet", {"list_index" : i}, s3routine, s3uuid))
 					else:
 						# Desktop
 						if (source_json["data"]["side_panel"].get("stripped_htmls") != None):
 							for i in range(len(source_json["data"]["side_panel"].get("stripped_htmls"))):
-								s3_data_list.extend(insertion_google_search(source_json["data"]["side_panel"].get("stripped_htmls")[i], "google_search_side_panel_snippet", {"list_index" : i}, s3routine))
+								s3_data_list.extend(insertion_google_search(source_json["data"]["side_panel"].get("stripped_htmls")[i], "google_search_side_panel_snippet", {"list_index" : i}, s3routine, s3uuid))
 				if ((type(source_json["data"]) == dict) and (source_json["data"].get("main_panel") != None)):
 					if (source_json["data"]["main_panel"].get("module_video_box") != None):
 						if (source_json["data"]["main_panel"].get("module_video_box").get("video") != None):
 							for i in range(len(source_json["data"]["main_panel"].get("module_video_box").get("video"))):
-								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("module_video_box").get("video")[i], "google_search_videobox_video", {"list_index" : i}, s3routine))
+								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("module_video_box").get("video")[i], "google_search_videobox_video", {"list_index" : i}, s3routine, s3uuid))
 					if (source_json["data"]["main_panel"].get("module_locations") != None):
 						for i in range(len(source_json["data"]["main_panel"]["module_locations"])):
-							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_locations"][i], "google_search_location", {"list_index" : i}, s3routine))
+							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_locations"][i], "google_search_location", {"list_index" : i}, s3routine, s3uuid))
 					
 					if (source_json["data"]["main_panel"].get("module_people_also_ask") != None):
 						for i in range(len(source_json["data"]["main_panel"]["module_people_also_ask"])):
-							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_people_also_ask"][i], "google_search_people_also_ask_result", {"list_index" : i}, s3routine))
+							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_people_also_ask"][i], "google_search_people_also_ask_result", {"list_index" : i}, s3routine, s3uuid))
 					if (source_json.get("interface") != "desktop"):
 						# Mobile
 						if (source_json["data"]["main_panel"].get("module_top_stories") != None):
 							for i in range(len(source_json["data"]["main_panel"].get("module_top_stories"))):
 								for j in range(len(source_json["data"]["main_panel"].get("module_top_stories")[i].get("tabulated_columns"))):
-									s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_top_stories"][i]["tabulated_columns"][j], "google_search_news_story", {"list_index" : j, "container_index" : i, "class" : "top_story", "type" : "column"}, s3routine))
+									s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_top_stories"][i]["tabulated_columns"][j], "google_search_news_story", {"list_index" : j, "container_index" : i, "class" : "top_story", "type" : "column"}, s3routine, s3uuid))
 						
 						if (source_json["data"]["main_panel"].get("module_people_also_search_for") != None):
 							if (source_json["data"]["main_panel"].get("module_people_also_search_for").get("tabulated_rows") != None):
 								for i in range(len(source_json["data"]["main_panel"].get("module_people_also_search_for").get("tabulated_rows"))):
-									s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("module_people_also_search_for").get("tabulated_rows")[i], "google_search_people_also_search_for_result", {"list_index" : i}, s3routine))
+									s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("module_people_also_search_for").get("tabulated_rows")[i], "google_search_people_also_search_for_result", {"list_index" : i}, s3routine, s3uuid))
 						
 						if (source_json["data"]["main_panel"]["module_twitter"].get("column_tweets") != None):
 							for i in range(len(source_json["data"]["main_panel"]["module_twitter"].get("column_tweets"))):
-								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_twitter"].get("column_tweets")[i], "google_search_twitter_tweet", {"list_index" : i, "type" : "column"}, s3routine))
+								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_twitter"].get("column_tweets")[i], "google_search_twitter_tweet", {"list_index" : i, "type" : "column"}, s3routine, s3uuid))
 						if (source_json["data"]["main_panel"]["module_twitter"].get("row_tweets") != None):
 							for i in range(len(source_json["data"]["main_panel"]["module_twitter"].get("row_tweets"))):
-								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_twitter"].get("row_tweets")[i], "google_search_twitter_tweet", {"list_index" : i, "type" : "row"}, s3routine))
+								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_twitter"].get("row_tweets")[i], "google_search_twitter_tweet", {"list_index" : i, "type" : "row"}, s3routine, s3uuid))
 					else:
 						# Desktop
 						if (source_json["data"]["main_panel"].get("module_top_stories") != None):
 							if (source_json["data"]["main_panel"].get("module_top_stories").get("tabulated_columns") != None):
 								for i in range(len(source_json["data"]["main_panel"].get("module_top_stories").get("tabulated_columns"))):
-									s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_top_stories"]["tabulated_columns"][i], "google_search_news_story", {"list_index" : i, "class" : "top_story", "type" : "column"}, s3routine))
+									s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_top_stories"]["tabulated_columns"][i], "google_search_news_story", {"list_index" : i, "class" : "top_story", "type" : "column"}, s3routine, s3uuid))
 						if (source_json["data"]["main_panel"].get("module_top_stories").get("tabulated_rows") != None):
 							for i in range(len(source_json["data"]["main_panel"].get("module_top_stories").get("tabulated_rows"))):
-								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_top_stories"]["tabulated_rows"][i], "google_search_news_story", {"list_index" : i, "class" : "top_story", "type" : "row"}, s3routine))
+								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_top_stories"]["tabulated_rows"][i], "google_search_news_story", {"list_index" : i, "class" : "top_story", "type" : "row"}, s3routine, s3uuid))
 						if (source_json["data"]["main_panel"].get("module_local_news").get("tabulated_columns") != None):
 							for i in range(len(source_json["data"]["main_panel"].get("module_local_news").get("tabulated_columns"))):
-								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_local_news"]["tabulated_columns"][i], "google_search_news_story", {"list_index" : i, "class" : "local_news", "type" : "column"}, s3routine))
+								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_local_news"]["tabulated_columns"][i], "google_search_news_story", {"list_index" : i, "class" : "local_news", "type" : "column"}, s3routine, s3uuid))
 						if (source_json["data"]["main_panel"]["module_related_searches"].get("carousels") != None):
 							for i in range(len(source_json["data"]["main_panel"]["module_related_searches"].get("carousels"))):
 								if (source_json["data"]["main_panel"]["module_related_searches"].get("carousels")[i].get("cards") != None):
 									for j in range(len(source_json["data"]["main_panel"]["module_related_searches"].get("carousels")[i].get("cards"))):
-										s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_related_searches"].get("carousels")[i].get("cards")[j], "google_search_related_searches_carousel_card", {"list_index" : j, "carousel_index" : i}, s3routine))
+										s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_related_searches"].get("carousels")[i].get("cards")[j], "google_search_related_searches_carousel_card", {"list_index" : j, "carousel_index" : i}, s3routine, s3uuid))
 						if (source_json["data"]["main_panel"]["module_twitter"].get("tweets") != None):
 							for i in range(len(source_json["data"]["main_panel"]["module_twitter"].get("tweets"))):
-								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_twitter"].get("tweets")[i], "google_search_twitter_tweet", {"list_index" : i, "type" : "column"}, s3routine))
+								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_twitter"].get("tweets")[i], "google_search_twitter_tweet", {"list_index" : i, "type" : "column"}, s3routine, s3uuid))
 						if (source_json["data"]["main_panel"]["module_video_box"].get("suggestions") != None):
 							for i in range(len(source_json["data"]["main_panel"]["module_video_box"].get("suggestions"))):
-								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_video_box"].get("suggestions")[i], "google_search_videobox_suggestions", {"list_index" : i}, s3routine))
+								s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"]["module_video_box"].get("suggestions")[i], "google_search_videobox_suggestions", {"list_index" : i}, s3routine, s3uuid))
 					if (source_json["data"]["main_panel"].get("search_results") != None):
 						for i in range(len(source_json["data"]["main_panel"].get("search_results").get("results_promoted_upper"))):
-							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("search_results").get("results_promoted_upper")[i], "google_search_result", {"list_index" : i, "type" : "promoted_upper"}, s3routine))
+							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("search_results").get("results_promoted_upper")[i], "google_search_result", {"list_index" : i, "type" : "promoted_upper"}, s3routine, s3uuid))
 						for i in range(len(source_json["data"]["main_panel"].get("search_results").get("results_promoted_lower"))):
-							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("search_results").get("results_promoted_lower")[i], "google_search_result", {"list_index" : i, "type" : "promoted_lower"}, s3routine))
+							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("search_results").get("results_promoted_lower")[i], "google_search_result", {"list_index" : i, "type" : "promoted_lower"}, s3routine, s3uuid))
 						for i in range(len(source_json["data"]["main_panel"].get("search_results").get("results_snippets"))):
-							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("search_results").get("results_snippets")[i], "google_search_result", {"list_index" : i, "type" : "snippet"}, s3routine))
+							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("search_results").get("results_snippets")[i], "google_search_result", {"list_index" : i, "type" : "snippet"}, s3routine, s3uuid))
 						for i in range(len(source_json["data"]["main_panel"].get("search_results").get("results_nonpromoted"))):
-							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("search_results").get("results_nonpromoted")[i], "google_search_result", {"list_index" : i, "type" : "standard"}, s3routine))
+							s3_data_list.extend(insertion_google_search(source_json["data"]["main_panel"].get("search_results").get("results_nonpromoted")[i], "google_search_result", {"list_index" : i, "type" : "standard"}, s3routine, s3uuid))
 		if (mode != None):
 			if (s3routine):
 				s3_data_list.append({"mode": mode, "json" : this_json})

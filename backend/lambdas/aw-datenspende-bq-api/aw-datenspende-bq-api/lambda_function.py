@@ -26,19 +26,23 @@ def sanitise_json(json_root_fname, raw_json_list, schemas, threshold):
 		# Check first if the s3 data structure has the table in question...
 		if (not raw_json_element["mode"] in s3_data_structure):
 			s3_data_structure[raw_json_element["mode"]] = []
-			s3_statistics["schema_%s_total_elements_n" % (raw_json_element["mode"])] = 0
-			s3_statistics["schema_%s_failed_elements_n" % (raw_json_element["mode"])] = 0
-			s3_statistics["schema_%s_succeeded_elements_n" % (raw_json_element["mode"])] = 0
-		s3_statistics["schema_%s_total_elements_n" % (raw_json_element["mode"])] += 1
+			if ("s3_bigquery" not in raw_json_element["mode"]):
+				s3_statistics["schema_%s_total_elements_n" % (raw_json_element["mode"])] = 0
+				s3_statistics["schema_%s_failed_elements_n" % (raw_json_element["mode"])] = 0
+				s3_statistics["schema_%s_succeeded_elements_n" % (raw_json_element["mode"])] = 0
+		if ("s3_bigquery" not in raw_json_element["mode"]):
+			s3_statistics["schema_%s_total_elements_n" % (raw_json_element["mode"])] += 1
 		# The row should be evaluated against the schema, and we log the results
 		evaluation = evaluate_row_against_schema(json.dumps(raw_json_element["json"]), schemas["schema_%s.json" % (raw_json_element["mode"])]) # Currently dumping and reloading JSON, need to fix this
 		if (evaluation["passed"]):
-		   s3_data_structure[raw_json_element["mode"]].append(raw_json_element["json"])
-		   s3_statistics["schema_%s_succeeded_elements_n" % (raw_json_element["mode"])] += 1
-		   total_successes += 1
+			s3_data_structure[raw_json_element["mode"]].append(raw_json_element["json"])
+			if ("s3_bigquery" not in raw_json_element["mode"]):
+				s3_statistics["schema_%s_succeeded_elements_n" % (raw_json_element["mode"])] += 1
+				total_successes += 1
 		else:
-			s3_statistics["schema_%s_failed_elements_n" % (raw_json_element["mode"])] += 1
-			total_failures += 1
+			if ("s3_bigquery" not in raw_json_element["mode"]):
+				s3_statistics["schema_%s_failed_elements_n" % (raw_json_element["mode"])] += 1
+				total_failures += 1
 	# We then push the sanitised rows back up to S3
 	for k,v in s3_data_structure.items():
 		boto3.resource('s3').Object("aw-datenspende-bq-bucket", "%s_%s_sanitised" % (json_root_fname, k)).put(Body=json.dumps(v))
@@ -92,7 +96,7 @@ def request_to_json_subprocess(key):
 	try:
 		response = requests.get(s3.generate_presigned_url('get_object', 
 			Params={'Bucket': CONSTANT_S3_BUCKET_NAME, 'Key': key}, ExpiresIn=60), timeout=10).json()
-		return route_json_construction(response, True)
+		return route_json_construction(response, True, key)
 	except Exception as e:
 		print(e)
 		print("Error encountered while attempting to grab UUID: %s" % (key))

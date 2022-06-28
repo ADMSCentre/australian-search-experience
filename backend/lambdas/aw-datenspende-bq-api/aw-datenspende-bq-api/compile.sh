@@ -16,19 +16,31 @@ pip freeze > requirements.txt --no-cache-dir
 pip install -r requirements.txt -t ./upload --no-cache-dir
 cd upload
 zip -r upload.zip *
-aws lambda update-function-code --function-name arn:aws:lambda:us-east-2:519969025508:function:aw-datenspende-bq-api --zip-file fileb://upload.zip
-cd ..
-rm -r ./schemas
-rm ./schema_statistics.json
-rm ./creds.json
-rm ./construct_youtube.py
-rm ./construct_google_news.py
-rm ./construct_google_videos.py
-rm ./construct_google_search.py
-rm ./construct_user.py
-rm ./requirements.txt
-rm ./utils.py
-rm ./run.py
-rm -r upload
 
 
+cd upload
+aws s3 cp upload.zip s3://aw-datenspende-bucket/upload-aw-datenspende-bq-api.zip
+
+aws lambda update-function-code --function-name arn:aws:lambda:us-east-2:519969025508:function:aw-datenspende-bq-api --s3-bucket aw-datenspende-bucket --s3-key upload-aw-datenspende-bq-api.zip
+
+#aws lambda update-function-code --function-name arn:aws:lambda:us-east-2:519969025508:function:aw-datenspende-bq-api --zip-file fileb://upload.zip
+#cd ..
+#rm -r ./schemas
+#rm ./schema_statistics.json
+#rm ./creds.json
+#rm ./construct_youtube.py
+#rm ./construct_google_news.py
+#rm ./construct_google_videos.py
+#rm ./construct_google_search.py
+#rm ./construct_user.py
+#rm ./requirements.txt
+#rm ./utils.py
+#rm ./run.py
+#rm -r upload
+
+# turn on the instance
+# mount the efs
+# change ownership
+# scp
+# change ownership
+# close
